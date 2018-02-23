@@ -53,9 +53,9 @@ namespace eval eqnews {
    # time to announce new news items
    # this can be a list of space delimited time binds.
    # the one you wish to use for bind_time uncommented.
-   set ary(bind_time) "00* 15* 30* 45*" ; # every 15 minutes
+   # set ary(bind_time) "00* 15* 30* 45*" ; # every 15 minutes
    # set ary(bind_time) "00* 30*" ; # every 30 minutes
-   # set ary(bind_time) "?0* ?5*" ; # every 5 minutes
+   set ary(bind_time) "?0* ?5*" ; # every 5 minutes
 
    # url to news page  (all available feeds)
    #set ary(page) https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_day.atom ; # only significant
@@ -80,10 +80,10 @@ namespace eval eqnews {
    set ary(regex) {<entry>.*?<title>(.*?)</title><updated>(.*?)</updated>.*?href="https://earthquake.usgs.gov/earthquakes/eventpage/(.*?)".*?<dt>Time</dt><dd>(.*?)</dd>}
 
    # max amount of news items to announce
-   set ary(max_bot) 5
+   set ary(max_bot) 3
 
    # max amount of news items for users
-   set ary(max_user) 5
+   set ary(max_user) 3
 
    # display format for news messages, variables are: %mag, %title, %ago, %event 
    # these can be used and will be replaced with actual values, newline (\n) will
