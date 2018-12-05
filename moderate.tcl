@@ -6,14 +6,14 @@ namespace eval moderate {
 
    setudef flag moderate
 
-   bind cron - {0 0 * * *} [namespace current]::lock
-   bind cron - {0 7 * * *} [namespace current]::unlock
+   bind cron - {0 0 * * *} [namespace current]::blocca
+   bind cron - {0 7 * * *} [namespace current]::sblocca
    
-   proc lock {min hour day month weekday} {
+   proc blocca {min hour day month weekday} {
       push "+m"
    }
    
-   proc unlock {min hour day month weekday} {
+   proc sblocca {min hour day month weekday} {
       push "-m"
    }
    
