@@ -69,7 +69,8 @@ set longline(vxmpt) 1
 ##############
 
 # Set time period (in minutes), How much time it takes to unban punished user.
-set longline(ub) 0
+# la riga sotto è commentata per rendere il ban permanente
+# set longline(ub) 0
 
 
 ########################################################
