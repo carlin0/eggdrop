@@ -32,6 +32,7 @@ namespace eval rssreader {
 ##############################################################################################
 ##  ##                           End Setup.                                              ## ##
 ##############################################################################################   
+  package require http
   bind dcc - rss rssreader::settings
   bind evnt -|- init-server rssreader::loadhash
   bind evnt -|- prerehash rssreader::loadhash
