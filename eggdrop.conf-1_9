@@ -12,11 +12,7 @@ set offset "5"
 
 #set env(TZ) "$timezone$offset"
 
-#set vhost4 "virtual.host.com"
-
 #set vhost4 "99.99.0.0"
-
-#set vhost6 "my.ipv6.host.com"
 
 set vhost6 "2a01:8740:1:fd03:1c5::ff29"
 
@@ -238,21 +234,21 @@ set default-invite-time 0
 
 set default-chanset {
         -autoop         -autovoice
-        -bitch          +cycle
+        -bitch          -cycle
         +dontkickops    +dynamicbans
         +dynamicexempts +dynamicinvites
-        +enforcebans    -greet
+        -enforcebans    -greet
         -inactive       -nodesynch
-        +protectfriends +protectops
+        -protectfriends -protectops
         -revenge        -revengebot
         -secret         -seen
-        +shared         -statuslog
+        -shared         -statuslog
         +userbans       +userexempts
         +userinvites    -protecthalfops
         -autohalfop     -static
 }
 
-channel add #provazze
+#channel add #provazze
 
 #### SERVER MODULE ####
 
@@ -527,7 +523,7 @@ set xfer-timeout 30
 
 #loadmodule compress
 
-set share-compressed 1
+#set share-compressed 1
 
 #set compress-level 9
 
