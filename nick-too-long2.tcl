@@ -11,8 +11,9 @@ proc nick_join {nick uhost hand chan} {
    if {![botisop $chan]} { return 0 }
    if [isbotnick $nick] { return 0 }
         if {[string length $nick] > $max_nick_len} {
-        pushmode $chan +b [maskhost $uhost 2]
-        putkick $chan $nick "Your nickname is too long! use $max_nick_len characters or less"
+#        pushmode $chan +b [maskhost $uhost 2]
+        pushmode $chan +b $nick 
+ putkick $chan $nick "Il tuo nick è troppo lungo! usa al massimo $max_nick_len caratteri"
  }
 }
 
