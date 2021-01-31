@@ -1,3 +1,4 @@
+### Nick troppo lungo
 
 set max_nick_len 15
 
