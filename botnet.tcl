@@ -1,13 +1,5 @@
 # BotNet Commands v1.11 by: MrHat_
 
-# e-mail: mrhat@thepentagon.com
-# irc: EFnet (#SouthPark, #Freedows)
-
-# This script allows you to do commands on the botnet (duh). All bots
-# that you own and that connect to your botnet need this to have the
-# script for it to use them all (again: duh) and they need to be linked 
-# too (duh!!!!!).
-
 # Command:
 #  DCC:
 #   .botnet <whattodo> <args>:
