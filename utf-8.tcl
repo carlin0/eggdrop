@@ -1,10 +1,3 @@
-######
-# Copyright Johannes Kuhn <#John @ quakenet>
-# This fixes the utf-8 issue on an eggdrop without patch.
-# Feel free to distribute and or use.
-# No warranty.
-#
-
 # This script converts all data that should be passed to an eggdrop command
 # to utf-8, so only the lowest 8 bit are used. When Tcl_Eval is called again
 # it can convert the data back to utf.
