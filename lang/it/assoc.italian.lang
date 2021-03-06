@@ -10,7 +10,7 @@
 0xb006,Il canale %s%d non ha un nome.\n
 0xb007,Ok, il nome del canale %s%d è stato tolto.\n
 0xb008,--- %s ha rimosso il nome di questo canale.\n
-0xb009,Ok, il canale %s%d ora è '%s' .\n
+0xb009,Ok, il canale %s%d adesso è '%s' .\n
 0xb00a,--- %s ha nominato questo canale '%s' .\n
 0xb00b,--- (%s) ha nominato questo canale '%s' .\n
 0xb00c,--- (%s) %s ha nominato questo canale '%s' .\n
