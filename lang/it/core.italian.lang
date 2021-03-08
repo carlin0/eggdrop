@@ -296,7 +296,7 @@ Connetti in telnet il bot e  scrivi 'NEW' come tuo soprannome.
 0xb26,Non posso collegare lì
 0xb27,Non posso scollegare
 0xb28,Rilevato ciclo continuo
-0xb29,Notizia di finto link da
+0xb29,Notizia di finto collegamento da
 0xb2b,Rimane disconnesso
 0xb2c,Collegato a
 0xb2d,Collegamento illegale da leaf
@@ -429,4 +429,4 @@ Connetti in telnet il bot e  scrivi 'NEW' come tuo soprannome.
 0xe32,Connessione telnet rifiutata da %s (ha provato usando il mio soprannome di botnet)
 0xe33,Connessione telnet persa da %s mentre controllo se è un duplicato
 0xe34,Connessione ident fuori tempo
-0xe35,Per favore togli il #commento dalla tua impostazione di ascolto e riprova
+0xe35,Per favore togli il #commento dalle tue impostazione di ascolto e riprova
