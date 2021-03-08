@@ -13,10 +13,10 @@ Orario locale %b%T%b
 %{+n}
 Tu sei un padrone di questo bot. Solo gli utenti +n possono vedere questo!
 %{-}
-Usa %b.help%b per gli help di base.
-Usa %b.help <comando>%b per l'help su un comando specifico.
+Usa %b.help%b per gli aiuti di base.
+Usa %b.help <comando>%b per l'aiuto su un comando specifico.
 Usa %b.help all%b per avere l'elenco completo dei comandi.
-Usa %b.help *stringa*%b per avere la lista degli help il cui testo contiene "stringa".
+Usa %b.help *stringa*%b per avere la lista degli aiuti il cui testo contiene "stringa".
 
-I comandi iniziano con '.' (esempio : '.quit' or '.help')
+I comandi iniziano con '.' (esempio : '.quit' o '.help')
 Tutto il resto sarà scritto/letto nella chat interna.
