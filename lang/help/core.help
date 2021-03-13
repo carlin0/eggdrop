@@ -1,0 +1,244 @@
+%{help=help}%{-}
+Comandi in DCC di %B, %V:
+   Per tutti gli utenti:
+      %bwho          away         quit         whom%b
+      %bme           page         match        motd%b
+      %bbots         newpass      chat         handle%b
+      %bwhoami       echo         strip        su%b
+      %btrace        fixcodes     bottree      vbottree%b
+      %bbotinfo      relay        -host        fprint%b
+      %chfinger%b
+%{o|o}
+   Per gli ops:
+      %baddlog       console      match        whois%b
+%{+t}
+   Per i botnet masters:
+      %b+bot         botattr      chhandle     chpass%b
+      %b+host        -bot         link         chaddr%b
+      %bboot         unlink       banner       dccstat%b
+%{+m|m}
+   Per i master di canale:
+      %bchattr       save         backup       reload%b
+      %bstatus       traffic      uptime%b
+%{+m}
+   Per i master globali:
+      %b+user        +ignore      comment      binds%b
+      %bignores      -user        -ignore      dccstat%b
+      %bdebug        rehash       restart      module%b
+%{+n}
+   Per i padroni del bot:
+      %bdie          simul        loadmod      unloadmod%b
+      %blanguage     set          tcl          rehelp%b
+      %bmodules      +lang        -lang        +lsec%b
+      %b-lsec        lstat        relang       ldump%b
+%{-}
+Tutti i comandi iniziano con '.', e il resto finisce in line.
+%{+m}
+
+Il testo che inizia con ',' è inviato SOLO ai bot-masters.
+%{-}
+
+Puoi ottenere aiuto sui singoli comandi: %b'.help <comando>'%b.
+%{+n}
+Ulteriori informazioni relative ai moduli caricati possono essere ottenute digitando
+%b'.help <modulo> module'%b. I moduli possibili sono:
+   %bassoc      channels     compress      console      ctcp%b
+   %bfilesys    irc          notes         seen         server%b
+   %bshare      transfer     uptime%b
+%{-}
+
+È possiible ricevere un elenco di comandi forniti da tutti i moduli caricati
+usando %b'.help all'%b. Se ricordi solo una parte del nome del comando
+che stai cercando, puoi usare i caratteri jolly (ad es. %b'.help *bot*'%b),
+e verranno visualizzati tutti i testi di aiuto corrispondenti.
+%{help=partyline}%{-}
+%B Comandi della party line:
+   %b.quit%b             Usa questo comando per lasciare la party line.
+   %b.whom%b [canale]    Mostra un elenco di tutti gli utenti in party line,
+                     o in un determinato canale.
+   %b.whom *%b           Mostra un elenco di tutti gli utenti, indicando quali
+                     sono in party line.
+   %b.chat%b <canale>    Ti fa lasciare il canale principale della party line per
+                     unirti a un canale specifico (i canali validi sono da 1 
+                     a 99999, il canale 0 e la party line).
+   %b.me%b <azione>      Fa una azione in party line.
+   %b.handle%b <nome>    Cambia il tuo nick in party line.
+   %b.help%b <comando>   Mostra aiuto su un comando specifico.
+
+Vedi '%b.help all%b' per l'elenco completo dei comandi.
+Tutti i comandi iniziano con '.', e il resto finisce in party line.
+%{+m}
+
+Il testo che inizia con ',' è inviato SOLO ai bot-masters.
+%{help=common}%{+o|o}
+###  %bcommon (the +c 'common' flag)%b
+   A volte molte persone usano IRC dallo stesso account, ad esempio un 
+   sito pubblico, dove molte persone possono avere lo stesso host. Per
+   per questo motivo, non possono utilizzare una registrazione utente
+   tradizionale perchè sembrerebbero essere tutti lo stesso utente.
+
+   In questi casi, creare un record utente per l'account e impostarlo 
+   + c, o "accesso comune", tramite il comando chanset. Contrassegnarlo 
+   come "accesso comune" significa che non deve essere utilizzato come
+   indirizzo definitivo. Quando qualcuno si presenta al bot 
+   (cioè da / msg "hello") e corrisponde come utente + c, verrà assegnata
+   una nuova registrazione utente che lo identifica DA NICKNAME.
+
+   Ovviamente, alle persone con quel tipo di registrazione utente non
+   dovrebbe essere dato accesso speciale, poiché quando cambiano i nick
+   il bot li identificherà come qualcun altro.
+
+Vedi anche: chattr, whois
+%{help=+lang}%{+n}
+###  %b+lang%b <lingua>
+   Aggiunge una nuova lingua come prima scelta all'elenco delle lingue.
+   Tutte le sezioni sono ricontrollate per verificare se sono presenti 
+   i file che supportano quella lingua.
+
+Vedi anche: -lang, +lsec, -lsec, lstat, relang
+%{help=-lang}%{+n}
+###  %b-lang%b <lingua>
+   Rimuove una lingua dall'elenco delle lingue. Se possibile,
+   la prossima scelta disponibile tra le lingue verrà caricata.
+
+Vedi anche: +lang, +lsec, -lsec, lstat, relang
+%{help=+lsec}%{+n}
+###  %b+lsec%b <sezione>
+   Aggiunge una nuova sezione della lingua. Il bot tenta di 
+   caricare la sezione con l'estensione preferita, se possibile.
+
+Vedi anche: -lang, +lang, -lsec, lstat, relang
+%{help=-lsec}%{+n}
+###  %b-lsec%b <sezione>
+   Rimuove una sezione della lingua. Tuttavia, le associazioni
+   della lingua non vengono rimosse.
+
+Vedi anche: +lang, -lang, +lsec, lstat, relang
+%{help=lstat}%{+n}
+###  %blstat%b
+   Mostra le statistiche delle lingue: tutte le lingue
+   selezionate e un elenco di tutte sezioni linguistiche.
+
+Vedi anche: +lang, -lang, +lsec, -lsec, relang
+%{help=ldump}%{+n}
+###  %bldump%b
+   Scarica tutti i dati della lingua nella partyline.
+
+Vedi anche: +lang, -lang, +lsec, -lsec, relang, lstat
+%{help=relang}%{+n}
+###  %brelang%b
+   Prova a trovare file di lingua con una lingua preferita rispetto a
+   quella attuale.
+
+Vedi anche: +lang, -lang, +lsec, -lsec, lstat
+%{help=tcl}%{+n}
+###  %btcl%b <comando>
+   Esegue uno specifico comando Tcl.
+
+   See doc/tcl-commands.doc for details on Tcl commands added to Eggdrop, and
+   visit https://tcl.tk/ for more information on Tcl.
+%{help=set}%{+n}
+###  %bset%b <variabile> [valore]
+   Modifica i valori delle impostazioni del file di configurazione del
+   bot o, se utilizzato senza un parametro valore, mostra il valore corrente
+   di un'impostazione. Qualsiasi configurazione di impostazione modificata
+   con questo comando verrà ripristinata quando il file di configurazione viene
+   ricaricato. Ecco le variabili che possono essere  modificate con questo comando
+   (notare che variabili aggiuntive potrebbero essere disponibili in altri moduli):
+%{cols=4}
+botnet-nick
+userfile
+motd
+paranoid-telnet-flood
+vhost4
+vhost6
+prefer-ipv6
+listen-addr
+telnet-banner
+admin
+userfile-perm
+use-telnet-banner
+notify-newusers
+owner
+nat-ip
+cidr-support
+dcc-sanitycheck
+network
+whois-fields
+username
+version
+firewall
+telnet-flood
+ignore-time
+dcc-flood-thr
+hourly-updates
+connect-timeout
+resolve-timeout
+dupwait-timeout
+require-p
+keep-all-logs
+open-telnets
+stealth-telnets
+stealth-prompt
+handlen
+reserved-portrange
+console
+default-flags
+log-time
+timestamp-format
+max-logsize
+quick-logs
+logfile-suffix
+quiet-save
+remote-boots
+max-socks
+ident-timeout
+allow-dk-cmds
+max-logs
+protect-telnet
+share-unlinks
+switch-logfiles-at
+ssl-privatekey
+ssl-certificate
+ssl-capath
+ssl-verify-depth
+ssl-cafile
+ssl-cert-auth
+ssl-verify-bots
+ssl-verify-clients
+ssl-verify-dcc
+%{end}
+   Usa %b'.help set <variabile>'%b per maggiori informazioni su ogni variabile.
+%{help=all}%{-}
+###  %bcore%b comandi
+   Per tutti gli utenti:
+      %bwho          away         quit         whom%b
+      %bme           page         match        motd%b
+      %bbots         newpass      chat         handle%b
+      %bwhoami       echo         strip        su%b
+      %btrace        fixcodes     bottree      vbottree%b
+      %bbotinfo      relay        -host        fprint%b
+      %chfinger%b
+%{o|o}
+   Per gli ops:
+      %baddlog       console      match        whois%b
+%{+t}
+   Per i botnet masters:
+      %b+bot         botattr      chhandle     chpass%b
+      %b+host        -bot         link         chaddr%b
+      %bboot         unlink       banner       dccstat%b
+%{+m|m}
+   Per i master di canale:
+      %bchattr       save         backup       reload%b
+      %bstatus       traffic      uptime%b
+%{+m}
+   Per i master globali:
+      %b+user        +ignore      comment      binds%b
+      %bignores      -user        -ignore      dccstat%b
+      %bdebug        rehash       restart      module%b
+%{+n}
+   Per i padroni del bot:
+      %bdie          simul        loadmod      unloadmod%b
+      %blanguage     set          tcl          rehelp%b
+      %bmodules      +lang        -lang        +lsec%b
+      %b-lsec        lstat        relang       ldump%b
