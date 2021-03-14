@@ -25,139 +25,142 @@ Vedi anche: -host
 Vedi anche: -ignore, ignores
 %{help=+user}%{+m}
 ###  %b+user%b <nome> [hostmask]
-   Creates a new user record for the handle given. The new user record will
-   have no flags, an optional hostmask, and no password.
+   Crea un nuovo utente col nome fornito. Il nuovo utente sarà senza flag
+   e password, una maschera host può essere aggiunta durante la creazione.
 
 Vedi anche: -user, +host, -host
 %{help=-bot}%{+t}
 ###  %b-bot%b <bot>
-   This is exactly the same as %b'.-user'%b (it removes a user record). It is
-   included for convenience.
+   È esattamente lo stesso di %b'.-user'%b (rimuove l'utente registrato).
 
 Vedi anche: +bot, +user, -user
 %{help=-host}%{-}
 ###  %b-host%b <hostmask>
-   Removes a host from your handle.
+   Rimuove un host al tuo utente.
 %{+m|m}
 
 ###  %b-host%b <nome> <hostmask>
-   Removes a hostmask from a user's user record.
+   Rimuove un host da un determinato utente.
 %{-}
 
 Vedi anche: +host
 %{help=-ignore}%{+m}
 ###  %b-ignore%b <hostmask/numeror>
-   Removes the specified ignore from the list of ignores stored on the bot. You
-   may also reference the ignore by the number shown by the 'ignores' command.
+   Rimuove un ignore specifico dall'elenco degli host ignorati archiviati
+   nel bot. Si può anche usare il numero mostrato dal comando 'ignores'.
 
 Vedi anche: +ignore, ignores
 %{help=-user}%{+m}
-###  %b-user%b <handle>
-   Removes the specified handle's user record.
+###  %b-user%b <nome>
+   Rimuove uno specifico utente registrato.
 
 Vedi anche: +user, +bot, -bot
 %{help=addlog}%{+to|o}
 ###  %baddlog%b <testo>
-   Adds your comment to the bot's logfile. Bot masters can go back later and
-   review the log, and will see your comment (with your handle attached). This
-   is useful for explaining confusing activity.
+   Aggiunge il tuo commento al file di registro del bot. I bot master possono
+   rivedere il registro e apparirà il tuo commento (con il tuo nome allegato).
+   Questo è utile per spiegare attività strane.
 %{help=away}%{-}
 ###  %baway%b [messaggio-di-assenza]
-   Marks you as "away" on the party line. Your away message will show up in
-   the %b'.who'%b list, and will be displayed to anyone who tries to send you
-   a note. Your notes will be stored, and then displayed to you as soon as you
-   are no longer away. Saying something on the party line will automatically
-   remove your "away" status, or you can type %b'.back'%b or %b'.away'%b by
-   itself.
+   Ti segna come "away" (assente) in party line. Il tuo messaggio di assenza 
+   verrà visualizzato nell'elenco %b'.who'%b , e verrà mostrato a chiunque
+   tenti di inviarti una nota. Le tue note verranno memorizzate, e le
+   visualizzerai appena tornerai dall'assenza. Se scrivi qualcosa nella party
+   line il tuo stato di "away" sarà rimosso automaticamente, oppure puoi
+   digitare %b'.back'%b o %b'.away'%b tu stesso.
 
 Vedi anche: back
 %{help=back}%{-}
 ###  %bback%b
-   This marks you as no longer away on the party line.
+   Questo segna che non sei più assente in party line.
 
 Vedi anche: away
 %{help=backup}%{+m|m}
 ###  %bbackup%b
-   This makes the bot write a backup of its entire user list to the disk. If
-   the channels module is loaded, this will also write a backup of the channels
-   file. This is useful if you feel the need to backup the userfile and channel
-   settings.
+   Questo fa sì che il bot scriva una copia dell'intero elenco utenti. Se il
+   modulo dei canali è caricato, scriverà anche una copia del file dei canali.
+   Questo è utile se hai la necessità di eseguire il backup dei file utente
+   e del canale.
 
 Vedi anche: reload, rehash, save
 %{help=banner}%{+t}
-###  %bbanner%b <text>
-   Displays a message to everyone currently using the bot's party line or file
-   area. This is useful for announcing that the bot will go down, etc.
+###  %bbanner%b <testo>
+   Visualizza un messaggio a tutti coloro che attualmente sono in party line
+   o nell'area file area. Questo è utile per annunciare che il bot sarà 
+   disattivato, riavviato, etc.
 %{help=binds}%{+m}
 ###  %bbinds%b [type/match] [all]
-   Shows the Tcl bindings in effect, in a list similar to this:
+   Mostra i collegamenti Tcl in vigore, in un elenco simile a questo:
       Command bindings:
         TYPE FLAGS    COMMAND              HITS BINDING (TCL)
         msg  -|-      rose                    0 msg_rose
         msg  -|-      go                      0 msg_go
         dcc  m|-      bind                    0 cmd_bind
         pub  -|-      gross                   0 pub_gross
-   The fields should be self-explanatory, except for HITS, which records the
-   number of times that binding has been called. If not, go read the file
-   %b'doc/tcl-commands.doc'%b for help on the Tcl bind command. Note that the
-   builtin commands are now shown. You may also specify a type of binding to
-   show (i.e. %b'.binds msg'%b) or you can specify a wild card match (i.e.
-   %b'.binds *seen*'%b) if you want to narrow the field a bit. The wild card
-   matches will match against the TYPE, COMMAND and BINDING fields. You can
-   view more binds by adding 'all' to the end of the command.
+   I campi dovrebbero essere autoesplicativi, ad eccezione di HITS, che
+   registra il numero di volte che è stato chiamato il binding. In caso
+   contrario, vai a leggere il file %b'doc/tcl-commands.doc'%b per l'aiuto
+   sul comando Tcl bind. Nota che ora vengono mostrati i comandi incorporati.
+   È inoltre possibile specificare un tipo di associazione da mostrare
+   (es.%b'.binds msg '%b) oppure puoi specificare una corrispondenza con
+   caratteri jolly (es.%b'.binds *seen* '%b) se vuoi restringere un po' il
+   campo. I caratteri jolly corrisponderanno ai campi TYPE, COMMAND e BINDING.
+   Puoi visualizzare più binding aggiungendo 'all' alla fine del comando.
 
 Vedi anche: tcl
 %{help=boot}%{+t}
 ###  %bboot%b <nome[@bot]> [motivo]
-   Kicks a user off the party line and displays the reason, if you specify
-   one. You can also specify a bot, and attempt to boot someone from another
-   bot on the botnet, though it may be rejected if that bot does not allow
-   remote boots. You can not boot a bot owner.
+   Espelle un utente dalla party line e visualizza il motivo, se specificato.
+   Puoi anche specificare un bot e tentare di espellere qualcuno da un altro
+   bot sulla botnet, sebbene possa essere rifiutato se quel bot non consente
+   espulsioni remote. Non puoi espellere un proprietario di bot.
 %{help=botattr}%{+t}
 ###  %bbotattr%b <nome> [flags] [canale]
-   Lets you view and change the bot flags for a bot. For example, to set
-   "Fred1" +share and -hub, you would do '.botattr Fred1 +s-h.'
+   Consente di visualizzare e cambiare le flag di un bot. Ad esempio per
+   impostare "Fred1" +share e -hub, digita '.botattr Fred1 +s-h.'
 
-   Whether or not you change any flags, it will show you the bot's flags
-   afterwards. To get a list of the flags possible, see %b'.help whois'%b.
+   Indipendentemente dal fatto che tu modifichi o meno qualsiasi flag, ti
+   mostrerà i flag del bot in seguito al comando dato. Per vedere un elenco
+   delle flag, vedi %b'.help whois'%b.
 
-   %bNOTE:%b This command is NOT used to replace .chattr. It modifies bot flags,
-         such as s, h, a, u, etc.
-   %bNOTE:%b You can't use this command on bots which are directly linked to your
-         bot at the current moment.
+   %bNOTA:%b Questo comando NON viene utilizzato per sostituire .chattr.
+          Modifica i flag dei bot, come s, h, a, u, ecc.
+   %bNOTA:%b Non puoi usare questo comando su un bot che è collegato
+          direttamente al tuo in quel momento.
 
 Vedi anche: whois, chattr
 %{help=botinfo}%{-}
 ###  %bbotinfo%b
-   Requests information from every bot currently on the botnet. Each bot should
-   eventually send you one line containing its version, network setting,
-   channels, and uptime.
+   Richiede informazioni da ogni bot attualmente presente sulla botnet.
+   Ogni bot dovrebbe eventualmente mandare una riga contenente la sua versione,
+   le impostazioni di rete, i canali e tempo di attività.
 
 Vedi anche: bottree, vbottree, bots
 %{help=bots}%{-}
 ###  %bbots%b
-   Shows the list of bots currently on the botnet.
+   Mostra l'elenco dei bot attualmente presenti nella botnet.
 
-   Example:
+   Esempio:
       Bots: cEvin, ruthie, Killa1
 
-   There is no indication of which bots are directly connected to this current
-   bot. Use %b'.who'%b%{+t} or %b'.bottree'%b%{-} for that information.
+   Non vi è alcuna indicazione di quali bot siano collegati direttamente a
+   quello in cui si digita il comando. Usa %b'.who'%b%{+t} o %b'.bottree'%b%{-}
+   per quella informazione.
 
 Vedi anche: bottree, vbottree, botinfo
 %{help=bottree}%{-}
 ###  %bbottree%b
-   Shows a tree-format diagram of the bots currently on the botnet. It's just a
-   nice way to get a feel for how the bots are physically connected. If 2 bots
-   are sharing, a + will be indicated, or a ? if nothing is known.
+   Mostra un diagramma ad albero dei bot attualmente presenti sulla botnet.
+   È solo un bel modo per avere un'idea di come i bot sono fisicamente connessi.
+   Se 2 bot stanno condividendo, verrà indicato un + o un ? se non si sa nulla.
 
 Vedi anche: bots, botinfo, vbottree
 %{help=chaddr}%{+t}
-###  %bchaddr%b <bot> <indirizzo> [[+]bot port[/[+]user port]]
-   Changes the address for a bot. This is the address your bot will try to
-   connect to when linking. If the bot has a separate port for bots and users,
-   they should be separated  by a slash (/). Prefixing the port with a plus
-   sign will only allow secure (SSL) linking to be used.
+###  %bchaddr%b <bot> <indirizzo> [[+]porta dei bot[/[+]porta utenti]]
+   Modifica l'indirizzo di un bot. Questo è l'indirizzo a cui proverà il tuo
+   bot connettersi se richiesto. Se il bot ha una porta separata per bot e
+   utenti, dovrebbero essere separate da una barra (/). La porta con il prefisso
+   più consentirà solo l'utilizzo del collegamento protetto (SSL).
 
 Vedi anche: link, +bot
 %{help=chat}%{-}
