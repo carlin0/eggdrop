@@ -166,78 +166,80 @@ Vedi anche: link, +bot
 %{help=chat}%{-}
 ###  %bchat%b <on/off>
 ###  %bchat%b <[*]canale numero/nome>
-   Changes your current channel on the partyline. When you first connect to
-   the partyline, it places you on channel 0 (the main party line).
+   Cambia il tuo canale attuale nella partyline. Quando ti connetti per la prima
+   volta la partyline, ti colloca sul canale 0 (la party line principale).
 
-   Some channels may have assigned names if the assoc module is loaded. For
-   these, you can specify the channel by name instead of channel number if
-   you wish.
+   Alcuni canali potrebbero avere nomi assegnati se il modulo assoc è caricato.
+   Per questi, è possibile specificare il canale per nome invece del numero.
 
-   %b'.chat off'%b removes you from all channels, including the main party line.
-   You can still use bot commands and see the console, but you can't talk to
-   anyone except via %b'.note'%b. %b'.chat on'%b returns you to the main party
-   line (channel 0) if you were elsewhere.
+   %b'.chat off'%b ti fa lasciare tutti i canali, inclusa la partyline principale.
+   Puoi ancora usare i comandi del bot e vedere la console, ma non puoi parlare con
+   gli altri tranne tramite %b'.note '%b. %b'.chat su '%b ti riporta alla partyline
+   principale (canale 0) se tu fossi altrove.
 
-   If you prefix the channel with a '*', you will join a local channel.
+   Se anteponi al nome del canale un '*', ti unirai a un canale locale.
 
 Vedi anche: console
 %{help=chattr}%{+m|m}
 ###  %bchattr%b <nome> [flags] [canale]
-   This lets you view and change the flags for a user.
+   Questo consente di vedere e modificare le flag per un utente.
 
-   For example, to give Lamer the p and f flags:
+   Per sempio per dare a Lamer le flag 'p' e 'f':
       .chattr Lamer +pf
 
-   To remove Denali from the global op list:
+   Per rimuovere Denali dall'elenco degli op globali:
       .chattr Denali -o
 
-   You may also do any combination of the above:
+   Puoi anche fare qualsiasi combinazione di quanto sopra:
       .chattr Fred1 -m+xj-o
 
-   You can also change the flags for Usagi on a specific channel by supplying
-   the channel after the attributes:
+   Puoi anche cambiare i flag per Usagi su un canale specifico scrivendo il
+   canale dopo gli attributi:
       .chattr Usagi -m+dk-o #blah
 
-   Changing global and channel specific flags within the same command line is
-   also possible (global +f, +o #lamer):
+   È anche possibile cambiare flag globali e specifiche di canale con un solo
+   comando (globale +f, +o #lamer):
       .chattr Bill f|o #lamer
 
-   Whether or not you change any flags, it will show you the user's attributes
-   afterwards. To get a list of all possible flags, see %b'.help whois'%b.
+   Indipendentemente dal fatto che tu modifichi o meno qualsiasi flag, ti
+   mostrerà gli attributi dell'utente dopo il comando. Per ottenere un elenco
+   di tutte le possibili flag, vedere %b'.help whois'%b.
 
-   %bNOTES:%b Only the owner may add or remove the 'n' (owner), 'm' (master) or
-          't' (botnet master) flags. It is pointless to -n a permanent owner.
-          You must remove the permanent owner in the config file.
+   %bNOTE:%b Solo il padrone può aggiungere o levare le flag 'n' (padrone),
+          'm' (master) o 't' (botnet master). È inutile fare -n a un padrone
+          permanente del bot, va rimosso nel file di configurazione.
 
 Vedi anche: whois, botattr
 %{help=chhandle}%{+t}
 ###  %bchhandle%b <vecchio-nome> <nuovo-nome>
-   Changes the handle of a user. For example, to change the handle of user
-   'gavroche' to 'jamie', you would use 'chhandle gavroche jamie'.
+   Cambia il nome di un utente. Per esempio, per cambiare il nome dell'utente
+   'gavroche' a 'jamie', useresti 'chhandle gavroche jamie'.
 
 Vedi anche: chpass
 %{help=chpass}%{+t}
 ###  %bchpass%b <nome> [nuovapassword]
-   Changes a user's password. If you do not specify the new password, the user
-   effectively no longer has a password set. A password is needed to get ops,
-   join the party line, etc.
+   Cambia la password di un utente. Se non si specifica la nuova password,
+   l'utente non ha più una password impostata. È necessaria una password per 
+   avere l'op, entrare in partyline, ecc.
 
-   %bNOTE:%b In previous versions, setting a password to "nopass" would clear
-         a user's password -- with encrypted passwords. This no longer works!
+   %bNOTE:%b Nelle precedenti versioni, impostare la password a "nopass"
+         cancellava la password dell'utente -- con password crittografate.
+         Non funziona più!
 
 Vedi anche: chhandle
 %{help=comment}%{+m}
 ###  %bcomment%b <utente> <commento>
-   Creates or changes the comment field for a user. The comment field can only
-   be seen via 'whois' or 'match'. Non-masters cannot see the comment field.
+   Crea o modifica il campo del commento per un utente. Il campo commento
+   può solo essere visto tramite 'whois' o 'match'. I non master non possono
+   vedere il campo dei commenti.
 %{help=console}%{+to|o}
 ###  %bconsole%b [canale] [modi]
-   Changes your console level so that you will see only the types of console
-   messages that you want to. Your current console channel is the channel (that
-   the bot is on) from which you can view from the party line, and which
-   channel-specific commands (like 'say' and 'op') take affect on.
+   Modifica il livello della tua console in modo da visualizzare solo i tipi
+   di messaggi che desideri. Il tuo canale console corrente è il canale (dove
+   il bot è acceso) che puoi visualizzare dalla partyline e in cui i comandi
+   specifici del canale (come 'say' e 'op') hanno effetto.
 
-   Valid flags are:
+   Le flag valide sono:
      %bj%b  joins, parts, quits, aways, and netsplits on the channel
      %bk%b  kicks, bans, and mode changes on the channel
      %bm%b  private msgs, notices and ctcps to the bot
@@ -245,7 +247,7 @@ Vedi anche: chhandle
      %bs%b  server connects, disconnects, and notices
 
 %{+m}
-   Masters only:
+   Solo per i master:
      %bb%b  information about bot linking and userfile sharing
      %bl%b  messages from linked bots
      %bd%b  misc debug information
@@ -255,7 +257,8 @@ Vedi anche: chhandle
      %bx%b  file transfers and file-area commands
 
 %{+n}
-   Owners only (these have to be enabled in the config file via "set raw-log"):
+   Solo per i padroni (questi devono essere abilitati nel file di confiugrazione
+   attraverso "set raw-log"):
      %bg%b  raw outgoing share traffic
      %bh%b  raw incoming share traffic
      %br%b  raw incoming server traffic
@@ -263,93 +266,99 @@ Vedi anche: chhandle
      %bu%b  raw outgoing botnet traffic
      %bv%b  raw outgoing server traffic
 
-   There are also 8 user-defined console modes ('1' through '8').
+   Sono inoltre disponibili 8 modalità console definite dall'utente (da '1' a '8').
 
 %{+o|o}
-   The mode can also be a modifier like '+p' or '-jk' or '+mp-b'. If you omit
-   the channel and modes, your current console channel and flags will be shown.
+   La modalità può anche essere un modificatore come '+ p' o '-jk' o '+ mp-b'.
+   Se ometti verranno mostrati il ​​canale e le modalità, il canale corrente
+   della console e i flag.
 
 %{+m|m}
 ###  %bconsole%b <utente> [canale] [modi]
-   This is used to set the console level of another user. This can even be used
-   on users who normally would not be able to set their own console mode.
+   Viene utilizzato per impostare il livello della console di un altro utente.
+   Può anche essere usato per gli utenti che normalmente non sarebbero in grado
+   di impostare la propria console.
 %{help=resetconsole}%{+to|o}
 ###  %bresetconsole%b
-   Changes your console level to the default settings from the configfile.
+   Cambia  il livello della console alle impostazioni predefinite dal file
+   di configurazione.
 %{+m|m}
 ###  %bresetconsole%b <utente>
-   This is used to reset the console level of another user to the default
-   setting from the configfile. This can even be used on users who normally
-   would not be able to set their own console mode.
+   Viene utilizzato per ripristinare il livello della console di un altro utente
+   al valore predefinito dal file di configurazione. Può essere utilizzato anche
+   su utenti che normalmente non sarebbero in grado di impostare
+   la propria console.
 %{help=dccstat}%{+m}
 ###  %bdccstat%b
-   Displays a table-format list of all "dcc" connections in use on the bot.
-   Dcc stands for "Direct Client-to-client Communication", and Eggdrop expands
-   this to cover every open socket. Any type of network connection to the bot
-   is considered a "dcc" connection.
+   Visualizza un elenco in formato tabella di tutte le connessioni 'dcc' in uso
+   sul bot. Dcc sta per 'Direct Client-to-client Communication' e Eggdrop espande
+   questo per coprire ogni presa aperta. Qualsiasi tipo di connessione di rete
+   al bot è considerata una connessione 'dcc'.
 
-   The headings of the table are:
-     %bIDX%b   index; the socket number of this connection (always unique)
-     %bADDR%b  the ip address mask of the host the bot is connected to, if
-           applicable
-     %bPORT%b  the port number being used for this connection
-     %bNICK%b  the handle of the user or bot, if applicable
-     %bTYPE%b  the type of dcc connection (see below)
-     %bINFO%b  misc information, i.e. flags for certain dcc types
+   I titoli della tabella sono:
+     %bIDX%b   indice; il numero di socket di questa connessione (sempre univoco)
+     %bADDR%b  la maschera dell'indirizzo IP dell'host a cui è connesso il bot,
+          se applicabile
+     %bPORT%b  il numero della porta usate per questa connession
+     %bNICK%b  il nome dell'utente o del bot, se applicabile
+     %bTYPE%b  il tipo di connessione dcc (vedi sotto)
+     %bINFO%b  informazioni varie, ad es. flag per alcuni tipi di dcc
 
-   The types of connections currently possible are as follows (but more are
-   being added all the time):
-     %bCHAT%b  dcc-chat partyline user
-     %bPASS%b  user entering dcc chat (being asked for password)
-     %bSEND%b  user sending a file
-     %bGET%b   sending a file to a user
-     %bGETP%b  pending get (waiting for the user to acknowledge)
-     %bLSTN%b  telnet listening port (in place of a hostname, it will show the
-           callback procedure name, or a mask of acceptable handles)
-     %bT-IN%b  incoming telnet user (being asked for handle)
-     %bFILE%b  user in dcc-chat file area
-     %bBOT%b   connected bot (botnet connection)
-     %bBOT*%b  pending bot link (waiting for acknowledgement)
-     %bRELA%b  user in relay connection to another bot
-     %b>RLY%b  bot being relay'd to (one for each "RELA")
-     %bCONN%b  pending telnet connection (chat, relay, bot-link, etc)
-     %bNEW%b   new user via telnet (entering a handle)
-     %bNEWP%b  new user via telnet (entering a password)
+   I tipi di connessione possibile attualmente sono i seguenti (ma altri sono
+   aggiunti continuamente):
+     %bCHAT%b  utente in partyline dcc-chat
+     %bPASS%b  utente che entra in dcc chat (sto chiedendo la password)
+     %bSEND%b  utente che sta inviando un file
+     %bGET%b   utente a cui sto inviando un file
+     %bGETP%b  in attesa di ricezione (in attesa che l'utente confermi)
+     %bLSTN%b  porta di ascolto telnet (al posto di un nome host, mostrerà il
+          nome della procedura di callback o un nome accettabile)
+     %bT-IN%b  utente telnet in entrata (sto chiedendo il nome)
+     %bFILE%b  utente nell'area file dcc-chat
+     %bBOT%b   bot collegato (connessione botnet)
+     %bBOT*%b  collegamento bot in sospeso (in attesa di riconoscimento)
+     %bRELA%b  utente in connessione di inoltro a un altro bot
+     %b>RLY%b  bot inoltrato a (uno per ogni "RELA")
+     %bCONN%b  in attesa di connessione telnet (chat, relay, bot-link, etc)
+     %bNEW%b   nuovo utente via telnet (inserisce un nome)
+     %bNEWP%b  nuovo utente via telnet (inserisce la password)
 
-   In addition, 'CHAT' and 'BOT' have flags listed for each connection. Capital
-   letters mean that the flag is on, and lowercase letters mean that the flag
-   is off. The flags for 'CHAT' are:
-     %bC%b  in file area, but allowed to return to party line
-     %bP%b  party line access only
-     %bT%b  telnet connection (instead of dcc chat)
-     %bE%b  echo is on
-     %bP%b  paging is on
+   Inoltre, 'CHAT' e 'BOT' hanno le flag elencate per ogni connessione. Le
+   lettere maiuscole indicano che la flag è attiva, e le minuscole che la
+   flag è disattivata. Le flag per 'CHAT' sono:
+     %bC%b  nell'area file, ma è consentito tornare alla party line
+     %bP%b  solo accesso alla party line
+     %bT%b  connessione telnet (invece della dcc chat)
+     %bE%b  l'eco è attivo
+     %bP%b  il paging è attivo
 
-   The flags for 'BOT' are:
-     %bP%b  ping sent, waiting for reply
-     %bU%b  user-file sharing is active
-     %bC%b  local bot initiated the connection
-     %bO%b  user-file offered, waiting for reply
-     %bS%b  in the process of sending the user-file
-     %bG%b  in the process of getting the user-file
-     %bW%b  warned this bot to stop hubbing
-     %bL%b  leaf-only bot (not allowed to be a hub)
-     %bI%b  bot is currently in the 'linking' stage
-     %bA%b  bot is being aggressively shared with
+   Le flag per 'BOT' sono:
+     %bP%b  ping inviato, in attesa di risposta
+     %bU%b  la condivisione della lista utenti è attiva
+     %bC%b  bot locale ha avviato la connessione
+     %bO%b  lista utenti offerta, in attesa di risposta
+     %bS%b  processo in corso di invio lista utenti
+     %bG%b  processo in corso di ricezione lista utenti
+     %bW%b  ha avvertito questo bot di interrompere l'hubbing
+     %bL%b  leaf bot (non gli è consentito di essere un hub)
+     %bI%b  il bot è attualmente in fase di 'collegamento'
+     %bA%b  il bot è condiviso in modo aggressivo con
 
-   For 'CHAT' users, the party-line channel is also listed.
+   Per gli utenti 'CHAT', viene elencato anche il canale della party-line.
 %{help=debug}%{+m}
 ###  %bdebug%b
-   Display a dump of memory allocation information, assuming the bot was
-   compiled with memory debugging. It's useless to anyone but developers
-   trying to find memory leaks.
+   Visualizza un dump delle informazioni sull'allocazione della memoria,
+   supponendo che il bot sia stato compilato con il debug della memoria.
+   È inutile per tutti tranne che per gli sviluppatori che cercano di
+   trovare perdite di memoria.
 %{help=echo}%{-}
 ###  %becho%b <on/off>
-   Specifies whether you want your messages echoed back to you. If it's on,
-   then when you say something on the party line, it will be displayed to you
-   just like everyone else will see it. If it's off, then it won't happen.
+   Specifica se desideri che i tuoi messaggi ti vengano restituiti.
+   Se è acceso, quando scrivi qualcosa nella partyline, ti verrà mostrato
+   proprio come lo vedranno tutti gli altri. Se è spento, non accadrà.
 %{help=die}%{+n}
 ###  %bdie%b [motivo]
-   This kills the bot. The bot goes offline immediately, logging who issued
-   the 'die' command. You shouldn't have to use this too often. If you specify
-   a reason, it is logged, otherwise the reason is "authorized by <handle>".
+   Questo spegne il bot. Il bot va offline immediatamente, registrando
+   chi ha dato il comando 'die'. Non dovresti usarlo troppo spesso. Se
+   specifichi un motivo, viene registrato, altrimenti il ​​motivo sarà
+   "autorizzato da <nome>".
