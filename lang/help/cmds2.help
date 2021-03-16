@@ -52,93 +52,96 @@ Vedi anche: unlink, +bot, -bot
 
 Vedi anche: modules, module, unloadmod
 %{help=match}%{+o|o}
-###  %bmatch%b <attr> [channel] [[start] limit]
-   This displays all user records with the attributes requested.
+###  %bmatch%b <attr> [canale] [[inizio] limite]
+   Questo mostra tutti gli utenti registrati nel bot aventi gli
+   attributi richiesti.
 
-   "attr" is of the form:  <+/-><global>[&/|<channel>[&/|<bot>]]
+   "attr" ha la forma:  <+/-><globale>[&/|<canale>[&/|<bot>]]
 
-   Specifying "&" as the separator will cause AND style matching.
+   Se si specifica "&" come separatore, verrà eseguita una
+   corrispondenza di stile AND.
 
-   For example:
+   Per esempio:
       .match +p&o
 
-   This will match all users with both the "p" global flag and the "o" channel
-   flag on your current console channel.
+   Questo abbinerà tutti gli utenti sia con il flag globale "p" che con le flag
+   di canale "o" sul canale corrente della console.
 
-   Specifying "|" as the separator will cause OR style matching.
+   Se si specifica "|" come separatore verrà eseguita una corrispondenza di
+   stile OR.
 
-   For example:
+   Per esempio:
       .match +p|o
 
-   This will match all users with either the "p" global flag or the "o" channel
-   flag on your current console channel. If you specify a channel, it will be
-   used instead of the current console channel.
+   Questo abbinerà tutti gli utenti con il flag globale "p" o la flag di
+   canale "o" sul canale corrente della console. Se specifichi un canale, sarà
+   utilizzato al posto del canale della console corrente.
 
-   For example:
+   Per esempio:
       .match +p|o #eggdrop
 
-   This will match all users with either the "p" global flag or the "o" channel
-   flag on the channel #eggdrop. You can also match bot flags.
+   Questo abbinerà tutti gli utenti con la flag globale "p" o la flag di canale
+   "o" sul canale #eggdrop. Puoi anche abbinare flag dei bot.
 
-   For example:
+   Per esempio:
       .match +o|o|h
 
-   This will match all bots with either the "o" global flag, the "o" channel
-   flag on the current console channel, or the "h" botflag. You can also limit
-   the number of total results returned by specifying a limit at the end of the
-   command. A starting point can also be specified.
+   Questo abbinerà tutti i bot con il flag globale "o", o la flag di canale
+   "o" sul canale della console corrente o la botflag "h". Puoi anche limitare
+   il numero di risultati totali restituiti specificando un limite alla fine del
+   comando. È inoltre possibile specificare un punto di partenza.
 
-   For example:
+   Per esempio:
       .match +p&o #eggdrop 16 25
 
-   This would show results 16 through 25 matching any users with the "p" global
-   flag or the "o" channel flag on #eggdrop.
+   Questo mostra i risultati da 16 a 25 degli utenti con la flag globale "p"
+   o la flag di canale "o" su #eggdrop.
 
-###  %bmatch%b <wildcard-string> [[start] limit]
-   This displays all user records where the user's handle or any of the user's
-   hostmasks match the specified wildcard string. You can also limit the number
-   of total results returned by specifying a limit at the end of the command. A
-   starting point can also be specified.
+###  %bmatch%b <stringa-con-caratteri-jolly> [[inizio] limite]
+   Visualizza tutti i record utente in cui si trova il nome dell'utente o
+   le maschere host che corrispondono alla stringa di caratteri jolly specificata.
+   Puoi anche limitare il numero dei risultati totali restituiti specificando un
+   limite alla fine del comando. Può anche essere specificato il punto di partenza.
 
-   For example:
+   Pe esempio:
      .match *.edu 16 25
 
-   This would show results 16 through 25 matching any users with a hostmask
-   that ends with ".edu".
+   Questo mostra i risultati da 16 a 25 di qualsiasi utente con la maschera host
+   che finisce con ".edu".
 %{help=me}%{-}
-###  %bme%b <text>
-   Performs an action on the party line. This appears as "* Wcc is leaving",
-   etc.
+###  %bme%b <testo>
+   Esegue un'azione nella partyline. Ciò apparirà così "* Wcc sta lasciando", ecc.
 %{help=module}%{+n}
-###  %bmodule%b [modulename]
-   Reports the names of currently loaded modules, including dependencies and a
-   status report. If you specify a module name, only information on that module
-   will be displayed.
+###  %bmodule%b [nome-del-modulo]
+   Riporta i nomi dei moduli attualmente caricati, comprese le dipendenze e
+   un rapporto sullo stato. Se specifichi un nome di modulo, saranno mostrate
+   solo le informazioni su quel modulo.
 
 Vedi anche: modules, loadmod, unloadmod
 %{help=modules}%{+n}
-###  %bmodules%b [botname]
-   Displays a list of currently loaded modules. If a botname is specified, the
-   modules currently loaded on that bot will be displayed instead.
+###  %bmodules%b [nome-del-bot]
+   Visualizza un elenco dei moduli attualmente caricati. Se viene specificato
+   il nome di un bot verranno invece visualizzati i moduli attualmente
+   caricati su quel bot.
 
 Vedi anche: module, loadmod, unloadmod
 %{help=motd}%{-}
-###  %bmotd%b [botname]
-   This redisplays the partyline Message Of The Day, which was shown when you
-   first joined the partyline. If the name of a remote bot is specified, that
-   bot's motd will be displayed instead.
+###  %bmotd%b [nome-del-bot]
+   Questo rivisualizza il "Message Of The Day", che hai già visto quando sei
+   entrato in partyline. Se si specifica il nome di un bot remoto, verrà
+   visualizzato il motd del suddetto bot.
 %{help=newpass}%{-}
 ###  %bnewpass%b <password>
-   Changes your password on the bot. This is similar to the '/msg <bot> pass'
-   command, except you don't need to specify your old password.
+   Cambia la tua password sul bot. Questo è simile al comando '/msg <bot> pass',
+   tranne per il fatto che non è necessario specificare la vecchia password.
 %{+t}
 
 Vedi anche: chpass
 %{help=handle}%{-}
-###  %bhandle%b <new-handle>
-   Changes your handle on the bot. This is the handle (nickname) that the
-   bot will know you as from this point forward. It is used to log into the
-   bot, and for the /msg IDENT command, etc.
+###  %bhandle%b <nuovo-nome>
+   Cambia il tuo nome nel bot. Questo è il nome (nickname) con cui il bot ti
+   riconoscerà da ora in avanti. Viene utilizzato per accedere al bot, e per
+   il comando /msg IDENT, etc.
 
 Vedi anche: newpass%{+t}, chhandle, chpass
 %{help=note}%{-}
