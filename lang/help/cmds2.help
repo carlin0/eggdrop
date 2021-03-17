@@ -224,134 +224,136 @@ Vedi anche: rehash, reload, save
 
 Vedi anche: reload, rehash, backup
 %{help=simul}%{+n}
-###  %bsimul%b <handle> <text>
-   This allows you to simulate the specified handle typing the given text.
+###  %bsimul%b <nome> <testo>
+   Ciò consente di simulare che un altro utente digiti un determinato testo.
 
-   For example:
+   Per esempio:
       .simul dweeb .quit
 
-   This would appear just as if "dweeb" typed ".quit". This command will not
-   work unless eggdrop has simul enabled in the config file. Please use this
-   command ethically.
+   Questo sembrerebbe come se "dweeb" ha digitato ".quit". Questo comando
+   non funziona a meno che non sia abilitato nel file di configurazione. Sei
+   pregato di usare questo comando eticamente.
 %{help=strip}%{-}
-###  %bstrip%b [modes]
-   Allows you to remove embedded 'attribute' codes your partyline output. Valid
-   options are:
-      %bc%b - remove all color codes
-      %bb%b - remove all boldface codes
-      %br%b - remove all reverse video codes
-      %bu%b - remove all underline codes
-      %ba%b - remove all ANSI codes
-      %bg%b - remove all ctrl-g (bell) codes
-      %bo%b - remove all ordinary codes (ctrl+o, terminates bold/color/..)
-      %bi%b - remove all italics codes
-      %b*%b - remove all of the above
+###  %bstrip%b [modi]
+   Ti permette di rimuovere i codici "attributo" dall'output della partyline.
+   Le opzioni valide sono:
+      %bc%b - rimuove i codici colore
+      %bb%b - rimuove i codici grassetto
+      %br%b - rimuove i codici reverse
+      %bu%b - rimuove i codici sottolineato
+      %ba%b - rimuove i codici ANSI
+      %bg%b - rimuove i codici ctrl-g (bell)
+      %bo%b - rimuove tutti i codici ordinari (ctrl+o, bold/color/..)
+      %bi%b - rimuove i codici italics
+      %b*%b - rimuove tutto quanto sopra elencato
 
-   The mode can also be a modifier like '+c' or '-bu' or '+ru-c'. If
-   you omit modes, it will show your current setting.
+   La modalità può anche essere modificata con '+c' o '-bu' o '+ru-c'. Se
+   ometti le modalità, mostrerà l'impostazione corrente.
 
 Vedi anche: fixcodes
 %{+m}
 
-###  %bstrip%b <user> [modes]
-   Set the strip level of another user. A master can't set their own strip
-   flags without prefixing the modes with a '+' or '-'.
+###  %bstrip%b <utente> [modi]
+   Imposta le modalità di strip per un altro utente. Un master non può
+   impostare le proprie modalità strip senza anteporre un '+' o '-'.
 
 
 %{help=su}%{-}
-###  %bsu%b <user>
-   Lets you assume the identity of another user. If you are a global owner,
-   this does not require a password. Otherwise, you will be asked for the
-   user's password. %b.quit%b returns you to your original handle.
+###  %bsu%b <utente>
+   Consente di assumere l'identità di un altro utente. Se sei un
+   proprieterio globale, non ti serve una password. Altrimenti ti verrà
+   richiesta la password dellutente. %b.quit%b ti riporta al tuo
+   utente originale.
 %{help=trace}%{+t}
 ###  %btrace%b <bot>
-   Sends out a trace signal to another bot. If/when the trace signal returns,
-   (and it should!) you will get an output that looks something like this:
+   Invia un segnale di trace a un altro bot. Se/quando il segnale torna,
+   (e dovrebbe!) otterrai un output simile a questo:
       Trace result -> Valis:Stonewall:NoBoty:SomeBoty
 
-   This is a list of the bots connected between you and the destination bot.
-   It should also return the time in seconds taken for the trace to occur.
+   Questo è un elenco dei bot collegati tra te e il bot di destinazione.
+   Dovrebbe anche restituire il tempo in secondi impiegato per la traccia.
 
 Vedi anche: bots, bottree, vbottree
 %{help=unlink}%{+t}
 ###  %bunlink%b <bot/*>
-   This disconnects the specified bot from the botnet (assuming it was linked
-   in the first place). Some bots (sharebots in particular) might not allow you
-   to unlink them. If "*" is specified as the parameter, all bots will be
-   unlinked.
+   Questo disconnette il bot specificato dalla botnet (supponendo che fosse
+   collegato innanzitutto). Alcuni bot (quelli in condivisione in particolare)
+   potrebbero non consentirti di scollegarli. Se è specificato "*" come
+   parametro, tutti i bot saranno scollegati.
 
 Vedi anche: link, +bot, -bot, bots, bottree
 %{help=unloadmod}%{+n}
-###  %bunloadmod%b <module>
-   Unloads the specified module.
+###  %bunloadmod%b <modulo>
+   Scarica un determinato modulo.
 
 Vedi anche: modules, module, loadmod
 %{help=whom}%{-}
-###  %bwhom%b [channel/*]
-   Displays a list of users on the current partyline channel.
+###  %bwhom%b [canale/*]
+   Mostra una lista degli utenti attualmente in partyline.
 
-   For example:
+   Per esempio:
       [23:12] #Wcc# whom
        Nick        Bot        Host
       ----------   ---------  --------------------
       *Wcc         Anakha     telnet@xxx.atlaga.adelphia.net [idle 8m]
       *Blah        Anakha     telnet@xxx.atlaga.adelphia.net
-      Total users: 2
+      Totale utenti: 2
 
-   Each user's nickname will be listed in the first column, preceded by a "*"
-   if they are a bot owner, "+" if they are a master, "%%" if they are a botnet
-   master, or "@" if they are an op. In the next column, the bot the user is
-   connected to will be displayed. In the third column, the host is shown. If
-   the user is away, the away message will be shown. Likewise, if they are
-   idle, their idle time will be displayed.
+   Il nickname di ogni utente verrà elencato nella prima colonna, preceduto
+   da un "*" se è proprietario del bot, "+" se è un master, "%%" se è un
+   botnet master, o "@" se è un op. Nella colonna successiva, verrà visualizzato
+   il bot a cui l'utente è collegato. Nella terza colonna viene mostrato l'host.
+   Se l'utente è assente, verrà mostrato il messaggio di assenza. E allo stesso
+   modo, se hanno idle, verrà visualizzato il loro tempo di inattività.
 
-   To see what users are on a different channel, you may specify a channel
-   number/name. If you specify "*" as the channel, all users on all botnet
-   channels will be shown.
+   Per vedere quali utenti sono su un canale diverso, puoi specificare un canale
+   numero/nome. Se specifichi '*' come canale, tutti gli utenti su tutti i
+   canali della botnet verranno visualizzati.
 
 Vedi anche: who, bots, chat
 %{help=who}%{-}
 ###  %bwho%b [bot]
-   Displays a list of users on the local bot.
+   Mostra una lista degli utenti sul bot locale.
 
-   For example:
+   Per esempio:
       [23:21] #Wcc# who
-      Party line members:  (* = owner, + = master, @ = op)
+      Membri in partyline:  (* = owner, + = master, @ = op)
       *Wcc       telnet@xxx.atlaga.adelphia.net (idle 17m)
       *Wcc       telnet@xxx.atlaga.adelphia.net
-      Bots connected:
+      Bot connessi:
       -> wortel (05 Dec 16:32) eggdrop v1.6.15 <efnet>
 
-   The first section is people on your current channel (the party line, if you
-   haven't changed channels) who are on the bot. A '*' will precede the handle
-   if they are a bot owner, "+" if they are a master, "%%" if they are a botnet
-   master, or "@" if they are an op. The user's nickname, hostname, and
-   possibly an idle time and/or away message will be displayed.%{+n} Owners
-   will also see the user's dcc idx.%{-}
+   La prima sezione ci sono le persone sul tuo canale attuale (la partyline,
+   se tu non hai cambiato canale) che si trovano sul bot. Un "*" precederà i
+   nomi se sono proprietari di un bot, "+" se sono master, "%%" se sono botnet
+   master, o "@" se sono op. Il nickname, e il nome host dell'utente, potrebbe
+   essere visualizzato un tempo di inattività e/o un messaggio di assenza.
+ %{+n} I proprietari vedranno anche l'idx dcc dell'utente.%{-}
 
-   The next section is bots directly linked to the current bot. The arrow
-   indicates which bot initiated the connection. The right arrow means this bot
-   connected to wortel. A left arrow means the remote bot linked to this bot. A
-   '+' next to the arrow indicates that the bot is sharing userfiles with us.
-   The connection time (05 Dec 16:32) and bot version are also shown, as well
-   as what is specified under "network" in the config file.%{+n} Owners will
-   also see the bot's dcc idx.%{-}
+   La sezione successiva è quella dei bot direttamente collegati al bot corrente.
+   La freccia indica quale bot ha avviato la connessione. La freccia destra
+   indica questo bot collegato a wortel. Una freccia sinistra indica il bot remoto
+   collegato a questo bot. Un "+" accanto alla freccia indica che il bot sta
+   condividendo la lista utenti con noi. Vengono mostrati anche il tempo di
+   connessione (05 dic 16:32) e la versione del bot come specificato in "rete"
+   nel file di configurazione.%{+n} I proprietari vedranno anche il dcc
+   idx del bot.%{-}
 
-   The final section (not shown in example above) is a list of users on the
-   local bot who are not on your channel. This will be omitted if there are no
-   users on other channels. If you specify the name of a remote bot, for
-   example %b'.who valis'%b, the who request will be sent to that bot instead.
-   The remote bot must be linked to the botnet.
+   La sezione finale (non mostrata nell'esempio sopra) è un elenco di utenti su
+   bot locali che non sono sul tuo canale. Questo verrà omesso se non ci sono
+   utenti su altri canali. Se specifichi il nome di un bot remoto, per
+   esempio %b'.who valis '%b, la richiesta who verrà invece inviata a quel bot.
+   Il bot remoto deve essere collegato alla botnet.
 %{+m}
 
-   Masters may also see "(con <flags>)" after a user's entry, which shows the
-   user's console flags/modes (see %b'.help console'%b).
+   I master possono anche vedere '(con flag)' dopo l'immissione di un utente,
+   che flag/modalità della console ha l'utente (vedi %b'.help console'%b).
 
-   In the final section (users that aren't on the current channel), masters
-   will see the actual channels other users are on. Also, people in the
-   filesystem will be listed (as being in channel "files") if the filesys
-   module is loaded. A '+' next to the nickname here means the user has
-   access to return to the party line.
+   Nella sezione finale (utenti che non sono sul canale corrente), il master
+   vedrà i canali effettivi su cui si trovano gli altri utenti. Inoltre, le
+   persone in area file saranno elencate (come se fosse nei 'file' del canale)
+   se il modulo filesys viene caricato. Un "+" accanto al nick qui significa
+   che l'utente ha accesso per tornare alla partyline.
 %{-}
 
 Vedi anche: whom
