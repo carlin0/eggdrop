@@ -145,76 +145,82 @@ Vedi anche: chpass
 
 Vedi anche: newpass%{+t}, chhandle, chpass
 %{help=note}%{-}
-###  %bnote%b <nickname[@bot]> <message>
-   Sends a private note to a user on the partyline. If that user is currently
-   logged in and not marked as away, the message will be received immediately.
-   Otherwise, it will be stored and displayed the next time that user joins the
-   partyline. To send a note to someone on a different bot, add "nick@bot" to
-   the nickname.
+###  %bnote%b <nickname[@bot]> <messaggio>
+   Invia una nota privata a un utente nella partyline. Se quell'utente è
+   attualmente loggato e non contrassegnato come assente, il messaggio verrà
+   ricevuto immediatamente. In caso contrario, verrà memorizzato e visualizzato
+   la prossima volta che l'utente accede alla partyline. Per inviare una nota a
+   qualcuno su un bot diverso, usa "nick@bot".
 
 Vedi anche: whom, notes
 %{help=page}%{-}
-###  %bpage%b <number/off>
-   This allows you to slow down the number of lines the bot sends you at once
-   via the partyline. When enabled, any commands that send greater than the
-   specified number of lines will stop when that number is reached and wait for
-   you to type another command (or press enter) to continue. If you have too
-   many pending lines, you may be booted off the bot.
+###  %bpage%b <numero/off>
+   Ciò ti consente di rallentare il numero di righe che il bot ti invia
+   contemporaneamente tramite la partyline. Quando è abilitato, tutti i comandi
+   che inviano un valore maggiore al numero di righe specificato si fermerà
+   quando viene raggiunto quel numero e attenderà che digiti un altro comando
+   (o che premi invio) per continuare. Se hai molte righe in sospeso, potresti
+   essere espulso dal bot.
 %{help=quit}%{-}
-###  %bquit%b [comment]
-   This disconnects you from the partyline. If you specify a comment, it will
-   be displayed to other partyline users as you leave.
+###  %bquit%b [commentp]
+   Questo ti disconnette dalla partyline. Se specifichi un commento, lo
+   mostrerà agli altri utenti della partyline quando esci.
 %{help=rehash}%{+m}
 ###  %brehash%b
-   Reloads the bot's config file, which resets all changes made via the
-   %b'.set'%b command and reloads any Tcl scripts your config loads. It also
-   saves and reloads the user file from disk, just to give it some exercise.
+   Ricarica il file di configurazione del bot, che ripristina tutte le
+   modifiche apportate tramite il comando %b'.set '%b, ricarica tutti gli script
+   Tcl caricati dalla configurazione. Salva anche e ricarica la lista utenti
+   dal disco, solo per fare un po' di esercizio.
 
 Vedi anche: save, reload, restart%{+n}, rehelp, relang
 %{help=rehelp}%{+n}
 ###  %brehelp%b
-   This command forces the bot to recheck all of its help files for changes.
+   Questo comando forza il bot a ricontrollare tutti i suoi file di aiuto
+   per le modifiche.
 
 Vedi anche: save, reload, restart, relang
 %{help=relay}%{+o}
-###  %brelay%b <botname>
-   Relays you via telnet to another bot, whether or not it is currently linked.
-   The local bot must, however, have a bot record for the bot you wish to
-   relay to. Typing .quit or "*bye*" on a line by itself will end the relay.
+###  %brelay%b <nome-del-bot>
+   Ti trasmette tramite telnet a un altro bot, indipendentemente dal fatto
+   che sia attualmente collegato o meno. Il bot locale, tuttavia, deve avere
+   un record del bot a cui desideri inoltrare. Digitando .quit o "*bye*"
+   su una riga da solo terminerà il relay.
 
 Vedi anche: bots%{+t}, +bot, -bot
 %{help=reload}%{+m|m}
 ###  %breload%b
-   Reloads the bot's user file, discarding any changes made since the last
-   %b'.save'%b command or hourly user file save. Sharebots should probably
-   never do this.
+   Ricarica la lista utenti del bot, ignorando le modifiche apportate
+   dall'ultimo comando %b'.save '%b o dal salvataggio della lista utenti
+   ogni ora. I bot condivisi non dovrebbero farlo mai.
 
 Vedi anche: save%{+m}, rehash
 %{help=traffic}%{+m|m}
 ###  %btraffic%b
-   Shows total and daily net traffic stats since the last %b'.restart'%b.
-   Stats groups are IRC, Botnet, Partyline, Transfer.mod and Misc.
+   Mostra le statistiche sul traffico netto totale e giornaliero
+   dall'ultimo %b'.restart '%b. I gruppi di statistiche sono IRC, Botnet,
+   Partyline, Transfer.mod e Varie.
 %{+m}
 
 Vedi anche: restart
 %{help=whoami}%{-}
 ###  %bwhoami%b
-   Shows your current handle and to what bot you are connected.
+   Mostra il tuo nome attuale e a quale bot sei connesso.
 
 Vedi anche: whom
 %{help=restart}%{+m}
 ###  %brestart%b
-   Restarts the Tcl interpreter, wipes all timers, reloads all modules, and
-   reloads the config file for the bot (which resets any changes made via the
-   %b'.set'%b command and reloads any Tcl scripts your config loads). As with
-   the %b'.rehash'%b command, it also saves and reloads the user file from disk.
+   Riavvia l'interprete Tcl, cancella tutti i timer, ricarica tutti i moduli
+   e ricarica il file di configurazione del bot (che ripristina tutte le
+   modifiche apportate tramite il comando %b'.set '%b, ricarica tutti gli
+   script Tcl caricati dalla configurazione). Come il comando %b'.rehash '%b,
+   salva e ricarica anche l'elenco utenti dal disco.
 
 Vedi anche: rehash, reload, save
 %{help=save}%{+m|m}
 ###  %bsave%b
-   This makes the bot write its entire userfile to disk. This is useful if you
-   think the bot is about to crash or something, since the user file is only
-   written to disk about once an hour.
+   Questo fa sì che il bot scriva la sua intera lista utenti sul disco.
+   Questo è utile se tu pensi che il bot stia per bloccarsi o qualcosa del
+   genere, poiché la lista utenti è già scritta sul disco una volta ogni ora.
 
 Vedi anche: reload, rehash, backup
 %{help=simul}%{+n}
