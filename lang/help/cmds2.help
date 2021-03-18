@@ -359,71 +359,79 @@ Vedi anche: who, bots, chat
 Vedi anche: whom
 %{help=whois}%{+o|o}
 ###  whois <nickname>
-   Shows you stored information about a user record. Five headings are
-   displayed:
-      %bHANDLE%b - the handle (nickname) of the user
-      %bPASS%b   - "yes" if she has a password set; "no" otherwise
-      %bNOTES%b  - number of stored notes waiting for the user
-      %bFLAGS%b  - the list of flags for this user (see below)
-      %bLAST%b   - the time or date that the user was last on the channel
+   Mostra le informazioni memorizzate su un record utente.I cinque dati
+   visualizzati sono:
+      %bHANDLE%b - il nome (nickname) dell'utente
+      %bPASS%b   - "yes" se ha impostato la password; altrimenti "no"
+      %bNOTES%b  - il numero delle note memorizzate in attesa per l'utente
+      %bFLAGS%b  - l'elenco dele flag per questo utente (vedi sotto)
+      %bLAST%b   - l'ora o la data in cui l'utente è stato visto l'ultima volta
 
-   Valid global flags:
-      %ba%b - autoop (user is opped automatically upon joining any channel)
-      %bb%b - bot (user is a bot)
-      %bc%b - common (see %b'.help common'%b)
-      %bd%b - deop (user cannot gain ops in any channel)
-      %be%b - nethack-exempt (user is exempted from stopnethack protection)
-      %bf%b - friend (user is not punished for flooding, etc on any channel)
-      %bg%b - autovoice (user is voiced automatically upon joining any channel)
-      %bh%b - highlight (use bold text in help/text files)
-      %bj%b - janitor (user is a file-area master)
-      %bk%b - autokick (user is kicked and banned automatically)
-      %bl%b - halfop (user has halfop access to all of the bot's channels)
-      %bm%b - master (user has access to almost every feature of the bot)
-      %bn%b - owner (user has absolute control over the bot)
-      %bo%b - op (user has op access to all of the bot's channels)
-      %bp%b - party-line (user has access to the partyline)
-      %bq%b - quiet (user cannot gain voice on any channel)
-      %br%b - dehalfop (user cannot gain halfops on any channel)
-      %bt%b - botnet master (user has access to features related to the botnet)
-      %bu%b - unshared (user's user record is not sent to other bots)
-      %bv%b - voice (user gets +v automatically on +autovoice channels)
-      %bw%b - wasop-test (needs wasop test for +stopnethack procedure)
-      %bx%b - xfer (user has filesystem access)
-      %by%b - autohalfop (user is auto-halfopped upon joining any channel)
-      %bz%b - washalfop-test (needs washalfop test for +stopnethack procedure)
+   Le flag globali valide sono:
+      %ba%b - autoop (l'utente è oppato automaticamente quando entra in
+              qualsiasi canale)
+      %bb%b - bot (l'utente è un bot)
+      %bc%b - accesso comune (pubblico) (vedi %b'.help common'%b)
+      %bd%b - deop (l'utente non può avere l'op in nessun canale)
+      %be%b - nethack-exempt (l'utente è esente dalla protezione stopnethack)
+      %bf%b - friend (l'utente non viene punito per flood, etc in ogni canale)
+      %bg%b - autovoice (all'utente viene messo il +v automaticamente quando
+              entra in qualsiasi canale)
+      %bh%b - highlight (usa il grassetto nei file di aiuto/testo)
+      %bj%b - janitor (l'utente è un master dell'area file)
+      %bk%b - autokick (l'utente è kickato e bannato automaticamente)
+      %bl%b - halfop (l'utente è mezzo-op (%) in tutti i canali)
+      %bm%b - master (l'utente ha accesso a quasi tutte le funzionalità del bot)
+      %bn%b - owner (l'utente ha l'assoluto controllo sul)
+      %bo%b - op (l'utente è op in tutti i canali)
+      %bp%b - party-line (l'utente ha accesso alla partyline)
+      %bq%b - quiet (l'utente non può avere il voice (+v) in nessun canale)
+      %br%b - dehalfop (l'utente non può avere il mezzo-op (%) in nessun canale)
+      %bt%b - botnet master (l'utente ha accesso alle funzionalità relative
+              alla botnet)
+      %bu%b - unshared (la lista degli utenti non viene inviata ad altri bot)
+      %bv%b - voice (l'utente riceve il +v automaticamente nei canali +autovoice)
+      %bw%b - wasop-test (necessita di un test wasop per la procedura + stopnethack)
+      %bx%b - xfer (l'utente ha accesso all'area file)
+      %by%b - autohalfop (l'utente riceve il mezzo-op (%) automaticamente quando
+              entra in qualsiasi canale)
+      %bz%b - washalfop-test (necessita di un test washalfop per la procedura
+              +stopnethack)
 
-      There are also 26 user-defined global flags (A-Z).
+      Sono inoltre disponibili 26 flag globali definite dall'utente (A-Z).
 
-   Users can also have flags specific to a channel:
+   Gli utenti possono anche avere flag per un canale specifico:
 
-      %ba%b - autoop (user is opped automatically upon joining the channel)
-      %bd%b - deop (user cannot gain ops on the channel)
-      %be%b - nethack-exempt (user is exempted from stopnethack protection)
-      %bf%b - friend (user is not punished for flooding, etc)
-      %bg%b - autovoice (user is voiced automatically upon joining the channel)
-      %bk%b - autokick (user is kicked and banned automatically)
-      %bl%b - halfop (user has halfop access to the channel)
-      %bm%b - master (user is a channel master)
-      %bn%b - owner (user is a channel owner)
-      %bo%b - op (user has op access to the channel)
-      %bq%b - quiet (user cannot gain voice on the channel)
-      %br%b - dehalfop (user cannot gain halfops on the channel)
-      %bv%b - voice (user gets +v automatically if the channel is +autovoice)
-      %bw%b - wasop-test (needs wasop test for +stopnethack procedure)
-      %by%b - autohalfop (user is auto-halfopped upon joining the channel)
-      %bz%b - washalfop-test (needs washalfop test for +stopnethack procedure)
+      %ba%b - autoop (l'utente è oppato automaticamente quando entra nel canale)
+      %bd%b - deop (l'utente non può avere l'op nel canale)
+      %be%b - nethack-exempt (l'utente è esentato dalla protezione stopnethack)
+      %bf%b - friend (l'utente non è punito per flood, etc)
+      %bg%b - autovoice (all'utente viene dato automaticamente il +v quando
+              entra in canale)
+      %bk%b - autokick (l'utente è kickato e bannato automaticamente)
+      %bl%b - halfop (l'utente è mezzo-op (%) nel canale)
+      %bm%b - master (l'utente è master di canale)
+      %bn%b - owner (l'utente è un padrone del canale)
+      %bo%b - op (l'utente è op de canale)
+      %bq%b - quiet (l'utente non può avere il voice (+v) nel canale)
+      %br%b - dehalfop (l'utente non può avere il mezzo-op (%) nel canale)
+      %bv%b - voice (l'utente ha il +v automaticamente se il canale è +autovoice)
+      %bw%b - wasop-test (necessita di un test wasop per la procedura +stopnethack)
+      %by%b - autohalfop (l'utente riceve il mezzo-op (%) automaticamente quando
+              entra nel canale)
+      %bz%b - washalfop-test (necessita di un test washalfop per la procedura
+              +stopnethack)
 
-      There are also 26 user-defined channel flags (A-Z).
+      Sono inoltre disponibili 26 flag di canale definite dall'utente (A-Z).
 
-   Hostmasks for the user are displayed on the following lines. If the user is
-   a bot, there will be a line below which says "ADDRESS:" and gives the bot's
-   telnet address. Some user entries may have "EMAIL:" and "INFO:" entries too.
-   There may be additional information displayed depending on the modules
-   loaded, such as filesys and console.
+   Le maschere host per l'utente vengono visualizzate nelle seguenti righe.
+   Se l'utente è un bot, ci sarà una riga sotto con "ADDRESS:" che fornisce
+   l'indirizzo telnet del bot. Alcune voci utente possono contenere anche
+   "EMAIL:" e "INFO:". Potrebbero essere visualizzate informazioni aggiuntive
+   a seconda dei moduli caricati, come filesys e console.
 
-   For bots, there are additional flags seen under the "BOTATTR:" section.
-   Valid botflags include:
+   Per i bot, ci sono flag aggiuntive che puoi vedere nela sezione "BOTATTR:".
+   Le flag dei bot valide includono:
       %ba%b - alternate (bot is autolinked if no hub bots can be linked)
       %bb%b - ban sharing (pasv bot can share bans with aggr bot)
       %bc%b - channel sharing (pasv bot can share chan changes with aggr bot)
