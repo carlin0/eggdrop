@@ -432,34 +432,42 @@ Vedi anche: whom
 
    Per i bot, ci sono flag aggiuntive che puoi vedere nela sezione "BOTATTR:".
    Le flag dei bot valide includono:
-      %ba%b - alternate (bot is autolinked if no hub bots can be linked)
-      %bb%b - ban sharing (pasv bot can share bans with aggr bot)
-      %bc%b - channel sharing (pasv bot can share chan changes with aggr bot)
-      %bd%b - share aggressively (SEND userfile to a passive bot), none sharing (pasv bot to aggr bot)
-      %be%b - exempt sharing (pasv bot can share exempts with aggr bot)
-      %bg%b - global share (bot is sharing all channels)
-      %bh%b - hub (bot is autolinked at highest priority)
-      %bi%b - isolate (isolate the party line across a botlink)
-      %bj%b - invite sharing (pasv bot can share invites with aggr bot)
-      %bl%b - leaf (bot is not allowed to link other bots onto the botnet)
-      %bn%b - ignore sharing (pasv bot can share ignores with aggr bot)
-      %bp%b - share passively (ACCEPT userfile from an aggressive bot)
-      %br%b - reject (bot will not be allowed to link to the botnet)
-      %bs%b - share aggressively (SEND userfile to a passive bot), all sharing (pasv bot to aggr bot)
-      %bu%b - user sharing (pasv bot can share user changes with aggr bot)
+      %ba%b - alternate (il bot è collegato automaticamente se non può essere
+              collegato l'hub)
+      %bb%b - ban sharing (bot passivo può condividere i ban col bot aggressivo)
+      %bc%b - channel sharing (bot passivo può condividere le modiifche ai canali
+              col bot aggressivo)
+      %bd%b - share aggressively (INVIA la lista utenti al bot passivo), nessuna
+              condivisione (bot passivo al bot aggressivo)
+      %be%b - exempt sharing (bot passivo può condividere le esenzioni al ban
+              col bot aggressivo)
+      %bg%b - global share (il bot condivide tutti i canali)
+      %bh%b - hub (il bot viene collegato automaticamente con alta priorità)
+      %bi%b - isolate (isolare la partyline attrverso un collegamento al bot)
+      %bj%b - invite sharing (bot passivo può condividere gli inviti col
+              bot aggressivo)
+      %bl%b - leaf (bot non autorizzato a collegare altri bot nella botnet)
+      %bn%b - ignore sharing (bot passivo può condividere gli ignore col
+              bot aggressivo)
+      %bp%b - share passively (ACCETTA la lista utenti da un bot aggressivo)
+      %br%b - reject (bot che non sarà autorizzato a collegare la botnet)
+      %bs%b - share aggressively (INVIA la lista utenti al bot passivo),
+              tutto condiviso (bot passivo al bot aggressivo)
+      %bu%b - user sharing (bot passivo può condividere le modifiche
+              all'utente col bot aggressivo)
 
-      There are also 10 user-defined bot flags (0-9). Bots may also have +s
-      (share) settings for individual channels.
+      Sono inoltre disponibili 10 flag definite per i bot (0-9). I bot
+      possono anche avere l'impostazione +s (share) per i singoli canali.
 %{+m}
 
-   Masters: if the user has a comment, you will see it under "COMMENT:".%{-}
+   Per i masters: se l'utente ha un commento, lo vedrai sotto "COMMENT:".%{-}
 
 Vedi anche: match, who, whom%{+m|m}, chattr%{+t}, botattr
 %{help=status}%{+m|m}
 ###  %bstatus%b
 ###  %bstatus all%b
-   Displays a condensed block of status information about the bot.
-   is running. For example:
+   Visualizza un blocco condensato di informazioni sullo stato del bot.
+   in esecuzione. Per esempio:
       [01:15] #Wcc# status
       I am Anakha, running eggdrop v1.8.3:  171 users (mem: 315k)
       Online for 14 days, 02:50  (background)  CPU 71:29  cache hit 40.3%
@@ -485,44 +493,46 @@ Vedi anche: match, who, whom%{+m|m}, chattr%{+t}, botattr
           #|DAWG|Tcl: 42 members, enforcing "+tn" (lurking)
 
 
-   The first lines contain information such as the bot's name, what version
-   of Eggdrop it's running, the number of users the bot has records of, and 
-   the amount of memory being used by the userfile. Following that is
-   information such as the uptime of the bot, CPU time, and what compile
-   options, if any, the bot was configured with, along with the bot's admin and
-   and filename of the running config file. The subsequent lines show
-   information such as the operating system the bot is running on, information
-   on the Tcl libraries used to compile the Eggdrop, and if SSL and IPv6
-   support are enabled. If debug mode is enabled, additional info may be shown. 
-   Sharing information will also be shown if it's being used.
+   Le prime righe contengono informazioni come il nome del bot, quale versione
+   di Eggdrop è in esecuzione, il numero di utenti che il bot ha registrato e
+   la quantità di memoria utilizzata dalla lista utenti. Il seguito sono
+   informazioni come il tempo di attività del bot, il tempo della CPU e con che
+   opzioni e stato compilato, se presenti, con cui è stato configurato il bot,
+   insieme all'amministratore del bot e il nome del file di configurazione in
+   esecuzione. Le righe successive mostrano informazioni come il sistema
+   operativo su cui è in esecuzione il bot, informazioni sulle librerie Tcl
+   usate per compilare Eggdrop e se i supporti SSL e IPv6 sono abilitati.
+   Se la modalità di debug è abilitata, potrebbero essere visualizzate
+   informazioni aggiuntive. Se vengono utilizzate, verranno visualizzate
+   anche le informazioni di condivisione.
 
-   Select information from modules will be displayed after the core
-   information. If you use %b'.status all'%b instead, you will see all status
-   information available from loaded modules.
+   Le informazioni selezionate dai moduli verranno visualizzate dopo il
+   nucleo informazioni. Se invece usi %b'.status all'%b, vedrai tutto lo
+   stato informazioni disponibili dei moduli caricati.
 
 Vedi anche: channel%{+n}, set%{+m}, debug
 %{help=uptime}%{+m|m}
 ###  %buptime%b
-   Displays the bot's current uptime.
+   Visualizza il tempo di attività corrente del bot.
 
 Vedi anche: status
 %{help=vbottree}%{-}
 ###  %bvbottree%b
-   Shows a tree-format diagram of the bots and their Eggdrop version
-   currently on the botnet. If 2 bots are sharing, a + will be indicated, or
-   a ? if nothing is known.
+   Mostra un diagramma ad albero dei bot e la loro versione Eggdrop
+   attualmente sulla botnet. Se 2 bot condividono, verrà indicato un
+   + o ? se non si sa niente.
 
 Vedi anche: bots, botinfo, bottree
 %{help=fprint}%{-}
 ### %bfprint <+/SHA1 fingerprint>%b
-   Adds an SSL certificate fingerprint to your user account. This allows you
-   to authenticate to Eggdrop with a certificate instead of a password. You
-   can log in to the partyline using SSL and use %b'.fprint +'%b to add the
-   current certificate, or use %b'.fprint <SHA1 fingerprint>'%b to manually
-   add a certificate fingerprint.
+   Aggiunge un certificato SSL al tuo account utente. Questo ti permetterà
+   di autenticarti sull'Eggdrop con un certificato invece che con una password.
+   potrai accedere alla partyline utilizzando SSL e utilizzare %b'.fprint +'%b
+   per aggiungere il certificato corrente o usa %b'.fprint <SHA1 fingerprint>'%b
+   per aggiungere manualmente un certificato.
 
 %{help=chfinger}%{-}
-### %bchfinger <handle> [fingerprint]%b
-   Changes the SSL certificate fingerprint associated with your user account.
-   Not specifying a value for 'fingerprint' will remove an existing certificate
-   associated with your user account.
+### %bchfinger <nome> [fingerprint]%b
+   Modifica il certificato SSL associato al tuo account utente. La mancata
+   specifica di un valore per 'fingerprint' rimuoverà un certificato esistente
+   associato al tuo account utente.
