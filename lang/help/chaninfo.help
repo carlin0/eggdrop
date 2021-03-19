@@ -78,44 +78,45 @@
                           volta che il canale è -i, l'invito verrà rimosso al
                           successivo controllo del bot.
                           Tieni presente che questa è una funzionalità di IRCnet.
-        %baop-delay%b         This is used for autoop, autohalfop, autovoice.
-                          If an op or voice joins a channel while another op or
-                          voice is pending, the bot will attempt to put both
-                          modes on one line.
-                            aop-delay 0   No delay is used.
-                            aop-delay X   An X second delay is used.
-                            aop-delay X:Y Random delay between X and Y is used.
-     The following can be set + or - (e.g. .chanset #channel -enforcebans)
-        %benforcebans%b    When a ban is set, kick people who are on the channel
-                       and match the ban?
-        %bdynamicbans%b    Only activate bans on the channel when necessary?
-                       This keeps the channel's ban list from getting
-                       excessively long. The bot still remembers every ban,
-                       but it only activates a ban on the channel when it sees
-                       someone join who matches that ban.
-        %buserbans%b       Allow bans to be made by users directly? If turned
-                       off, the bot will require all bans to be made through
-                       the bot's console.
-        %bdynamicexempts%b Only activate exempts on the channel when
-                       necessary? This keeps the channel's exempt list from
-                       getting excessively long. The bot still remembers every
-                       exempt, but it only activates a exempt on the channel
-                       when it sees a ban set that matches the exempt. The
-                       exempt remains active on the channel for as long as the
-                       ban is still active.
-        %buserexempts%b    Allow exempts to be made by users directly? If
-                       turned off, the bot will require all exempts to be made
-                       through the bot's console.
-        %bdynamicinvites%b Only activate invites on the channel when necessary?
-                       This keeps the channel's invite list from getting
-                       excessively long. The bot still remembers every invite,
-                       but the invites are only activated when the channel is
-                       set to invite only and a user joins after requesting an
-                       invite. Once set, the invite remains until the channel
-                       goes to -i.
-        %buserinvites%b    Allow invites to be made by users directly? If turned
-                       off, the bot will require all invites to be made through
-                       the bot's console.
+        %baop-delay%b         Viene utilizzato per autoop, autohalfop, autovoice.
+                          Se un op o un voice entra nel canale mentre un altro op
+                          o il voice è in sospeso, il bot tenterà di inserirli
+                          entrambi su una riga di comando.
+                            aop-delay 0   Nessun ritardo.
+                            aop-delay X   X secondi di ritardo saranno attesi.
+                            aop-delay X:Y Il ritardo sarà casuale e compreso
+                                tra X e Y.
+     Quanto segue può essere impostato + o - (ad es. .chanset #canale -enforcebans)
+        %benforcebans%b    Quando viene impostato un ban, kicka gli utenti che
+                       sono nel canale la cui mask corrisponde al ban.
+        %bdynamicbans%b    Attivare i divieti sul canale solo quando necessario?
+                       Ciò impedisce all'elenco di ban del canale di essere
+                       eccessivamente lungo. Il bot ricorda ancora ogni ban,
+                       ma lo attiva nell canale solo quando vede qualcuno che
+                       entra e che corrisponde a quel ban.
+        %buserbans%b       Consentire che i ban siano fatti direttamente
+                       dagli utenti? Se disattivato, il bot richiederà che
+                       tutti i ban vengano effettuati dalla console del bot.
+        %bdynamicexempts%b Attiva le esenzioni al ban nel canale solo quando
+                       necessario? Ciò riduce l'elenco esenzioni del canale
+                       evitando che diventi eccessivamente lungo. Il bot
+                       ricorda ancora ogni esenzione, ma la attiva nel canale
+                       solo quando vede impostato un ban che corrisponde
+                       all'esenzione. L'esenzione rimane attivo nell canale
+                       per tutto il tempo in cui il ban è ancora attivo.
+        %buserexempts%b    Consentire che le esenzioni al ban siano fatte
+                       direttamente dagli utenti? Se disattivato il bot
+                       vorrà che le esenzioni siano fatte dalla console del bot.
+        %bdynamicinvites%b Attivare gli inviti nel canale solo quando necessario?
+                       Ciò impedisce che l'elenco degli inviti del canale
+                       diventi eccessivamente lungo. Il bot ricorda ancora ogni
+                       invito, ma li attiva ​​solo quando il canale viene
+                       impostato +i e un utente entra dopo aver richiesto un
+                       un invito. Una volta impostato, l'invito rimane fino a
+                       che nel canale non viene tolto il +i.
+        %buserinvites%b    Consentire che gli inviti siano fatti direttamente
+                       dagli utenti? Se disattivato il bot vorrà che gli inviti
+                       siano fatti dalla console del bot.
         %bautoop%b         Op users with the +o flag as soon as they join the
                        channel? This is insecure and not recommended.
         %bautohalfop%b     Halfop users with the +l flag as soon as they join
