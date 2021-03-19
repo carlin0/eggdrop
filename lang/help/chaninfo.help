@@ -1,0 +1,180 @@
+%{help=chaninfo}%{+m|m}
+###  %bchaninfo%b <canale>
+     Questo è un elenco di tutte le impostazioni possibili su un determinato canale.
+     Sono le seguenti:
+        %bchanmode%b   Queste sono le modalità applicate al canale. Entrambi
+                  sia + che - vengono forzatamente tenute dal bot.
+        %bidle-kick%b  Kicka gli utenti inattivi che non sono + f o superiori
+                   sul canale dopo un tot minuti (impostare 0 per disabilitare).
+%{+n}
+        %bATTENZIONE:%b Per motivi di sicurezza, solo i proprietari permanenti
+                     possono impostare le modalità need- *.
+        %bneed-op%b      Questo comando Tcl verrà eseguito quando il bot non
+                 ha l'op.
+        %bneed-invite%b  Questo comando Tcl verrà eseguito se il bot necessita
+                     di essere invitato in un canale (es. il canale è +i).
+        %bneed-key%b     Questo comando Tcl verrà eseguito se il bot necessita
+                     della parola chiave per entrare nel canale.
+        %bneed-unban%b   Questo comando Tcl verrà eseguito se il bot necessita
+                    che gli venga tolto il ban dal canale in cui deve entrare.
+        %bneed-limit%b   Questo comando Tcl verrà eseguito se il bot necessita
+                    che il limite del canale venga alzato per poter entrare.
+%{+m|m}
+        %bstopnethack-mode%b  Questa impostazione fa si che il bot de-oppi chiunque
+                          entri nel canale col l'op dato dal server. Ci sono sette
+                          modalità differenti per questa impostazione:
+                            0 disabilitato
+                            1 isoptest (permette serverop se è un op registrato)
+                            2 wasoptest (permette serverop se l'utente aveva l'op
+                              prima dello split)
+                            3 permette serverop nei casi isop o wasop
+                            4 permette serverop nel caso sia isop e wasop
+                            5 se il canale è -bitch, vedi stopnethack-mode 3
+                              se il canale è +bitch, vedi stopnethack-mode 1
+                            6 se il canale è -bitch, vedi stopnethack-mode 2
+                              se il canale è +bitch, vedi stopnethack-mode 4
+        %brevenge-mode%b      Questa impostazione definisce come il bot dovrebbe
+                          gli utenti in caso di vendetta. Ci sono quattro
+                          possibili impostazioni:
+                            0 Deoppa l'utente.
+                            1 Deoppa l'utente e gli da la flag di canale +d.
+                            2 Deoppa l'utente, gli da la flag di canale +d 
+                              e lo kicka.
+                            3 Deoppa l'utente, gli da la flag di canale +d,
+                              lo kicka e lo banna.
+        %bban-type%b          Questa impostazione definisce il tipo di ban che
+                          il bot imposta per gli utenti +k o se il revenge-mode è 3.
+                          I tipi disponibili sono:
+                            0 *!user@host
+                            1 *!*user@host
+                            2 *!*@host
+                            3 *!*user@*.host
+                            4 *!*@*.host
+                            5 nick!user@host
+                            6 nick!*user@host
+                            7 nick!*@host
+                            8 nick!*user@*.host
+                            9 nick!*@*.host
+                          È inoltre possibile specificare i tipi da 10 a 19 quali
+                          corrispondono ai tipi da 0 a 9, ma invece di utilizzare un *
+                          carattere jolly per sostituire solo parti dell'host
+                          i numeri nei nomi host vengono sostituiti con '?'
+                          carattere jolly. Lo stesso vale per i tipi 20-29, ma invece
+                          di '?', verrà utilizzato il carattere jolly '*'. I tipi
+                          30-39 impostano l'host su '*'.
+        %bban-time%b          Imposta qui la durata dei ban temporanei (in
+                          minuti). Se imposti su 0, il bot non li rimuoverà mai.
+        %bexempt-time%b       Imposta qui la durata delle esenzioni temporanee al ban
+                          (in minuti). Se imposti su 0, il bot non le rimuoverà mai.
+                          Il bot controllerà le esenzioni ogni X minuti, ma non
+                          rimuoverà l'esenzione se il ban è impostato sul canale che
+                          corrisponde a quello esente. Una volta rimosso il ban, il
+                          bot leverà l'esenzione la prossima volta che controlla.
+                          Notare che che questa è una funzionalità di IRCnet.
+        %binvite-time%b       Imposta qui la durata degli inviti temporanei (in
+                          minuti). Se imposti su 0, il bot non li rimuoverà mai.
+                          Il bot controllerà gli inviti ogni X minuti, ma non
+                          rimuoverà l'invito se il canale è impostato +i. Una
+                          volta che il canale è -i, l'invito verrà rimosso al
+                          successivo controllo del bot.
+                          Tieni presente che questa è una funzionalità di IRCnet.
+        %baop-delay%b         This is used for autoop, autohalfop, autovoice.
+                          If an op or voice joins a channel while another op or
+                          voice is pending, the bot will attempt to put both
+                          modes on one line.
+                            aop-delay 0   No delay is used.
+                            aop-delay X   An X second delay is used.
+                            aop-delay X:Y Random delay between X and Y is used.
+     The following can be set + or - (e.g. .chanset #channel -enforcebans)
+        %benforcebans%b    When a ban is set, kick people who are on the channel
+                       and match the ban?
+        %bdynamicbans%b    Only activate bans on the channel when necessary?
+                       This keeps the channel's ban list from getting
+                       excessively long. The bot still remembers every ban,
+                       but it only activates a ban on the channel when it sees
+                       someone join who matches that ban.
+        %buserbans%b       Allow bans to be made by users directly? If turned
+                       off, the bot will require all bans to be made through
+                       the bot's console.
+        %bdynamicexempts%b Only activate exempts on the channel when
+                       necessary? This keeps the channel's exempt list from
+                       getting excessively long. The bot still remembers every
+                       exempt, but it only activates a exempt on the channel
+                       when it sees a ban set that matches the exempt. The
+                       exempt remains active on the channel for as long as the
+                       ban is still active.
+        %buserexempts%b    Allow exempts to be made by users directly? If
+                       turned off, the bot will require all exempts to be made
+                       through the bot's console.
+        %bdynamicinvites%b Only activate invites on the channel when necessary?
+                       This keeps the channel's invite list from getting
+                       excessively long. The bot still remembers every invite,
+                       but the invites are only activated when the channel is
+                       set to invite only and a user joins after requesting an
+                       invite. Once set, the invite remains until the channel
+                       goes to -i.
+        %buserinvites%b    Allow invites to be made by users directly? If turned
+                       off, the bot will require all invites to be made through
+                       the bot's console.
+        %bautoop%b         Op users with the +o flag as soon as they join the
+                       channel? This is insecure and not recommended.
+        %bautohalfop%b     Halfop users with the +l flag as soon as they join
+                       the channel? This is insecure and not recommended.
+        %bbitch%b          Only let users with the +o flag have op on the
+                       channel?
+        %bgreet%b          Say a user's info line when they join the channel?
+        %bprotectops%b     Re-op a user with the +o flag if they get deopped?
+        %bprotecthalfops%b Re-halfop a user with the +l flag if they get
+                       dehalfopped?
+        %bprotectfriends%b Re-op a user with the +f flag if they get deopped?
+        %bstatuslog%b      Log the channel status line every 5 minutes? This
+                       shows the bot's status on the channel (op, voice, etc.),
+                       the channel's modes, and the total number of members,
+                       ops, voices, regular users, and +b, +e, and +I modes
+                       on the channel. A sample status line follows:
+
+                         [01:40] @#chan (+istn) : [m/1 o/1 v/4 n/7 b/1 e/5 I/7]
+        %brevenge%b        Remember people who deop/kick/ban the bot, valid ops,
+                       or friends and punish them? Users with the +f flag are
+                       exempt from revenge.
+        %brevengebot%b     This is similar to to the 'revenge' option, but it
+                       only triggers if a bot gets deopped, kicked or banned.
+        %bautovoice%b      Voice users with the +v flag when they join the
+                       channel?
+        %bsecret%b         Prevent this channel from being listed on the botnet?
+        %bshared%b         Share channel-related user info for this channel?
+        %bcycle%b          Cycle the channel when it has no ops?
+        %bdontkickops%b    Do you want the bot not to be able to kick users who
+                       have the +o flag, letting them kick-flood for instance
+                       to protect the channel against clone attacks?
+        %binactive%b       This prevents the bot from joining the channel (or
+                       makes it leave the channel if it is already there). It
+                       can be useful to make the bot leave a channel without
+                       losing its settings, channel-specific user flags,
+                       channel bans, and without affecting sharing.
+        %bseen%b           Respond to seen requests in the channel?  The seen
+                       module must be loaded for this to work.
+        %bnodesynch%b      Allow non-ops to perform channel modes? This can stop
+                       the bot from fighting with services such as ChanServ, or
+                       from kicking IRCops when setting channel modes without
+                       having ops.
+        %bstatic%b         Allow only permanent owners to remove the channel?
+     The following are flood settings, they are set via ".chanset <channel>
+     <flood-type> <number>:<seconds>", where <number> and <seconds> are
+     integers indicating the number of times in how many seconds the flood will
+     be triggered. Setting this to 0:X or X:0 (where X is an integer >= 0), or
+     the special case of just 0, will deactivate the respective flood setting.
+        %bflood-chan%b  Set here how many channel messages in how many seconds
+                    from one host constitutes a flood.
+        %bflood-ctcp%b  Set here how many channel ctcps in how many seconds from
+                    one host constitutes a flood.
+        %bflood-join%b  Set here how many joins in how many seconds from one
+                    host constitutes a flood.
+        %bflood-kick%b   Set here how many kicks in how many seconds from one
+                    host constitutes a flood.
+        %bflood-deop%b   Set here how many deops in how many seconds from one
+                    host constitutes a flood.
+        %bflood-nick%b   Set here how many nick changes in how many seconds from
+                    one host constitutes a flood.
+%{+n|n}
+See also: %{+n}+chan, -chan,%{+n|n} chansave, chanset
