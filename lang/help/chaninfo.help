@@ -117,54 +117,57 @@
         %buserinvites%b    Consentire che gli inviti siano fatti direttamente
                        dagli utenti? Se disattivato il bot vorrà che gli inviti
                        siano fatti dalla console del bot.
-        %bautoop%b         Op users with the +o flag as soon as they join the
-                       channel? This is insecure and not recommended.
-        %bautohalfop%b     Halfop users with the +l flag as soon as they join
-                       the channel? This is insecure and not recommended.
-        %bbitch%b          Only let users with the +o flag have op on the
-                       channel?
-        %bgreet%b          Say a user's info line when they join the channel?
-        %bprotectops%b     Re-op a user with the +o flag if they get deopped?
-        %bprotecthalfops%b Re-halfop a user with the +l flag if they get
-                       dehalfopped?
-        %bprotectfriends%b Re-op a user with the +f flag if they get deopped?
-        %bstatuslog%b      Log the channel status line every 5 minutes? This
-                       shows the bot's status on the channel (op, voice, etc.),
-                       the channel's modes, and the total number of members,
-                       ops, voices, regular users, and +b, +e, and +I modes
-                       on the channel. A sample status line follows:
+        %bautoop%b         Da l'op agli utenti con la flag +o appena entrano in
+                       canale? Questo non è sicuro ed è sconsigliato.
+        %bautohalfop%b     Da il mezzo-op agli utenti con la flag +l appena
+                       entrano in canale? Questo non è sicuro e nemmeno
+                       raccomandabile.
+        %bbitch%b          Consente solo agli utenti con la flag +o di avere
+                       l'op in canale?
+        %bgreet%b          Dire la info line di un utente quando entra in canale?
+        %bprotectops%b     Ridare l'op a un utente con la flag +o se viene deoppato?
+        %bprotecthalfops%b Ridare il mezzo-op a un utente con la flag +l se
+                       gli viene tolto?
+        %bprotectfriends%b Ridare l'op a un utente con la flag +f se viene deoppato?
+        %bstatuslog%b      LOggare lo stato del canale ogni 5 minuti? Questo mostra
+                       lo stato del bot sul canale (op, voice, ecc.), le modalità
+                       del canale e il numero totale di membri, op, voice, utenti
+                       normali e modalità +b, +e e +I nel canale.
+                       Segue una riga di stato di esempio:
 
                          [01:40] @#chan (+istn) : [m/1 o/1 v/4 n/7 b/1 e/5 I/7]
-        %brevenge%b        Remember people who deop/kick/ban the bot, valid ops,
-                       or friends and punish them? Users with the +f flag are
-                       exempt from revenge.
-        %brevengebot%b     This is similar to to the 'revenge' option, but it
-                       only triggers if a bot gets deopped, kicked or banned.
-        %bautovoice%b      Voice users with the +v flag when they join the
-                       channel?
-        %bsecret%b         Prevent this channel from being listed on the botnet?
-        %bshared%b         Share channel-related user info for this channel?
-        %bcycle%b          Cycle the channel when it has no ops?
-        %bdontkickops%b    Do you want the bot not to be able to kick users who
-                       have the +o flag, letting them kick-flood for instance
-                       to protect the channel against clone attacks?
-        %binactive%b       This prevents the bot from joining the channel (or
-                       makes it leave the channel if it is already there). It
-                       can be useful to make the bot leave a channel without
-                       losing its settings, channel-specific user flags,
-                       channel bans, and without affecting sharing.
-        %bseen%b           Respond to seen requests in the channel?  The seen
-                       module must be loaded for this to work.
-        %bnodesynch%b      Allow non-ops to perform channel modes? This can stop
-                       the bot from fighting with services such as ChanServ, or
-                       from kicking IRCops when setting channel modes without
-                       having ops.
-        %bstatic%b         Allow only permanent owners to remove the channel?
-     The following are flood settings, they are set via ".chanset <channel>
-     <flood-type> <number>:<seconds>", where <number> and <seconds> are
-     integers indicating the number of times in how many seconds the flood will
-     be triggered. Setting this to 0:X or X:0 (where X is an integer >= 0), or
-     the special case of just 0, will deactivate the respective flood setting.
+        %brevenge%b        Ricorda chi fa deop/kick/ban al bot, e li punisce?
+                       Gli utenti con la flag +f sono esenti dalla vendetta.
+        %brevengebot%b     Questo è simile all'opzione 'revenge', ma si attiva
+                       solo se un bot viene deoppato, kickato o bannato.
+        %bautovoice%b      Da il voice agli utenti con la flag +v appena
+                       entrano in canale?
+        %bsecret%b         Impedire che questo canale venga elencato nella botnet?
+        %bshared%b         Condividere le informazioni degli utenti relative a
+                       questo canale?
+        %bcycle%b          Uscire e rientrare nel canale se è senza op?
+        %bdontkickops%b    Vuoi che il bot non sia in grado di kickare gli
+                       utenti che hanno la flag + o, ad esempio lasciandogli
+                       fare kick-flood per proteggere il canale in caso di
+                       attacchi di cloni?
+        %binactive%b       Ciò impedisce al bot di entrare nel canale (o lo
+                       fa uscire dal canale se è già presente). Può essere
+                       utile per fare in modo che il bot lasci un canale senza
+                       perdere le impostazioni, i flag utente specifici del
+                       canale, ban di canale e senza influire sulla condivisione.
+        %bseen%b           Rispondere alle richieste di seen nel canale?  Il
+                       modulo seen deve essere caricato affinchè funzioni.
+        %bnodesynch%b      Consentire ai non op di cambiare le modalità canale?
+                       Questo può evitare al bot di combattere con servizi come
+                       ChanServ o di kickare IRCops quando impostano le modalità
+                       di canale senza avere l'op.
+        %bstatic%b         Consentire solo ai padroni permanenti di rimuovere 
+                       il canale?
+     Le seguenti sono impostazioni di flood, vengono impostate tramite il
+     comando ".chanset <canale> <tipo-di-flood> <numero>:<secondi>", dove il
+     <numero> e i <secondi> sono numeri interi che indicano dopo quante volte
+     in quanti secondi è considerato flood. Impostando 0:X oppure X:0 oppure
+     anche solo 0, quella impostazione di flood sarà disattivata.
         %bflood-chan%b  Set here how many channel messages in how many seconds
                     from one host constitutes a flood.
         %bflood-ctcp%b  Set here how many channel ctcps in how many seconds from
@@ -178,4 +181,4 @@
         %bflood-nick%b   Set here how many nick changes in how many seconds from
                     one host constitutes a flood.
 %{+n|n}
-See also: %{+n}+chan, -chan,%{+n|n} chansave, chanset
+Vedi anche: %{+n}+chan, -chan,%{+n|n} chansave, chanset
