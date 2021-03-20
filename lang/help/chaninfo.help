@@ -168,17 +168,17 @@
      <numero> e i <secondi> sono numeri interi che indicano dopo quante volte
      in quanti secondi è considerato flood. Impostando 0:X oppure X:0 oppure
      anche solo 0, quella impostazione di flood sarà disattivata.
-        %bflood-chan%b  Set here how many channel messages in how many seconds
-                    from one host constitutes a flood.
-        %bflood-ctcp%b  Set here how many channel ctcps in how many seconds from
-                    one host constitutes a flood.
-        %bflood-join%b  Set here how many joins in how many seconds from one
-                    host constitutes a flood.
-        %bflood-kick%b   Set here how many kicks in how many seconds from one
-                    host constitutes a flood.
-        %bflood-deop%b   Set here how many deops in how many seconds from one
-                    host constitutes a flood.
-        %bflood-nick%b   Set here how many nick changes in how many seconds from
-                    one host constitutes a flood.
+        %bflood-chan%b  Imposta qui quanti messaggi al canale in quanti secondi
+                    da un host costituiscono flood.
+        %bflood-ctcp%b  Imposta qui quanti ctcp al canale in quanti secondi da
+                    un host costituiscono flood.
+        %bflood-join%b  Imposta qui quanti ingressi nel canale in quanti secondi
+                    da un host costituiscono flood.
+        %bflood-kick%b   Imposta qui quanti kick in quanti secondi da un host
+                    costituiscono flood.
+        %bflood-deop%b   Imposta qui quanti deop in quanti secondi da un host
+                    costituiscono flood.
+        %bflood-nick%b   Imposta qui quanti cambiamenti di nick in quanti
+                    secondi da un host costituiscono flood.
 %{+n|n}
 Vedi anche: %{+n}+chan, -chan,%{+n|n} chansave, chanset
