@@ -1,0 +1,312 @@
+%{help=+ban}%{+lo|lo}
+###  %b+ban%b <hostmask> [canale] [%%<XyXdXhXm>] [commento]
+   Aggiunge un ban all'elenco dei ban memorizzati sul bot, con commento
+   facoltativo e tempo di durata. Questo ban viene memorizzato con il tuo
+   nome come creatore e sarà in vigore per ogni canale se non è specificato
+   alcun canale. Il prefisso di un commento con '@' lo renderà visibile solo
+   all'interno del bot e non verrà utilizzato come motivo del ban. Il prefisso
+   del commento con '*' renderà il ban sempre attivo (sticky). Il tempo di
+   durata deve essere espresso in anni, giorni, ore e/o minuti.
+
+Vedi anche: bans, -ban, stick, unstick
+%{help=+exempt}%{+lo|lo}
+###  %b+exempt%b <hostmask> [canale] [%%<XyXdXhXm>] [commento]
+   Aggiunge un'esenzione ai ban all'elenco delle esenzioni archiviate nel bot,
+   con facoltativo commento e tempo di durata. Questa esenzione viene memorizzata
+   con il tuo nome come creatore e sarà attivo per ogni canale se non viene
+   specificato alcun canale. Prefissare un commento con '*' renderà l'esenzione
+   sempre attiva (sticky). Il tempo di durata è da esprimere in anni, giorni,
+   ore e/o minuti.
+
+Vedi anche: exempts, -exempt, stick, unstick
+%{help=+invite}%{+lo|lo}
+###  %b+invite%b <hostmask> [canale] [%%<XyXdXhXm>] [commento]
+   Aggiunge un invito all'elenco degli inviti archiviati nel bot, con
+   facoltativo commento e tempo di durata. Questo invito viene memorizzato
+   con il tuo nome come creatore e sarà attivo per ogni canale se non viene
+   specificato alcun canale. Il prefisso del commento con '*' renderà
+   l'invito sempre attivo (sticky). Il tempo di durata è da esprimere
+   in anni, giorni, ore e/o minuti.
+
+Vedi anche: invites, -invite, stick, unstick
+%{help=+chan}%{+n}
+###  %b+chan%b <canale> [opzioni]
+   Aggiunge un canale all'elenco dei canali del bot. Questo canale non è
+   permanente a meno che %b"chanfile"%b non sia stato impostato nel file di
+   configurazione del bot. Se lo è, viene salvato ogni volta che la lista
+   utenti viene salvata o utilizzando %b'.chansave'%b. Se vengono specificate
+   delle opzioni, il canale verrà configurato con le opzioni.
+
+Vedi anche: -chan, chanset, chaninfo
+%{help=+chrec}%{+m|m}
+###  %b+chrec%b <nome> [canale]
+   Aggiunge un record di canale vuoto per l'utente specificato in modo che
+   il canale duri e le informazioni possano essere salvate. Nessuna flag
+   è associato al canale.
+
+Vedi anche: -chrec, +chan, -chan, chattr
+%{help=-ban}%{+lo|lo}
+###  %b-ban%b <banmask o numero> [canale]
+   Rimuove il ban specificato dall'elenco dei ban archiviati nel bot.
+   Potresti fare anche riferimento al ban con il numero mostrato dal
+   comando 'bans'.
+
+Vedi anche: bans, +ban, stick, unstick
+%{help=-exempt}%{+lo|lo}
+###  %b-exempt%b <hostmask o numero>
+   Rimuove l'esenzione al ban specificato dall'elenco di esenzioni
+   archiviate nel bot. Si può anche fare riferimento all'esenzione
+   dal numero mostrato dal comando 'exempts'.
+
+Vedi anche: exempts, +exempt, stick, unstick
+%{help=-invite}%{+lo|lo}
+###  %b-invite%b <hostmask o numero>
+   Rimuove l'invito specificato dall'elenco degli inviti archiviati nel bot.
+   Si può anche fare riferimento all'invito tramite il numero mostrato dal
+   comando 'invites'.
+
+Vedi anche: invites, +invite, stick, unstick
+%{help=-chan}%{+n}
+### %b-chan%b <canale>
+   Ciò rimuove TUTTE le informazioni su un canale dal bot. Il canale non è
+   permanente a meno che il file del canale non sia stato salvato. Se
+   rimuovi un canale per sbaglio, puoi annullare le modifiche con il comando
+   'chanload'. Nota che perderai tutte le altre modifiche apportate
+   dall'ultimo salvataggio.
+
+   %f*** IMPORTANTE ***%f
+
+   Questa operazione cancella TUTTE le informazioni sul canale, comprese
+   le impostazioni del canale, ban, esenzioni, inviti e record di canale
+   per gli utenti -- %bOGNI COSA%b.
+
+   %bNON%b usarlo per fare in modo che il bot lasci temporaneamente un
+   canale. Questo comando serve per abbandonare un canale (ad esempio,
+   il canale dovrà essere ridefinito e tutte le flag utente per quel
+   canale dovranno essere rifatte.
+
+   Anche se non hai definito il chanfile, cancellerà comunque tutti i file
+   record di canale per gli utenti al successivo salvataggio della lista
+   utenti.
+
+Vedi anche: +chan, chansave, chanload, chanset, chaninfo
+%{help=-chrec}%{+m|m}
+###  %b-chrec%b <nome> [canale]
+   Rimuove un record di canale per l'utente specificato, inclusi gli
+   ultimi del canale, informazioni e flag.
+
+Vedi anche: +chrec, chattr
+%{help=bans}%{+lo|lo}
+###  %bbans%b [[channel/all]/wildcard]
+   Shows you a list of the global bans active on the current channel, and the
+   list of channel-specific bans, as well as any bans that are on the channel
+   but weren't placed by the bot.
+
+   Here's a sample entry;
+      [ 5] *!*habib@*frys.com (perm)
+           paulie: revolving check policy
+           Created 15:10
+
+   The number (5) can be used to reference the ban if you wish to remove it
+   (see %b'-ban'%b). Next is the actual hostmask being banned. The "(perm)"
+   means that the ban is "permanent": that is, it doesn't automatically expire.
+   If there is an elapsed time showing instead, the time displayed is how long
+   the ban has been active. These types of bans expire after two hours. The
+   second line of the ban entry is the comment ("revolving check policy"), and
+   who set the ban (paulie). The last line shows when the ban was added, and
+   possibly the last time the ban was activated on the channel (if it's
+   different from the creation time).
+
+   Sometimes there will be a "!" or "*" right before the number. A "!" means
+   the ban is in the bot's ban list, but is not currently on the channel. A "*"
+   marks a ban which is NOT in the bot's ban list but IS on the channel.
+
+   If you use 'bans' without an argument, it will show you only the bans which
+   are currently active on the channel. If you use 'bans all', it will show you
+   every ban in the global ban list and on the channel. If you use 'bans
+   <wildcard>', it will list all bans (active or not) that match against your
+   wildcard. Consider it a 'bans all' list matched against your wildcard.
+
+   The ban list may change according to which channel you're currently viewing
+   in the console. Different bans may be active on different channels. If you
+   specify a channel name, that channel will be used instead of your current
+   console channel.
+
+Vedi anche: -ban, +ban, console, chanset, chaninfo, stick, unstick
+%{help=invites}%{+lo|lo}
+###  %binvites%b [[channel/all]/wildcard]
+   Shows you a list of the global invites active on the current channel, and
+   the list of channel-specific invites, as well as any invites that are on the
+   channel but weren't placed by the bot.
+
+   Here's a sample entry;
+      ! [ 3] *!test@test.com (perm)
+             Wcc: requested
+             Created 01:15
+
+   The number (3) can be used to reference the invite if you wish to remove it
+   (see %b'-invite'%b). Next is the actual hostmask being invited. The "(perm)"
+   means that the invite is "permanent": that is, it doesn't automatically
+   expire. If there is an elapsed time showing instead, the time displayed is
+   how long the invite has been active. These types of invites expire after one
+   hour. The second line of the invite entry is the comment ("requested"), and
+   who set the invite (Wcc). The last line shows when the invite was added, and
+   possibly the last time the invite was activated on the channel (if it's
+   different from the creation time).
+
+   Sometimes there will be a "!" or "*" right before the number. A "!" means
+   the invite is in the bot's invite list, but is not currently on the channel.
+   A "*" marks an invite which is NOT in the bot's invite list but IS on the
+   channel.
+
+   If you use 'invites' without an argument, it will show you only the invites
+   which are currently active on the channel. If you use 'invites all', it will
+   show you every invite in the global invite list and on the channel. If you
+   use 'invites <wildcard>', it will list all invites (active or not) that
+   match against your wildcard. Consider it a 'invites all' list matched
+   against your wildcard.
+
+   The invite list may change according to which channel you're currently
+   viewing in the console. Different invites may be active on different
+   channels. If you specify a channel name, that channel will be used instead
+   of your current console channel.
+
+Vedi anche: -invite, +invite, console, chanset, chaninfo, stick, unstick
+%{help=exempts}%{+lo|lo}
+###  %bexempts%b [[channel/all]/wildcard]
+   Shows you a list of the global exempts active on the current channel, and
+   the list of channel-specific exempts, as well as any exempts that are on the
+   channel but weren't placed by the bot.
+
+   Here's a sample entry;
+      ! [ 3] *!test@test.com (perm)
+             Wcc: requested
+             Created 01:15
+
+   The number (3) can be used to reference the exempt if you wish to remove it
+   (see %b'-exempt'%b). Next is the actual hostmask being exempted. The "(perm)"
+   means that the exempt is "permanent": that is, it doesn't automatically
+   expire. If there is an elapsed time showing instead, the time displayed is
+   how long the exempt has been active. These types of exempts expire after one
+   hour. The second line of the exempt entry is the comment ("requested"), and
+   who set the exempt (Wcc). The last line shows when the exempt was added, and
+   possibly the last time the exempt was activated on the channel (if it's
+   different from the creation time).
+
+   Sometimes there will be a "!" or "*" right before the number. A "!" means
+   the exempt is in the bot's exempt list, but is not currently on the channel.
+   A "*" marks an exempt which is NOT in the bot's exempt list but IS on the
+   channel.
+
+   If you use 'exempts' without an argument, it will show you only the exempts
+   which are currently active on the channel. If you use 'exempts all', it will
+   show you every exempt in the global exempt list and on the channel. If you
+   use 'exempts <wildcard>', it will list all exempts (active or not) that
+   match against your wildcard. Consider it a 'exempts all' list matched
+   against your wildcard.
+
+   The exempt list may change according to which channel you're currently
+   viewing in the console. Different exempts may be active on different
+   channels. If you specify a channel name, that channel will be used instead
+   of your current console channel.
+
+Vedi anche: -exempt, +exempt, console, chanset, chaninfo, stick, unstick
+%{help=chanload}%{+n|n}
+###  %bchanload%b
+   Reloads the channel settings from the file defined by the %b"chanfile"%b
+   setting. This allows you to return to a previous setting if you've really
+   messed things up.
+
+Vedi anche: chansave, chanset, chaninfo%{+n}, +chan, -chan
+%{help=chanset}%{+n|n}
+###  %bchanset%b <channel> <settings>
+   Allows you to change the channel settings (see %b'chaninfo'%b for the
+   settings) for one specific channel or all channels. Use '*' to to apply the
+   change to all channels.
+   Changes are used until the next rehash/chanload/restart, and are saved
+   whenever the channel settings are saved.
+
+Vedi anche: chansave, chanload, chaninfo%{+n}, +chan, -chan
+%{help=chansave}%{+n|n}
+###  %bchansave%b
+   Saves the channel settings to the file defined by the %b"chanfile"%b
+   setting. This file is reloaded during rehash and restarting the bot.
+
+Vedi anche: chanload, chanset, chaninfo%{+n}, +chan, -chan
+%{help=chinfo}%{+m|m}
+###  %bchinfo%b <user> [channel] [info-line/none]
+   Sets the information line for a user. This line is shown via the /msg
+   commands %b'who'%b and %b'whois'%b. If you have set greet on, it is also
+   shown when the user joins the channel. If the info line begins with an '@',
+   then it is "locked", and that user may no longer change it. If the channel
+   name is omitted, the default info line is changed. If you specify 'none'
+   as the info-line, it will be erased.
+
+Vedi anche: info
+%{help=info}%{-}
+###  %binfo%b [channel] [info-line]
+   Sets your info line. This line is shown via the /msg commands %b'who'%b and
+   %b'whois'%b. If you have set greet on, it is also shown when you joins the
+   channel. If the info line begins with an '@', then it is "locked", and tou
+   may no longer change it.
+%{+m|m}
+Vedi anche: chinfo
+%{help=stick}%{+ol|ol}
+###  %bstick%b [ban/exempt/invite] <hostmask/number> [channel]
+   Makes a ban, exempt, or invite "sticky". This means that the bot will always
+   try to keep it active on the channel, even if the channel is using dynamic
+   bans. Obviously, if the channel isn't using dynamic bans, this has no
+   effect.
+
+Vedi anche: unstick, bans, exempts, invites, +ban, +exempt, +invite
+%{help=unstick}%{+ol|ol}
+###  %bunstick%b [ban/exempt/invite] <hostmask/number> [channel]
+   Makes a "sticky" ban, exempt, or invite normal again.
+
+Vedi anche: stick, bans, exempts, invites, -ban, -exempt, -invite
+%{help=channels module}%{+n}
+###  %bchannels module%b
+   This module provides channel related support for the bot. Without it, you
+   won't be able to make the bot join a channel or save channel specific
+   userfile information.
+
+   The following commands are provided by the channels module:
+
+   For all users:
+      %binfo%b
+
+   For channel ops or halfops:
+      %b+ban         -ban         bans         stick%b
+      %b+exempt      -exempt      exempts      unstick%b
+      %b+invite      -invite      invites%b
+
+   For channel masters:
+      %b+chrec       -chrec       chaninfo     chinfo%b
+
+   For channel owners:
+      %bchanload     chansave     chanset%b
+
+   For global owners:
+      %b+chan        -chan%b
+
+   Config file variables for configuring the channels module:
+      %bshare-greet     use-info            force-expire%b
+   (Use %b'.help set <variable>'%b for more info)
+%{help=all}%{-}
+###  %bchannels module%b commands
+   For all users:
+      %binfo%b
+%{+ol|ol}
+   For channel ops or halfops:
+      %b+ban         -ban         bans         stick%b
+      %b+exempt      -exempt      exempts      unstick%b
+      %b+invite      -invite      invites%b
+%{+m|m}
+   For channel masters:
+      %b+chrec       -chrec       chaninfo     chinfo%b
+%{+n|n}
+   For channel owners:
+      %bchanload     chansave     chanset%b
+%{+n}
+   For global owners:
+      %b+chan        -chan%b
