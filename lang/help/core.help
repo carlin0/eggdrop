@@ -47,7 +47,7 @@ Ulteriori informazioni relative ai moduli caricati possono essere ottenute digit
    %bshare      transfer     uptime%b
 %{-}
 
-È possiible ricevere un elenco di comandi forniti da tutti i moduli caricati
+È possibile ricevere un elenco di comandi forniti da tutti i moduli caricati
 usando %b'.help all'%b. Se ricordi solo una parte del nome del comando
 che stai cercando, puoi usare i caratteri jolly (ad es. %b'.help *bot*'%b),
 e verranno visualizzati tutti i testi di aiuto corrispondenti.
