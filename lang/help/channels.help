@@ -97,118 +97,120 @@ Vedi anche: +chan, chansave, chanload, chanset, chaninfo
 
 Vedi anche: +chrec, chattr
 %{help=bans}%{+lo|lo}
-###  %bbans%b [[channel/all]/wildcard]
-   Shows you a list of the global bans active on the current channel, and the
-   list of channel-specific bans, as well as any bans that are on the channel
-   but weren't placed by the bot.
+###  %bbans%b [[canale/all]/caratteri-jolly]
+   Mostra un elenco dei ban globali attivi sul canale corrente e l'elenco dei
+   ban specifici del canale, nonché di eventuali ban presenti nell canale ma
+   che non sono stati inseriti dal bot.
 
-   Here's a sample entry;
+   Ecco l'esempio di una voce;
       [ 5] *!*habib@*frys.com (perm)
            paulie: revolving check policy
            Created 15:10
 
-   The number (5) can be used to reference the ban if you wish to remove it
-   (see %b'-ban'%b). Next is the actual hostmask being banned. The "(perm)"
-   means that the ban is "permanent": that is, it doesn't automatically expire.
-   If there is an elapsed time showing instead, the time displayed is how long
-   the ban has been active. These types of bans expire after two hours. The
-   second line of the ban entry is the comment ("revolving check policy"), and
-   who set the ban (paulie). The last line shows when the ban was added, and
-   possibly the last time the ban was activated on the channel (if it's
-   different from the creation time).
+   Il numero (5) può essere utilizzato per fare riferimento al ban se desideri
+   rimuoverlo (vedi %b'-ban'%b). Il prossimo è l'effettiva maschera host che
+   viene bandita. Il "(perm)" significa che il ban è "permanente": cioè non scade
+   automaticamente. Se invece viene visualizzato un tempo trascorso, il tempo
+   visualizzato è da quanto tempo il ban è attivo. Questi tipi di ban scadono dopo
+   due ore. La seconda riga della voce del ban è il commento ("revolving check
+   policy"), e chi ha impostato il ban (paulie). L'ultima riga mostra quando è
+   stato aggiunto il ban e forse l'ultima volta che il ban è stato attivato nel
+   canale (se è diverso dal tempo di creazione).
 
-   Sometimes there will be a "!" or "*" right before the number. A "!" means
-   the ban is in the bot's ban list, but is not currently on the channel. A "*"
-   marks a ban which is NOT in the bot's ban list but IS on the channel.
+   A volte ci sarà un "!" o "*" subito prima del numero. Un "!" vuol dire
+   che il ban è nell'elenco dei ban del bot, ma non è attualmente attivo nel
+   canale. Un "*" invece contrassegna un ban che NON è nell'elenco dei ban del
+   bot ma È attivo nel canale.
 
-   If you use 'bans' without an argument, it will show you only the bans which
-   are currently active on the channel. If you use 'bans all', it will show you
-   every ban in the global ban list and on the channel. If you use 'bans
-   <wildcard>', it will list all bans (active or not) that match against your
-   wildcard. Consider it a 'bans all' list matched against your wildcard.
+   Se usi 'bans' senza argomenti, ti verranno mostrati solo i ban che sono
+   attualmente attivi nel canale. Se usi 'bans all', ti mostrerà ogni ban
+   nell'elenco globale dei ban e sul canale. Se usi 'bans <carattere-jolly>',
+   elencherà tutti i ban (attivi o meno) che corrispondono al tuo carattere
+   jolly. Consideralo un elenco di 'bans all' abbinato al tuo carattere jolly.
 
-   The ban list may change according to which channel you're currently viewing
-   in the console. Different bans may be active on different channels. If you
-   specify a channel name, that channel will be used instead of your current
-   console channel.
+   L'elenco dei ban può cambiare in base al canale che stai attualmente
+   visualizzando nella console. Diversi ban possono essere attivi su diversi
+   canali. Se tu specifichi un nome di canale, quel canale verrà utilizzato al
+   posto del tuo attuale canale della console.
 
 Vedi anche: -ban, +ban, console, chanset, chaninfo, stick, unstick
 %{help=invites}%{+lo|lo}
-###  %binvites%b [[channel/all]/wildcard]
-   Shows you a list of the global invites active on the current channel, and
-   the list of channel-specific invites, as well as any invites that are on the
-   channel but weren't placed by the bot.
+###  %binvites%b [[canale/all]/carattere-jolly]
+   Mostra un elenco degli inviti globali attivi sul canale corrente e l'elenco
+   degli inviti specifici del canale, nonché tutti gli inviti presenti nel
+   canale ma che non sono stati inseriti dal bot.
 
-   Here's a sample entry;
+   Ecco una voce di esempio;
       ! [ 3] *!test@test.com (perm)
              Wcc: requested
              Created 01:15
 
-   The number (3) can be used to reference the invite if you wish to remove it
-   (see %b'-invite'%b). Next is the actual hostmask being invited. The "(perm)"
-   means that the invite is "permanent": that is, it doesn't automatically
-   expire. If there is an elapsed time showing instead, the time displayed is
-   how long the invite has been active. These types of invites expire after one
-   hour. The second line of the invite entry is the comment ("requested"), and
-   who set the invite (Wcc). The last line shows when the invite was added, and
-   possibly the last time the invite was activated on the channel (if it's
-   different from the creation time).
+   Il numero (3) può essere utilizzato per fare riferimento all'invito se
+   desideri rimuoverlo (vedi %b'-invite'%b). Il prossimo è l'effettiva
+   maschera host che viene invitata. Il "(perm)" significa che l'invito è
+   "permanente": cioè non scade automaticamente. Se invece è visualizzato
+   un tempo trascorso, il tempo visualizzato è da quanto tempo è attivo
+   l'invito. Questi tipi di inviti scadono dopo un'ora. La seconda riga
+   della voce di invito è il commento ("requested") e chi ha impostato
+   l'invito (Wcc). L'ultima riga mostra quando è stato aggiunto l'invito e
+   forse l'ultima volta che l'invito è stato attivato nel canale (se è
+   diverso dal tempo di creazione).
 
-   Sometimes there will be a "!" or "*" right before the number. A "!" means
-   the invite is in the bot's invite list, but is not currently on the channel.
-   A "*" marks an invite which is NOT in the bot's invite list but IS on the
-   channel.
+   A volte ci sarà un "!" o "*" subito prima del numero. Un "!" vuol dire che
+   l'invito è nell'elenco degli inviti del bot, ma non è attualmente attivo
+   nel canale. Un "*" contrassegna un invito che NON è nell'elenco degli inviti
+   del bot ma È attivo nel canale.
 
-   If you use 'invites' without an argument, it will show you only the invites
-   which are currently active on the channel. If you use 'invites all', it will
-   show you every invite in the global invite list and on the channel. If you
-   use 'invites <wildcard>', it will list all invites (active or not) that
-   match against your wildcard. Consider it a 'invites all' list matched
-   against your wildcard.
+   Se usi 'invites' senza argomenti, ti verranno mostrati solo gli inviti
+   attualmente attivi sul canale. Se usi 'invites all', ti mostrerà ogni
+   invito nell'elenco globale degli inviti e sul canale. Se tu usi
+   'invites <carattere-jolly>', elencherà tutti gli inviti (attivi o meno) che
+   corrispondono al tuo carattere jolly. Consideralo un elenco 'invites all'
+   abbinato al tuo carattere jolly.
 
-   The invite list may change according to which channel you're currently
-   viewing in the console. Different invites may be active on different
-   channels. If you specify a channel name, that channel will be used instead
-   of your current console channel.
+   L'elenco degli inviti può cambiare in base al canale in cui si trova
+   attualmente la visualizzazione nella console. Inviti diversi possono essere
+   attivi su diversi canali. Se si specifica un nome di canale, verrà invece
+   utilizzato quel canale al posto del tuo canale console corrente.
 
 Vedi anche: -invite, +invite, console, chanset, chaninfo, stick, unstick
 %{help=exempts}%{+lo|lo}
-###  %bexempts%b [[channel/all]/wildcard]
-   Shows you a list of the global exempts active on the current channel, and
-   the list of channel-specific exempts, as well as any exempts that are on the
-   channel but weren't placed by the bot.
+###  %bexempts%b [[canale/all]/carattere-jolly]
+   Mostra un elenco delle esenzioni al ban globali attive sul canale corrente
+   e l'elenco delle esenzioni specifiche per canale, nonché tutte le esenzioni
+   presenti nel canale ma che non sono state inserite dal bot.
 
-   Here's a sample entry;
+   Ecco una voce di esempio;
       ! [ 3] *!test@test.com (perm)
              Wcc: requested
              Created 01:15
 
-   The number (3) can be used to reference the exempt if you wish to remove it
-   (see %b'-exempt'%b). Next is the actual hostmask being exempted. The "(perm)"
-   means that the exempt is "permanent": that is, it doesn't automatically
-   expire. If there is an elapsed time showing instead, the time displayed is
-   how long the exempt has been active. These types of exempts expire after one
-   hour. The second line of the exempt entry is the comment ("requested"), and
-   who set the exempt (Wcc). The last line shows when the exempt was added, and
-   possibly the last time the exempt was activated on the channel (if it's
-   different from the creation time).
+   Il numero (3) può essere utilizzato per fare riferimento all'esenzione se
+   si desidera rimuoverla (vedi %b'-exempt'%b). Il prossimo è l'effettiva
+   maschera host esentata. Il "(perm)" significa che l'esenzione è "permanente":
+   cioè non scade automaticamente. Se invece è visualizzato un tempo trascorso,
+   il tempo visualizzato è da quanto tempo è attiva l'esenzione. Questi tipi di
+   esenzioni scadono dopo un'ora. La seconda riga dell'esenzione è il commento
+   ("requested"), e chi ha impostato l'esenzione (Wcc). L'ultima riga mostra
+   quando è stata aggiunta l'esenzione e forse l'ultima volta che l'esenzione è
+   stata attivata sul canale (se è diverso dal tempo di creazione).
 
-   Sometimes there will be a "!" or "*" right before the number. A "!" means
-   the exempt is in the bot's exempt list, but is not currently on the channel.
-   A "*" marks an exempt which is NOT in the bot's exempt list but IS on the
-   channel.
+   A volte ci sarà un "!" o "*" subito prima del numero. Un "!" vuol dire che
+   l'esenzione è nell'elenco delle esenzioni del bot, ma non è attualmente
+   attiva nel canale. Un "*" contrassegna un'esenzione che NON è nell'elenco
+   delle esenzioni del bot ma È presente nel canale.
 
-   If you use 'exempts' without an argument, it will show you only the exempts
-   which are currently active on the channel. If you use 'exempts all', it will
-   show you every exempt in the global exempt list and on the channel. If you
-   use 'exempts <wildcard>', it will list all exempts (active or not) that
-   match against your wildcard. Consider it a 'exempts all' list matched
-   against your wildcard.
+   Se usi 'exempts' senza argomenti, ti verranno mostrati solo le esenzioni
+   attualmente attive nel canale. Se usi 'exempts all', ti mostrerà tutte
+   le esenzioni nell'elenco globale degli esenti e del canale. Se tu usi
+   'exempts <carattere-jolly>', elencherà tutte le esenzioni (attive o meno)
+   che corrispondono al tuo carattere jolly. Consideralo come un elenco
+   'exempts all' abbinato al tuo carattere jolly.
 
-   The exempt list may change according to which channel you're currently
-   viewing in the console. Different exempts may be active on different
-   channels. If you specify a channel name, that channel will be used instead
-   of your current console channel.
+   L'elenco delle esenzioni può cambiare in base al canale in cui si trova
+   attualmente la visualizzazione nella console. Differenti esenzioni possono
+   essere attive su differenti canali. Se si specifica un nome di canale, verrà
+   invece utilizzato quel canale al posto del tuo canale console corrente.
 
 Vedi anche: -exempt, +exempt, console, chanset, chaninfo, stick, unstick
 %{help=chanload}%{+n|n}
