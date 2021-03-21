@@ -215,100 +215,103 @@ Vedi anche: -invite, +invite, console, chanset, chaninfo, stick, unstick
 Vedi anche: -exempt, +exempt, console, chanset, chaninfo, stick, unstick
 %{help=chanload}%{+n|n}
 ###  %bchanload%b
-   Reloads the channel settings from the file defined by the %b"chanfile"%b
-   setting. This allows you to return to a previous setting if you've really
-   messed things up.
+   Ricarica le impostazioni del canale dal file definito %b'chanfile'%b.
+   Ciò ti consente di tornare a un'impostazione precedente, se hai
+   davvero incasinato le cose.
 
 Vedi anche: chansave, chanset, chaninfo%{+n}, +chan, -chan
 %{help=chanset}%{+n|n}
-###  %bchanset%b <channel> <settings>
-   Allows you to change the channel settings (see %b'chaninfo'%b for the
-   settings) for one specific channel or all channels. Use '*' to to apply the
-   change to all channels.
-   Changes are used until the next rehash/chanload/restart, and are saved
-   whenever the channel settings are saved.
+###  %bchanset%b <canale> <impostazioni>
+   Ti permette di cambiare le impostazioni (vedi %b'chaninfo'%b per
+   le impostazioni) di un canale specifico o tutti i canali. Usa '*'
+   per applicare la modifica a tutti i canali.
+   Le modifiche vengono utilizzate fino al successivo
+   rehash/chanload/restart e vengono salvate ogni volta che vengono
+   salvate le impostazioni del canale.
 
 Vedi anche: chansave, chanload, chaninfo%{+n}, +chan, -chan
 %{help=chansave}%{+n|n}
 ###  %bchansave%b
-   Saves the channel settings to the file defined by the %b"chanfile"%b
-   setting. This file is reloaded during rehash and restarting the bot.
+   Salva le impostazioni dei canali nel file definito %b"chanfile"%b.
+   Questo file viene ricaricato se fai rehash o restart al bot.
 
 Vedi anche: chanload, chanset, chaninfo%{+n}, +chan, -chan
 %{help=chinfo}%{+m|m}
-###  %bchinfo%b <user> [channel] [info-line/none]
-   Sets the information line for a user. This line is shown via the /msg
-   commands %b'who'%b and %b'whois'%b. If you have set greet on, it is also
-   shown when the user joins the channel. If the info line begins with an '@',
-   then it is "locked", and that user may no longer change it. If the channel
-   name is omitted, the default info line is changed. If you specify 'none'
-   as the info-line, it will be erased.
+###  %bchinfo%b <utente> [canale] [info-line/none]
+   Imposta la linea delle informazioni per un utente. Questa linea viene
+   mostrata tramite i comandi /msg %b'who'%b e %b'whois'%b. Se hai attivato il
+   saluto, è anche mostrato quando l'utente entra nel canale. Se la linea
+   informativa inizia con un '@', è 'bloccata' e l'utente non può più
+   modificarla. Se il nome del canale viene omesso, la linea delle informazioni
+   predefinita viene modificata. Se specifichi 'none' come linea di
+   informazioni, verrà cancellata.
 
 Vedi anche: info
 %{help=info}%{-}
-###  %binfo%b [channel] [info-line]
-   Sets your info line. This line is shown via the /msg commands %b'who'%b and
-   %b'whois'%b. If you have set greet on, it is also shown when you joins the
-   channel. If the info line begins with an '@', then it is "locked", and tou
-   may no longer change it.
+###  %binfo%b [canale] [info-line]
+   Imposta la tua linea delle informazioni. Questa linea è mostrata tramite i
+   comandi /msg %b'who'%b e %b'whois'%b. Se hai attivato il saluto, viene
+   visualizzato anche quando entri nel canale. Se la linea delle informazioni
+   inizia con un '@', allora è 'bloccata' e non potrai più cambiarla.
 %{+m|m}
 Vedi anche: chinfo
 %{help=stick}%{+ol|ol}
-###  %bstick%b [ban/exempt/invite] <hostmask/number> [channel]
-   Makes a ban, exempt, or invite "sticky". This means that the bot will always
-   try to keep it active on the channel, even if the channel is using dynamic
-   bans. Obviously, if the channel isn't using dynamic bans, this has no
-   effect.
+###  %bstick%b [ban/exempt/invite] <hostmask/numero> [canale]
+   Rende un ban, exempt o un invite "sticky". Ciò significa che il bot lo
+   manterrà sempre attivo nel canale, anche se il canale utilizza il ban
+   dinamico. Ovviamente, se il canale non utilizza ban dinamici, questo
+   non avrà effetto.
 
 Vedi anche: unstick, bans, exempts, invites, +ban, +exempt, +invite
 %{help=unstick}%{+ol|ol}
-###  %bunstick%b [ban/exempt/invite] <hostmask/number> [channel]
-   Makes a "sticky" ban, exempt, or invite normal again.
+###  %bunstick%b [ban/exempt/invite] <hostmask/numero> [canale]
+   Rende di nuovo normale un ban, exempt, o invite "sticky".
 
 Vedi anche: stick, bans, exempts, invites, -ban, -exempt, -invite
 %{help=channels module}%{+n}
-###  %bchannels module%b
-   This module provides channel related support for the bot. Without it, you
-   won't be able to make the bot join a channel or save channel specific
-   userfile information.
+###  %bmodulo dei canali%b
+   Questo modulo fornisce supporto relativo al canale per il bot.
+   Senza di esso, tu non sarai in grado di far entrare il bot in
+   un canale o di salvare le informazioni di un canale specifico
+   sulla lista degli utenti.
 
-   The following commands are provided by the channels module:
+   I seguenti comandi sono forniti dal modulo dei canali:
 
-   For all users:
+   Per tutti gli utenti:
       %binfo%b
 
-   For channel ops or halfops:
+   Per gli op e mezzi-op di canale:
       %b+ban         -ban         bans         stick%b
       %b+exempt      -exempt      exempts      unstick%b
       %b+invite      -invite      invites%b
 
-   For channel masters:
+   Per i master di canale:
       %b+chrec       -chrec       chaninfo     chinfo%b
 
-   For channel owners:
+   Per i padroni del canale:
       %bchanload     chansave     chanset%b
 
-   For global owners:
+   Per i padroni globali del bot:
       %b+chan        -chan%b
 
-   Config file variables for configuring the channels module:
+   Variabili del file di configurazione del modulo dei canali:
       %bshare-greet     use-info            force-expire%b
-   (Use %b'.help set <variable>'%b for more info)
+   (Usa %b'.help set <variabile>'%b per ulteriori informazioni)
 %{help=all}%{-}
-###  %bchannels module%b commands
-   For all users:
+###  comandi del %bmodulo dei canali%b
+   Per tutti gli utenti:
       %binfo%b
 %{+ol|ol}
-   For channel ops or halfops:
+   Per gli op e mezzi-op di canale:
       %b+ban         -ban         bans         stick%b
       %b+exempt      -exempt      exempts      unstick%b
       %b+invite      -invite      invites%b
 %{+m|m}
-   For channel masters:
+   Per i master di canale:
       %b+chrec       -chrec       chaninfo     chinfo%b
 %{+n|n}
-   For channel owners:
+   Per i padroni del canale:
       %bchanload     chansave     chanset%b
 %{+n}
-   For global owners:
+   Per i padroni globali del bot:
       %b+chan        -chan%b
