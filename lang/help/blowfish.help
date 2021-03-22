@@ -1,0 +1,8 @@
+%{help=blowfish module}%{+n}
+###  %bblowfish module%b
+   Questo modulo fornisce il supporto per la crittografia e la decrittografia
+   utilizzando blowfish.
+
+   Variabili del file di configurazione per la configurazione del modulo blowfish:
+      %bblowfish-use-mode%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
