@@ -1,0 +1,28 @@
+%{help=assoc}%{-}
+###  %bassoc%b
+   Questo visualizza un elenco dei nomi dei canali botnet correnti.
+%{+t}
+
+###  %bassoc%b [<[*]canale numero> <nome>]
+   Questo crea un nome per un canale. Il nome si propagherà in tutta
+   la botnet e può essere utilizzato al posto del numero di canale quando
+   si cambia canale di chat. Se il numero del canale è preceduto da un '*',
+   l'associazione avverrà solo per il canale locale e non verrà inviato al
+   resto della botnet. Se ometti il ​​numero e il nome del canale, verrà
+   scaricato un elenco dei canali denominati correnti. Se ometti solo il
+   nome, l'associazione sarà rimossa.
+
+Vedi anche: chat
+%{help=assoc module}%{+n}
+###  %bassoc module%b
+   Questo modulo fornisce il supporto per l'associazione, ovvero la
+   denominazione dei canali sulla botnet.
+
+   I seguenti comandi sono forniti dal modulo assoc:
+
+   Per i botnet masters:
+      %bassoc%b
+%{help=all}%{+t}
+###  comandi del %bmodulo assoc%b
+   Per i botnet master:
+      %bassoc%b
