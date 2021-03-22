@@ -179,43 +179,44 @@ Vedi anche: resetbans, resetexempts, invites, +invite, -invite
 
 Vedi anche: console, act, msg
 %{help=topic}%{+o|o}
-###  %btopic%b [channel] [text]
-   Changes the specified channel's topic, assuming the bot is a chanop or
-   the channel is not +t. If a channel is not specified, the current console
-   channel will be used. If no text is specified, the current topic will be
-   displayed.
+###  %btopic%b [canale] [testo]
+   Modifica l'argomento del canale specificato, supponendo che il bot sia op
+   o il canale non è + t. Se non è specificato alcun canale, verrà utilizzato
+   quello della console corrente. Se non viene specificato alcun testo,
+   sarà visualizzato l'argomento corrente.
 
 Vedi anche: console
 %{help=voice}%{+o|o}
-###  %bvoice%b <nickname> [channel]
-   Gives a voice (+v) to the specified user, so long as the bot has ops on the
-   given channel. If no channel is specified, the current console channel will
-   be used.
+###  %bvoice%b <nickname> [canale]
+   Da il voice (+v) all'utente specificato, a condizione che il bot sia op nel
+   canale. Se non viene specificato alcun canale, verrà utilizzato quello della
+   console corrente.
 
 Vedi anche: console, devoice
 %{help=irc module}%{+n}
 ###  %birc module%b
-   This module controls the bots interaction on IRC. It allows the bot to join
-   channels, etc.
+   Questo modulo controlla l'interazione dei bot su IRC. Permette al bot di
+   entrare nei canali, ecc.
 
-   The following commands are provided by the irc module:
+I seguenti comandi sono forniti dal modulo irc:
 
-   For channel ops:
+
+   Per gli op di canale:
       %bact          halfop       say          resetbans%b
       %bdeop         invite       topic        resetinvites%b
       %bop           channel      dehalfop     resetexempts%b
       %bdevoice      voice%b
 
-   For channel ops or halfops:
+   Per gli op e mezzi-op di canale:
       %bkick         kickban%b
 
-   For global ops:
+   Per gli op globali:
       %bmsg%b
 
-   For channel masters:
+   Per i master di canale:
       %badduser      deluser      reset%b
 
-   Config file variables for configuring the irc module:
+   Variabili del file di configurazione per la configurazione del modulo irc:
       %blearn-users     wait-info           mode-buf-length%b
       %bbounce-bans     max-bans            wait-split%b
       %bbounce-modes    use-354             bounce-invites%b
@@ -223,17 +224,17 @@ Vedi anche: console, devoice
       %bmax-invites     kick-method         modes-per-line%b
       %bno-chanrec-info ctcp-mode           prevent-mixing%b
       %bkeep-nick       include-lk%b
-   (Use %b'.help set <variable>'%b for more info)
+   (Usa %b'.help set <variabile>'%b per ulteriori informazioni)
 %{help=all}%{+o|o}
-###  %birc module%b commands
-   For channel ops:
+###  comandi del %bmodulo irc%b
+   Per gli op di canale:
       %bact          halfop       say          resetbans%b
       %bdeop         invite       topic        resetinvites%b
       %bop           channel      dehalfop     resetexempts%b
       %bdevoice      voice%b
 %{+o}
-   For global ops:
+   Per gli op globali:
       %bmsg%b
 %{+m|m}
-   For channel masters:
+   Per i master di canale:
       %badduser      deluser      reset%b
