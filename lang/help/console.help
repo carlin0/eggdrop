@@ -1,0 +1,16 @@
+%{help=store}%{-}
+###  %bstore%b
+   Memorizza le impostazioni della console in modo che vengano ripristinate
+   automaticamente la prossima volta che entrerai in partyline.
+%{help=console module}%{+n}
+###  %bconsole module%b
+   Questo modulo fornisce l'archiviazione delle impostazioni della console
+   quando esci dal bot o digiti %b.store%b in partyline.
+
+   Variabili del file di configurazione per il modulo della console:
+     %bforce-channel    console-autosave    info-party%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
+%{help=all}%{-}
+###  comandi del %bmodulo console%b
+   Per tutti gli utenti:
+      %bstore%b
