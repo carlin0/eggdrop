@@ -1,0 +1,9 @@
+%{help=ctcp module}%{+n}
+###  %bctcp module%b
+   Questo modulo fornisce le normali risposte ctcp che ti aspetteresti.
+   Se non viene caricato, la CTCP CHAT non funzionerà.
+
+   Variabili del file di configurazione per il modulo ctcp:
+     %bctcp-userinfo    ctcp-finger         ctcp-version%b
+     %bctcp-mode%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
