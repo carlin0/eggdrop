@@ -1,0 +1,11 @@
+%{help=dns module}%{+n}
+###  %bdns module%b
+   Questo modulo fornisce il supporto per le query DNS asincrone.
+   Questo evita che il bot si blocchi per diversi secondi mentre
+   risolve gli indirizzi IP o i nomi host.
+
+   Variabili del file di configurazione per il modulo dns:
+     %bdns-retrydelay%b    %bdns-maxsends%b    %bdns-servers%b
+     %bdns-negcache%b      %bdns-cache%b
+
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
