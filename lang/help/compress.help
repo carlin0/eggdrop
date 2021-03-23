@@ -1,0 +1,10 @@
+%{help=compress module}%{+n}
+###  %bcompress module%b
+   Questo modulo fornisce il supporto per la compressione dei file. Può essere
+   usato per comprimere i file tramite Tcl o per trasferire la lista utenti in
+   formato compresso durante il processo di condivisione, risparmiando banda.
+
+   Variabili del file di configurazione per la configurazione del modulo di
+   compressione:
+      %bcompress-level  share-compressed%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
