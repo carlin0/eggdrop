@@ -1,0 +1,7 @@
+%{help=ident module}%{+n}
+###  %bmodulo ident%b
+   Questo modulo fornisce supporto per metodi alternativi per fornire ident.
+
+   Variabili del file di configurazione per la configurazione del modulo ident:
+      %bident-method%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
