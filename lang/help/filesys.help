@@ -1,0 +1,197 @@
+%{help=files}%{+x}
+###  %bfiles%b
+   Ti sposta nel sottosistema di trasferimento file, se è stato abilitato
+   sul bot. Da lì puoi sfogliare i file online e utilizzare le DCC per
+   trasferimenti da scaricare e caricare
+%{help=filesys/cancel}%{+x}
+###  %bcancel%b <file(s)>
+   dice al bot di interrompere l'invio di un file in sospeso (o in coda,
+   in attesa o in fase di trasferimento).
+
+Vedi anche: pending
+%{help=filesys/cd}%{+x}
+###  %bcd%b <directory>
+   Cambia la tua directory se possibile. Funziona esattamente come
+   il comando unix.
+
+Vedi anche: pwd
+%{help=filesys/cp}%{+j}
+###  %bcp%b <origine> <destinazione>
+   Copia un file o un gruppo di file da un posto all'altro.
+
+Vedi anche: mv
+%{help=filesys/desc}%{+x}
+###  %bdesc%b <file> <descrizione>
+   Modifica la descrizione di un file. Se sei un master o un file
+   janitor, ti sarà possibile modificare la descrizione di qualsiasi file.
+   Altrimenti puoi modificare solo le descrizioni dei file hai caricato.
+
+   La descrizione è limitata a 3 righe di 60 caratteri ciascuno, ed è
+   suddivisa tra le parole. puoi forzare una interruzione di linea
+   mettendo un '|' nel commento.
+%{help=filesys/filestats}%{+j}
+###  %bfilestats%b <utente>
+   Rapporti sulle statistiche di caricamento e download degli utenti.
+
+###  %bfilestats%b <utente> %bclear%b
+   Cancella le statistiche di caricamento e download degli utenti.
+%{help=filesys/stats}%{+j}
+###  %bstats%b
+   Rapporto sulle tue statistiche di caricamento & download.
+%{help=filesys/get}%{+x}
+###  %bget%b <filename(s)> [nickname]
+   Ti invia i file richiesti, tramite IRC. dovresti ottenere un avviso di
+   DCC su IRC e dire al tuo client di accettarlo. Se il tuo nickname su IRC
+   è diverso da quello che usi sul bot, dovresti specificare anche un nickname.
+   Puoi anche usarlo per inviare file ad altre persone. Se un file che desideri
+   è effettivamente su un altro bot, potrebbe essere necessario un po' più di
+   tempo quindi sii paziente. Se quel bot non è connesso alla botnet in questo
+   momento, ti dirà che il file non è disponibile.
+
+   C'è un limite al numero di trasferimenti che puoi effettuare
+   contemporaneamente, quindi se superi questo limite, il resto delle tue
+   richieste di file verranno messe in coda. Al termine dei primi file in fase
+   di trasferimento, i file in coda verranno inviati.
+
+Vedi anche: pending, cancel
+%{help=filesys/help}%{+x}
+%B Comandi del file system:  (sono consentiti caratteri jolly)
+  %bget%b <file> [nick]     invia un file su IRC (DCC send)
+  %bpending%b               elenca i trasferimenti di file in coda
+  %bcancel%b <file>         annulla un trasferimento di file in coda
+  %bls%b [filemask]         mostra l'elenco dei file in questa directory
+  %bpwd%b                   mostra la directory di lavoro attuale
+  %bcd%b <dir>              cambia la directory corrente
+  %bdesc%b <file> <desc>    imposta la descrizione del <file> a <desc>
+  %bstats%b                 visualizza le tue statistiche di upload/download
+  %bquit%b                  lascia il file system
+%{+j}
+Solo per i file janitor:
+  %bhide      share     mkdir     cp        rm        lsa%b
+  %bunhide    unshare   rmdir     mv        ln        optimize%b
+  %bfilestats%b
+%{+x}
+Puoi ottenere aiuto su qualsiasi comando tramite:  %bhelp <comando>%b
+(Per caricare un file invialo tramite DCC.)
+%{+n}
+In qualità di proprietario del bot, è possibile configurare una serie di
+impostazioni dell'area file, usa %b'.help set <impostazione>'%b per
+maggiori informazioni.
+Impostazioni:
+   %bfiles-path%b        %bincoming-path%b
+   %bfiledb-path%b       %bmax-filesize%b
+   %bmax-file-users%b    %bupload-to-pwd%b
+%{help=filesys/hide}%{+j}
+###  %bhide%b <file(s)>
+   Contrassegna un file come nascosto, in modo che gli utenti normali non
+   possano vederlo. Solo un master o un file janitor usando %b'lsa'%b può
+   vedere i file nascosti.
+
+Vedi anche: unhide, lsa
+%{help=filesys/ln}%{+j}
+###  %bln%b <bot:path-del-file> <file-locale>
+   Crea un collegamento a un file su un altro bot. il percorso del file
+   deve essere completo, come "/gifs/uglyman.gif". Se il bot non è connesso
+   alla botnet, nessuno potrà scaricare il file fino a quando il bot non si
+   connette di nuovo. Il nome del file locale può essere quello che vuoi.
+   Esempio:  ln Snowbot:/gifs/uglyman.gif ugly.gif
+
+Vedi anche: share, unshare, get
+%{help=filesys/ls}%{+x}
+###  %bls%b [filemask]
+   Visualizza i file nella directory corrente. Le sottodirectory sono
+   mostrate con "<DIR>" accanto a loro e verranno visualizzati altri file
+   la loro dimensione (tipicamente in kilobyte), chi li ha caricati,
+   quando, e quante volte ogni file è stato scaricato. Se una descrizione
+   del file esiste, verrà visualizzata sotto il nome del file. Puoi
+   restringere l'elenco dei file specificando una maschera, proprio come
+   in unix.
+
+Vedi anche: cd, pwd, get
+%{help=filesys/lsa}%{+j}
+###  %blsa%b [filemask]
+   Funziona proprio come ls, ma vengono visualizzati anche i file nascosti.
+   I file nascosti vengono visualizzati con un "(hid)" accanto a loro e
+   i file condivisi vengono visualizzati con un "(shr)" accanto ad essi.
+
+Vedi anche: hide, share
+%{help=filesys/mkdir}%{+j}
+###  %bmkdir%b <dir> [flag [canale]]
+   Crea una sottodirectory da questa, con il nome dato. Se i flag sono
+   specificati, questi flag sono necessari per inserire o anche vedere la
+   directory. Puoi anche specificare un canale nel quale le flag vengono
+   confrontate. Puoi usare di nuovo il comando %b'mkdir'%b per modificare
+   o rimuovere tali flag.
+
+Vedi anche: rmdir
+%{help=filesys/mv}%{+j}
+###  %bmv%b <origine> <destinazione>
+   Sposta un file o un gruppo di file da un posto all'altro. (Può anche
+   essere usato per rinominare i file).
+
+Vedi anche: cp
+%{help=filesys/pending}%{+x}
+###  %bpending%b
+   Ti dà un elenco di ogni file che hai richiesto e che sono ancora in
+   attesa, in coda o in fase di trasferimento. Ti mostra il nickname su IRC
+   di è il ricevente del file, e se il trasferimento è in corso, ti dice
+   a che punto è il trasferimento.
+
+Vedi anche: cancel
+%{help=filesys/pwd}%{+x}
+###  %bpwd%b
+   Ti dice quale è la tua directory corrente.
+
+Vedi anche: cd
+%{help=filesys/quit}%{+x}
+###  %bquit%b
+   Esce dal file system
+%{help=filesys/rm}%{+j}
+###  %brm%b <file(s)>
+   Cancella un file per sempre.
+%{help=filesys/rmdir}%{+j}
+###  %brmdir%b <dir>
+   Rimuove una directory esistente, se non ha file dentro.
+
+Vedi anche: mkdir
+%{help=filesys/share}%{+j}
+###  %bshare%b <file(s)>
+   Contrassegna un file come condiviso. questo significa che altri bot
+   possono ottenere il file in remoto per gli utenti sui propri file system.
+   Per impostazione predefinita, i file sono contrassegnati come non condivisi.
+
+Vedi anche: unshare, lsa, ln
+%{help=filesys/optimize}%{+j}
+###  %boptimize%b
+   Pulisce il database della directory corrente. Se hai una grande directory
+   con molti file potresti voler usare questo comando se si verificano
+   rallentamenti/ritardi nel tempo. Normalmente però, il db dovrebbe
+   ripulirsi da solo.
+%{help=filesys/sort}%{+j}
+###  %bsort%b
+  Questo comando è obsoleto, perché la directory è sempre ordinata
+  al volo.
+%{help=filesys/unhide}%{+j}
+###  %bunhide%b <file(s)>
+   Fa si che un file non venga più nascosto.
+
+Vedi anche: hide, lsa
+%{help=filesys/unshare}%{+j}
+###  %bunshare%b <file(s)>
+   Rimuove l'etichetta di file condiviso al file stesso.
+
+Vedi anche: share, lsa, ln
+%{help=filesys module}%{+n}
+### %bmodulo filesys%b
+   Questo modulo fornisce un'area all'interno del bot in cui gli utenti
+   possono archiviare e gestire file. Con questo modulo, il bot è utilizzabile
+   come file server.
+
+   I seguenti comandi sono forniti dal modulo filesys:
+
+   Per gli utenti del filesystem:
+      %bfiles%b
+%{help=all}%{+x}
+###  comandi del %bmodulo filesys%b
+   Per gli utenti del filesystem:
+      %bfiles%b
