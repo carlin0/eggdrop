@@ -1,0 +1,12 @@
+%{help=uptime module}%{+n}
+###  %bmodulo uptime%b
+   Il modulo uptime riporta le statistiche di uptime a http://uptime.eggheads.org.
+   Vai a vedere qual è il tuo tempo di attività! Ci vogliono circa 9 ore per
+   apparire, quindi se il tuo bot non è elencato, riprova più tardi.
+
+   Le informazioni inviate al server includono il tempo di attività del bot,
+   botnet-nick, server, versione e indirizzo IP. Queste informazioni vengono
+   memorizzate in un file temporaneo solo a scopo di debug. Le uniche informazioni
+   pubblicamente disponibili saranno: il botnet-nick, la versione e il tempo di
+   attività. Se desideri che queste informazioni non vengano inviate, commenta la
+   riga 'loadmodule uptime' nel file di configurazione del tuo bot.
