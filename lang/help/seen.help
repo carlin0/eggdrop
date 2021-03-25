@@ -1,0 +1,17 @@
+%{help=seen}%{-}
+###  %bseen%b <nome>
+   Mostra l'ultima volta che il <nome> è stato visto dal bot.
+%{help=seen module}%{+n}
+###  %bmodulo seen%b
+   Questo modulo fornisce comandi 'seen' di base tramite msg, sul canale
+   o tramite dcc. Questo modulo funziona solo per chi è nell'elenco
+   utenti del bot.
+
+   I seguenti comandi sono forniti dal modulo seen:
+
+   Per tutti gli utenti:
+      %bseen%b
+%{help=all}%{-}
+###  comandi del %bmodulo seen%b
+   Per tutti gli utenti:
+      %bseen%b
