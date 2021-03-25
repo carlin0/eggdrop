@@ -1,0 +1,9 @@
+%{help=transfer module}%{+n}
+###  %bmodulo transfer%b
+   Il modulo transfer fornisce supporto DCC SEND/GET e trasferimento della
+   lista utenti per la condivisione (share).
+
+   Variabili del file di configurazione per il modulo transfer:
+      %bxfer-timeout    copy-to-tmp         dcc-block%b
+      %bmax-dloads      sharefail-unlink%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
