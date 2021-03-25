@@ -1,0 +1,88 @@
+%{help=+noteign}%{-}
+###  %b+noteign%b%{+m} [utente]%{-} <ignoremask>
+   Aggiunge un nuovo elemento da ignorare all'elenco di elementi da ignorare
+   dell'utente. L'ignoremask è confrontata con il nome dell'utente che tenta
+   di inviare una nota. I caratteri jolly sono consentiti.
+
+Vedi anche: -noteign, noteigns
+%{help=-noteign}
+###  %b-noteign%b%{+m} [utente]%{-} <ignoremask>
+   Rimuove un ignore esistente dall'elenco degli ignore note dell'utente.
+
+Vedi anche: +noteign, noteigns
+%{help=noteigns}
+###  %bnoteigns%b%{+m} [utente]%{-}
+   Elenca tutti gli ignore note per l'utente. Tutte le note inviate dagli
+   utenti le cui mask/nomi corrispondono con una di queste verranno rifiutate.
+
+Vedi anche: +noteign, -noteign
+%{help=fwd}%{+m}
+###  %bfwd%b <nome> [destinazione]
+   Ciò consente di impostare un 'indirizzo di inoltro' per le note inviate
+   a un utente. Ciò significa che se una nota deve essere memorizzata per
+   l'utente, il bot tenterà di trasmetterla all'utente@bot specificato.
+   Se il bot non è online, la nota sarà allora archiviata localmente.
+   Se l'utente remoto non esiste, la nota sarà persa.
+%{help=note}%{-}
+###  %bnote%b <nickname[@bot]> <messagio>
+   Invia una nota privata a un utente nella partyline. Se quell'utente è
+   attualmente nella partyline e non contrassegnato come assente (away),
+   riceverà immediatamente il messaggio. In caso contrario, potrebbe essere
+   memorizzato e visualizzato la prossima volta che l'utente si unisce
+   alla partyline.
+
+   Se entri in un canale e hai delle note memorizzate sul bot, il bot te
+   lo segnalerà (se abilitato). Per inviare una nota a qualcuno su un altro
+   bot della botnet, usa il formato 'nick@bot'.
+
+vedi anche: whom, notes, noteigns
+%{help=notes}%{-}
+###  %bnotes index%b
+###  %bnotes read%b  <# or ALL>
+###  %bnotes erase%b <# or ALL>
+   Ti consente di manipolare le note che sono state memorizzate per te mentre
+   non c'eri.
+
+   %b'.notes index'%b fornisce un elenco di tutte le note memorizzate: da chi
+   e quando sono state lasciate.
+
+   %b'.notes read'%b ti permette di leggere alcune o tutte le note, con un
+   elenco di numeri e/o intervalli separati da punto e virgola.
+
+   %b'.notes erase'%b cancella le note dopo che le hai lette.
+
+   Esempio:
+
+      .notes erase 2-4;8;16-
+
+   Questo cancellerà le note da 2 a 4, la 8 e tutte le note dalla 16
+   (inclusa) in poi.
+
+Vedi anche: whom, note, noteigns
+%{help=notes module}%{+n}
+###  %bmodulo notes%b
+   Questo modulo fornisce supporto per l'archiviazione di note per gli
+   utenti. L'invio di note tra utenti attualmente in linea è supportato,
+   ma serve solo per memorizzare le note per un successivo recupero.
+
+   I seguenti comandi sono forniti dal modulo note:
+
+   Per tutti gli utenti:
+      %bnotes        +noteign     -noteign     noteigns%b
+      %bnote%b
+
+   Per i master globali:
+      %bfwd%b
+
+   Variabili del file di configurazione del modulo note:
+      %bnote-life       max-notes           allow-fwd%b
+      %bnotify-users    notify-onjoin%b
+   (Use %b'.help set <variable>'%b per maggiori informazioni)
+%{help=all}%{-}
+###  comandi del %bmodulo notes%b
+   Per tutti gli utenti:
+      %bnotes        +noteign     -noteign     noteigns%b
+      %bnote%b
+%{+m}
+   Per i master globali:
+      %bfwd%b
