@@ -1,0 +1,21 @@
+%{help=resolve}
+###  %bresolve%b <host or ip>
+   Tenta di risolvere un nome host o un indirizzo ip utilizzando il
+   modulo dns; tuttavia, affinché questo comando funzioni al meglio, dovresti
+   caricare il modulo dns. Questo comando è completamente asincrono quindi
+   non ti impedirà di fare altre cose in partyline mentre cerca di risolvere
+   un indirizzo.
+
+Vedi anche: dns
+%{help=dns}
+###  %bdns%b <host or ip>
+   Tenta di risolvere un nome host o un indirizzo ip utilizzando il modulo dns;
+   tuttavia, affinché questo comando funzioni al meglio, dovresti caricare il
+   modulo dns. Questo comando è completamente asincrono quindi non ti impedirà
+   di fare altre cose in partyline mentre cerca di risolvere un indirizzo.
+
+Vedi anche: resolve
+%{help=all}
+###  comandi per %bcmd_resolve.tcl%b
+%b  dns          resolve%b
+%{-}
