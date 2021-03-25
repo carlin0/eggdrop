@@ -1,0 +1,59 @@
+%{help=share howto}%{+n}
+###  %bshare howto%b
+   Per prima cosa devi decidere due cose:
+     %b1.%b Quale bot sarà 'attivo' e quale 'passivo'.
+        Il bot attivo INVIA la lista utenti al bot passivo. Al bot 
+        %bpassivo%b la lista utenti %bverrà sovrascritta.%b Chiameremo il
+        bot %bATTIVO%b "A" e il bot %bPASSIVO%b "B".
+
+     %b2.%b Quali canali vuoi condividere tra i 2 bot. TUTTE le informazioni
+        verranno condivise, ma lo saranno solo per i canali che contrassegni
+        come condivisi.
+
+   Passaggi:
+     %b1.%b Per ogni canale che vuoi condividere devi impostare:
+
+           .chanset #channel +shared
+
+     %b2.%b Nel bot A, digita:
+     
+           '.botattr B +s' (+s cioè condivide attivamente)
+
+     %b3.%b Nel bot B, digita:
+
+           '.botattr A +p' (+p cioè condivide passivamente)
+
+     %b4.%b Per ogni canale che desideri condividere tra i due, procedi come segue:
+
+           Nel bot A, digita: '.botattr B |+s #channel'
+           Nel bot B, digita: '.botattr A |+p #channel'
+
+     %b5.%b Collegali insieme; dovrebbero iniziare a condividere immediatamente.
+%{help=flush}%{+n}
+###  %bflush%b <bot>
+   Questo cancella il buffer di risincronizzazione per uno share-bot. Questo è
+   utile se vuoi far ricominciare il trasferimento della lista utenti. Puoi
+   scollegare gli sharebot, usare flush sul buffer di risincronizzazione
+   e ricollegare i bot.
+
+Vedi anche: link, unlink, chattr, botattr
+%{help=share module}%{+n}
+###  %bmodulo share%b
+   Questo modulo fornisce supporto per la condivisione della lista utenti
+   tra due bot collegati direttamente.
+
+   Vedi %b'.help share howto'%b per maggiori informazioni.
+
+   I seguenti comandi sono forniti dal modulo share (condivisione):
+
+   Per i padroni globali:
+      %bflush%b
+
+   Variabili del file di configurazione per il modulo share:
+      %ballow-resync    resync-time         private-global%b
+      %bprivate-user    override-bots       private-globals%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
+%{help=all}%{+n}
+###  comandi del %bmodulo share%b
+   Per i padroni globali:
+      %bflush%b
