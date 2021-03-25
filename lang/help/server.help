@@ -1,0 +1,68 @@
+%{help=clearqueue}%{+m}
+###  %bclearqueue%b <coda>
+   Rimuove tutti i messaggi dalla coda specificata.
+
+   L'argomento della coda può essere uno dei seguenti:
+
+      %bmode%b, %bserver%b, %bhelp%b, %ball%b
+%{help=dump}%{+m}
+###  %bdump%b <testo>
+   Scarica il testo specificato dal server IRC.
+
+   Vedi http://www.ietf.org/rfc/rfc1459.txt per maggiori informazioni sul
+   protocollo IRC.
+%{help=jump}%{+m}
+###  %bjump%b [server [[+]porta [pass]]]
+   Fa passare il bot a un altro server. Se non specifichi un server, esso
+   passerà al server successivo nell'elenco dei server (vedi %b'.help server'%b).
+   Se specifichi un server, passerà a quel server (la porta predefinita è la
+   6667, a meno che non sia stata specificata una porta predefinita diversa nel
+   file di configurazione). Se anteponi alla porta un segno più (ad es. +6697),
+   sarà usata la connessione SSL. Se il server non è già nell'elenco dei server,
+   verrà aggiunto ad esso. Cambiare i server SEMPRE fa perdere l'op al bot!
+   Stai attento!
+
+   Ricorda, non puoi specificare una password senza specificare anche una porta.
+
+Vedi anche: servers
+%{help=servers}%{+o|o}
+###  %bservers%b
+   Elenca i server contenuti nell'elenco dei server del bot. Questa è la lista
+   del bot che ruota quando si cambia server. Inizia con un elenco statico
+   che viene caricato dal file di configurazione all'avvio del bot. Dopo di che,
+   puoi aggiungere server con il comando %b'.jump'%b. L'elenco dei server gli
+   farà indicare su quale server si trova attualmente il bot. Per esempio:
+
+      <D|Ares>   irc.arcti.ca:6667 (irc.arcti.ca) <- Io sono qui
+%{+m|m}
+Vedi anche: jump
+%{help=server module}%{+n}
+###  %bmodulo server%b
+   Questo modulo fornisce il supporto del server principale. Devi caricare
+   questo modulo se vuoi che il tuo bot acceda a IRC.
+
+   I seguenti comandi sono forniti dal modulo server:
+
+   Per gli op di canale:
+      %bservers%b
+
+   Per i master globali:
+      %bjump         dump%b
+
+   Variabili del file di configurazione del modulo server:
+      %bnick-len        server-timeout      lowercase-ctcp%b
+      %bmsg-rate        keep-nick           check-stoned%b
+      %bserverror-quit  max-queue-msg       trigger-on-ignore%b
+      %banswer-ctcp     server-cycle-wait   default-port%b
+      %bcheck-mode-r    ctcp-mode           use-penalties%b
+      %bdouble-server   double-mode         double-help%b
+      %buse-fastdeq     stack-limit         optimize-kicks%b
+      %bexclusive-binds%b
+   (Usa %b'.help set <variabile>'%b per maggiori informazioni)
+%{help=all}%{+o|o}
+###  comandi del %bmodulo server%b
+   Per gli op di canale:
+      %bservers%b
+%{+m|m}
+   Per i master globali:
+      %bjump         dump         clearqueue%b
