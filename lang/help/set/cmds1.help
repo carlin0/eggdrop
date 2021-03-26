@@ -1,0 +1,353 @@
+%{help=set botnet-nick}%{+n}
+###  %bset botnet-nick%b <nickname>
+   Se vuoi usare un nickname diverso sulla botnet da quello che usa su
+   IRC (cioè se sei su una botnet non affidabile), imposta qui il nick
+   che desideri utilizzare.
+%{help=set userfile}%{+n}
+###  %bset userfile%b <filename>
+   Specificare qui il nome del file con cui salvare l'elenco utenti.
+%{help=set motd}%{+n}
+###  %bset motd%b <filename>
+   Il MOTD (Message Of The day) è visualizzato quando le persone entrano
+   in telnet o dcc chat col bot. Guarda doc/TEXT-SUBSTITUTIONS per le
+   opzioni.
+%{help=set telnet-banner}%{+n}
+###  %bset telnet-banner%b <filename>
+   Questo banner viene visualizzato nelle connessioni telnet. Guarda
+   doc/TEXT-SUBSTITUTIONS per le opzioni.
+%{help=set admin}%{+n}
+###  %bset admin%b <admin-info>
+   Questa impostazione definisce quale persona di contatto deve essere
+   mostrata col comando .status, /msg help, e altri posti. Dovresti
+   davvero includere questa informazione.
+%{help=set notify-newusers}%{+n}
+###  %bset notify-newusers%b <nickname-list>
+   A chi deve essere inviata una nota quando vengono appresi nuovi utenti?
+%{help=set owner}%{+n}
+###  %bset owner%b <nickname-list>
+   Questo è un elenco dei padroni del bot.
+%{help=set vhost4}%{+n}
+###  %bset vhost4%b <ipv4-address|hostname>
+   Se utilizzi l'hosting virtuale (la tua macchina ha più di 1 IP),
+   potresti volere impostare su un particolare IP a cui collegarti. Lo 
+   puoi specificare tramite nome host o IP. Nota che questo non è usato
+   per l'ascolto. Usa la variabile listen per specificare l'indirizzo
+   di ascolto.
+%{help=set vhost6}%{+n}
+###  %bset vhost6%b <ipv6-address|hostname>
+   Vhost IPv6 a cui collegarsi per le connessioni IPv6 in uscita. Puoi
+   impostarlo a qualsiasi indirizzo IPv6 o nome host valido. Notare che
+   questo non viene utilizzato per l'ascolto. Usa la variabile listen
+   per specificare l'indirizzo di ascolto.
+%{help=set nat-ip}%{+n}
+###  %bset nat-ip%b <ip-address>
+   Se hai un firewall NAT (la tua casella ha un IP in uno dei seguenti
+   intervalli: 192.168.0.0-192.168.255.255, 172.16.0.0-172.31.255.255,
+   10.0.0.0-10.255.255.255 e il tuo firewall cambia in modo trasparente
+   il tuo indirizzo in un indirizzo univoco per la tua casella) o hai un
+   IP masquerading tra te e il resto del mondo e /dcc chat, /ctcp chat o
+   condivisione della lista utenti non funzionano, inserisci qui il tuo IP
+   esterno. Questo IP è utilizzato solo per i trasferimenti e non ha nulla
+   a che fare con vhost4/6 o impostazioni di ascolto (listen). Potrebbe
+   essere necessario impostarli.
+%{help=set prefer-ipv6}%{+n}
+###  %bset prefer-ipv6%b <0/1>
+  Preferisci IPv6 su IPv4 per connessioni e risoluzione DNS. Se la famiglia
+  di protocolli preferita non è supportata, sarà provata l'altra.
+%{help=set dcc-sanitycheck}%{+n}
+###  %bset dcc-sanitycheck%b <0/1>
+   Questa impostazione farà sì che il bot ignori le richieste di chat DCC
+   che sembrano avere informazioni fasulle sulla base del fatto che l'utente
+   può aver provato a fare in modo che il bot si connetta da qualche parte che
+   gli causerà dei guai, o che l'utente ha un client guasto, in tal caso la
+   connessione non funzionerebbe comunque.
+%{help=set network}%{+n}
+###  %bset network%b <net-name>
+   Questa impostazione viene utilizzata solo per le informazioni da condividere
+   con altri bot nella tua botnet. Impostalo sulla rete IRC a cui è connesso
+   il tuo bot.
+%{help=set whois-fields}%{+n}
+###  %bset whois-fields%b <field-list>
+   Immettere tutti i campi definiti dall'utente che dovrebbero essere
+   visualizzati nel file '.whois'. Questo verrà mostrato solo se l'utente
+   ha uno di questi campi extra. Potresti preferire commentarlo e utilizzare
+   lo script userinfo1.0.tcl che fornisce i comandi per cambiare tutti
+   questi dati.
+%{help=set username}%{+n}
+###  %bset username%b <username>
+   Questa impostazione definisce l'username che il bot utilizza su IRC. Questa
+   impostazione non ha effetto se un demone ident è in esecuzione sulla
+   macchina del tuo bot.
+%{help=set version}%{+n}
+###  %bset version%b
+   Versione bot corrente: '1.1.2 + pl1 1010201 pl1'; il primo elemento è la
+   versione testo, il secondo elemento è una versione numerica e qualsiasi
+   successiva sono i nomi delle patch che sono state aggiunte.
+%{help=set firewall}%{+n}
+###  %bset firewall%b <host:port>
+   Imposta questo sul tuo socks host se il tuo Eggdrop è dietro a un
+   firewall. Se usi un Sun "telnet passthru" firewall, metti come
+   prefisso al host un '!'.
+%{help=set telnet-flood}%{+n}
+###  %bset telnet-flood%b <times:seconds>
+   Definisci qui quanti tentativi di connessione telnet in quanti
+   secondi dallo stesso host costituiscono un'alluvione. Il corretto
+   formato è Tentativi: secondi.
+%{help=set paranoid-telnet-flood}%{+n}
+###  %bset paranoid-telnet-flood%b <0/1>
+   Se vuoi che il telnet-flood si applichi anche agli utenti +f
+   impostalo 1.
+%{help=set ignore-time}%{+n}
+###  %bset ignore-time%b <time>
+   Il tempo in minuti che l'ignore temporaneo dovrebbe durare.
+%{help=set dcc-flood-thr}%{+n}
+###  %bset dcc-flood-thr%b <number>
+   Specificare qui il numero di righe da accettare da un utente in
+   partyline entro 1 secondo prima che sia considerato flood e
+   quindi venga espulso automaticamente.
+%{help=set hourly-updates}%{+n}
+###  %bset hourly-updates%b <military time>
+   Definisci qui ciò che Eggdrop considera 'ogni ora'. Tutte le
+   chiamate ad esso, incluse cose come la notifica di note o il
+   salvataggio dell'elenco utenti, sono influenzate da questo.
+%{help=set switch-logfiles-at}%{+n}
+###  %bset switch-logfiles-at%b <military-time>
+   Puoi specificare quando Eggdrop deve cambiare i file di log e
+   ricominciare da zero. È necessario utilizzare l'ora militare per
+   questa impostazione. 300 è il predefinito e descrive 03:00 (AM).
+%{help=set connect-timeout}%{+n}
+###  %bset connect-timeout%b <seconds>
+   Questa impostazione definisce un tempo in secondi che il bot dovrebbe
+   attendere prima che una connessione dcc chat, telnet o relay scada.
+%{help=set resolve-timeout}%{+n}
+###  %bset resolve-timeout%b <seconds>
+   Imposta qui la quantità di secondi prima di rinunciare alla ricerca di
+   un nome host/indirizzo (potresti volerlo aumentare se sei su una rete lenta).
+   Il valore predefinito è RES_TIMEOUT, che generalmente è 5, il massimo
+   consentito è RES_MAXRETRANS (vedi resolv.h).
+%{help=set dupwait-timeout}%{+n}
+###  %bset dupwait-timeout%b <seconds>
+   Se il tuo Eggdrop rifiuta i bot che in realtà sono già stati disconnessi
+   da un altro hub, ma le informazioni di disconnessione non sono ancora
+   state diffuse sulla botnet a causa del ritardo, utilizzare questa
+   impostazione. Il bot attenderà secondi di dupwait-timeout prima di
+   ricontrollare e quindi alla fine rifiuterà il bot.
+%{help=set reserved-portrange}%{+n}
+###  %bset reserved-portrange%b <lowport>:<highport>
+   Se si desidera che tutti i trasferimenti di file dcc utilizzino un
+   particolare portrange o perché sei dietro un firewall o per altri
+   motivi di sicurezza, impostalo qui.
+%{help=set require-p}%{+n}
+###  %bset require-p%b <0/1>
+   Definisci qui se un utente +o ha anche bisogno della flag +p per
+   accedere in dcc al bot.
+%{help=set keep-all-logs}%{+n}
+###  %bset keep-all-logs%b <0/1>
+   Se vuoi mantenere i tuoi file di log per sempre, attiva questa
+   impostazione. Tutti i file di registro riceveranno il suffisso
+   ".[2 cifre giorno] [3 lettere mese] [4 cifre anno]". Nota che la tua
+   quota/hard-disk potrebbe essere riempita da questo, quindi controlla i
+   tuoi file di log spesso e scaricali.
+%{help=set open-telnets}%{+n}
+###  %bset open-telnets%b <0/1>
+   Se vuoi permettere alle persone di collegare in telnet e scrivere 'NEW'
+   per diventare un nuovo utente, impostalo su 1. Questo è simile al comando
+   messaggio 'hello'. L'impostazione di protect-telnet deve essere impostata
+   su 0 perchè funzioni.
+%{help=set stealth-telnets}%{+n}
+###  %bset stealth-telnets%b <0/1>
+   Se non vuoi che Eggdrop si identifichi come un eggdrop in una connessione
+   telnet, mettere questa impostazione su 1. L'Eggdrop mostrerà al prompt di
+   accesso con solo il contenuto dell'impostazione del prompt nascosto.
+%{help=set stealth-prompt}%{+n}
+###  %bset stealth-prompt%b <string>
+   Se stealth-telnets è 1, la stringa in questa impostazione sostituirà il
+   tradizionale banner Eggdrop.
+%{help=set use-telnet-banner}%{+n}
+###  %bset use-telnet-banner%b <0/1>
+   Se vuoi che Eggdrop mostri un banner durante la telnet, metti questa
+   impostazione su 1. Il banner telnet è impostato in 'set telnet-banner'.
+%{help=set handlen}%{+n}
+###  %bset handlen%b
+   Questa è la lunghezza massima che i nomi possono avere nel bot.
+%{help=set console}%{+n}
+###  %bset console%b <console-flags>
+   Questa è la modalità console predefinita. Utilizza le stesse flag di
+   evento come fanno i file di registro. Il canale della console viene
+   impostato automaticamente sul tuo canale "primario", che è impostato
+   nella sezione dei moduli del file di configurazione. I master possono
+   cambiare il canale e le modalità della loro console con il
+   comando '.console'.
+%{help=set default-flags}%{+n}
+###  %bset default-flags%b <flags>
+   Immettere le flag che tutti i nuovi utenti dovrebbero ottenere per
+   impostazione predefinita. Vedere '.help whois' nella partyline per un
+   elenco di flag e le loro descrizioni.
+%{help=set log-time}%{+n}
+###  %bset log-time%b <0/1>
+   Utilizzare questa funzione per contrassegnare le voci nel file di registro.
+%{help=set timestamp-format}%{+n}
+###  %bset timestamp-format%b <format>
+   Set the following to the timestamp for the logfile entries. Popular
+   times might be "[%H:%M]" (hour,min), or "[%H:%M:%S]" (hour, min, sec).
+   Read `man strftime' for more formatting options.  Keep it below 32
+   chars.
+%{help=set max-logsize}%{+n}
+###  %bset max-logsize%b <filesize>
+   This is the maximum size of your logfiles. Set it to 0 to disable.
+   This value is in kilobytes, so '550' would mean cycle logs when it
+   reaches the size of 550 kilobytes. Note that this only works if you
+   have keep-all-logs 0 (OFF).
+%{help=set quick-logs}%{+n}
+###  %bset quick-logs%b <0/1>
+   This could be good if you have had problem with the logfile
+   filling your quota/hard disk or if you log +p and publish it to
+   the web and need more up-to-date info. Note that this setting
+   might increase the CPU usage of your bot (on the other hand it will
+   decrease your mem usage).
+%{help=set logfile-suffix}%{+n}
+###  %bset logfile-suffix%b <suffix>
+   If keep-all-logs is 1, this setting will define the suffix of the
+   logfiles. The default will result in a suffix like "04May2000".
+   "%Y%m%d" will produce the often used yyyymmdd format. Read the
+   strftime manpages for more options. NOTE: On systems which don't
+   support strftime, the default format will be used _always_.
+%{help=set quiet-save}%{+n}
+###  %bset quiet-save%b <0/1/2/3>
+   "Writing user file..." and "Writing channel file..." messages won't
+   be logged anymore if this option is enabled. If you set it to 2, the
+   "Backing up user file..." and "Backing up channel file..." messages
+   will also not be logged. In addition to this, you can disable the
+   "Switching logfiles..." and the new date message at midnight, by
+   setting this to 3.
+%{help=set remote-boots}%{+n}
+###  %bset remote-boots%b <0/1>
+   This setting defines whether or not people can boot users on the
+   Eggdrop from other bots in your botnet. Valid settings are:
+     0 - allow *no* outside boots
+     1 - allow boots from sharebots
+     2 - allow any boots
+%{help=set max-socks}%{+n}
+###  %bset max-socks%b <max dcc connections>
+   Set here the maximum number of socket connections you will allow. You can
+   increase this later, but never decrease it below current usage. If you're
+   using Tcl threads, this is a per-thread maximum.
+%{help=set max-logs}%{+n}
+###  %bset max-logs%b <max number of logs>
+   This is the maximum number of logfiles allowed. This setting
+   can be increased; however, don't decrease it.
+%{help=set protect-telnet}%{+n}
+###  %bset protect-telnet%b <0/1>
+   This setting will drop telnet connections not matching a known
+   host.
+%{help=set ident-timeout}%{+n}
+###  %bset ident-timeout%b <timeout>
+   This setting defines the time in seconds the bot should wait for ident
+   reply before the lookup fails. The default ident on timeout is 'telnet'.
+%{help=set share-unlinks}%{+n}
+###  %bset share-unlinks%b 0/1
+   This setting prohibits remote bots from telling your Eggdrop to
+   unlink from share bots.
+%{help=set cidr-support}%{+n}
+###  %bset cidr-support%b <0/1>
+   Enables cidr support for b/e/I modes if set to 1. This means the
+   bot will understand and match modes in cidr notation, and will
+   be able to put and enforce such bans or unban itself, if banned 
+   with a cidr mask.
+     Warning: enabling this on servers which don't support cidr may
+   result in kick floods or other problems.
+%{help=set allow-dk-cmds}%{+n}
+###  %bset allow-dk-cmds%b <0/1>
+   Enable this setting if you want +d & +k users to use commands
+   bound as -|-.
+%{help=set userfile-perm}%{+n}
+###  %bset userfile-perm%b <octal value>
+   This specifies what permissions the user, channel, and notes
+   files should be set to. The octal values are the same as for
+   the chmod system command.
+%{help=set ssl-certificate}%{+n}
+###  %bset ssl-certificate%b <filename>
+   Specify the filename where your SSL certificate is located. If
+   you don't set this, eggdrop will not be able to act as a server
+   in SSL connections, as with most ciphers a certificate and a
+   private key are required on the server side. Must be in PEM
+   format.
+%{help=set ssl-privatekey}%{+n}
+###  %bset ssl-privatekey%b <filename>
+   File containing your private RSA key used for SSL connections.
+%{help=set ssl-verify-depth}%{+n}
+###  %bset ssl-verify-depth%b <depth>
+   Sets the maximum depth for the certificate chain verification
+   that will be allowed for ssl. When certificate verification is
+   enabled, any chain exceeding this depth will fail verification.
+%{help=set ssl-capath}%{+n}
+###  %bset ssl-capath%b <directory>
+   Specify the location where CA certificates for verification
+   purposes are located. These certificates are trusted. If you
+   don't set this or ssl-cafile, certificate verification will not
+   work.
+
+See also: ssl-cafile
+%{help=set ssl-cafile}%{+n}
+###  %bset ssl-cafile%b <filename>
+   Specify a file which contains CA certificates for verification
+   purposes. These certificates are trusted. If you don't set this
+   or ssl-capath, certificate verification will not work.
+
+See also: set ssl-capath
+%{help=set ssl-protocols}%{+n}
+###  %bset ssl-protocols%b <protocol list>
+   Specify the list of protocols allowed for use with ssl. The protocol list
+   is one or more protocol strings separated by spaces. Available protocols
+   are SSLv2, SSLv3, TLSv1, TLSv1.1, TLSv1.2, TLSv1.3. Default is
+   "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3".
+%{help=set ssl-dhparam}%{+n}
+###  %bset ssl-dhparam%b <filename>
+   Specify dhparam filename. You can create it using the following command:
+   openssl dhparam -out dhparam.pem 4096
+%{help=set ssl-ciphers}%{+n}
+###  %bset ssl-ciphers%b <cipher list>
+   Specify the list of ciphers (in order of preference) allowed for
+   use with ssl. The cipher list is one or more cipher strings
+   separated by colons, commas or spaces. Unavailable ciphers are
+   silently ignored unless no usable cipher could be found. For the
+   list of possible cipher strings and their meanings, please refer
+   to the ciphers(1) manual.
+   If you set this, the value replaces any ciphers OpenSSL might use
+   by  default. To include the default ciphers, you can put DEFAULT
+   as a cipher string in the list. This setting may not impact TLSv1.3
+   ciphersuites.
+%{help=set ssl-cert-auth}%{+n}
+###  %bset ssl-cert-auth%b <0/1/2>
+   Enable certificate authorization. Set to 1 to allow users and bots
+   to identify automatically by their certificate fingerprints. Setting
+   it to 2 to will force fingerprint logins. With a value of 2, users
+   without a fingerprint set or with a certificate UID not matching
+   their handle won't be allowed to login on SSL enabled telnet ports.
+   Fingerprints must be set in advance with the .fprint and .chfinger
+   commands.
+   NOTE: this setting has no effect on plain-text ports.
+%{help=set ssl-verify-dcc}%{+n}
+###  %bset ssl-verify-dcc%b <#>
+   Control certificate verification for DCC chats (/dcc chat botnick)
+
+See also: set ssl-verify-clients
+%{help=set ssl-verify-bots}%{+n}
+###  %bset ssl-verify-bots%b <#>
+   Control certificate verification for linking to hubs
+
+See also: set ssl-verify-clients
+%{help=set ssl-verify-clients}%{+n}
+###  %bset ssl-verify-clients%b <#>
+   Control cerfificate verification for SSL listening ports. This includes
+   leaf bots connecting to us, users telneting in and /ctcp bot chat.
+   You can set this by adding together the numbers for all exceptions you
+   want to enable. By default certificate verification is disabled and all
+   certificates are assumed to be valid.
+   There are the following exceptions with their corresponding numbers:
+     1  enable certificate verification
+     2  allow self-signed certificates
+     4  don't check peer common or alt names
+     8  allow expired certificates
+     16 allow certificates which are not valid yet
+     32 allow revoked certificates
