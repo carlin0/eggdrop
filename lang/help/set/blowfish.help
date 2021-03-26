@@ -1,0 +1,9 @@
+%{help=set blowfish-use-mode}%{+n}
+###  %bset blowfish-use-mode%b <ecb/cbc>
+   La modalità utilizzata per le funzioni "cripta" e "decripta". ECB era
+   utilizzato come predefinito, ma dalla v1.9.0 in poi sarà CBC.
+%{help=blowfish settings}%{+n}
+###  Impostazioni per il %bmodulo blowfish%b
+   Questo è un elenco delle variabili Tcl che possono essere utilizzate
+   per la configurazione del modulo blowfish.
+     %bblowfish-use-mode%b
