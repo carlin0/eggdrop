@@ -1,0 +1,16 @@
+%{help=set force-expire}%{+n}
+###  %bset force-expire%b <0/1>
+   Se imposti questa su 1 il tuo bot rimuoverà ban/exempt/inviti impostati
+   da altri bot nel canale.
+%{help=set share-greet}%{+n}
+###  %bset share-greet%b <0/1>
+   Condividere le info line degli utenti con gli altri sharebot?
+%{help=set use-info}
+%{+n}
+###  %bset use-info%b <0/1>
+   Imposta questo a 1 se vuoi permettere agli utenti di registrare una info line.
+%{help=set allow-ps}%{+n}
+###  %bset allow-ps%b <0/1>
+   Mettere questa impostazione su 1 se si desidera consentire a entrambe le
+   modalità dei canali (+p e +s) allo stesso tempo nel canale. Assicurati che il
+   server supporti il mix +ps o potresti ottenere un'infinità di flood.
