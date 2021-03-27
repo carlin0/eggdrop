@@ -1,0 +1,34 @@
+%{help=set ctcp-finger}%{+n}
+###  %bset ctcp-finger%b "<testo>"
+   Specifica la risposta che il bot fornisce a una richiesta CTCP FINGER.
+
+   Per esempio:
+      .set ctcp-finger "Robey (robey@wc130), idle 0 seconds"
+
+Vedi anche: set ctcp-version, set ctcp-userinfo
+%{help=set ctcp-userinfo}%{+n}
+###  %bset ctcp-userinfo%b "<testo>"
+   Specifica la risposta che il bot fornisce a una richiesta CTCP USERINFO.
+
+Vedi anche: set ctcp-version, set ctcp-finger
+%{help=set ctcp-version}%{+n}
+###  %bset ctcp-version%b "<testo>"
+   Specifica la risposta da inviare a una richiesta CTCP VERSION.
+
+   Per esempio:
+      .set ctcp-version "Irssi 0.8.9"
+
+   Oppure
+      .set ctcp-version "xchat 2.0.7 Linux 2.6.5-1.358smp [i686/2.60GHz/SMP]"
+
+
+Vedi anche: set ctcp-finger, set ctcp-userinfo
+%{help=set ctcp-mode}%{+n}
+###  %bset ctcp-mode%b <0/1/2>
+   Imposta qui come il modulo ctcp dovrebbe rispondere alle richieste di ctcp.
+   Ci sono 3 possibili modalità operative:
+      %b0%b: Viene utilizzato il comportamento normale.
+      %b1%b: Il bot ignora tutte le richieste di ctcp ad eccezione di CHAT e
+         PING fatte da un utente con la flag +o.
+      %b2%b: Viene utilizzato il comportamento normale, tuttavia il bot non
+         risponderà a più di X ctcps in Y secondi (definito da 'set flood-ctcp').
