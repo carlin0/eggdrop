@@ -1,0 +1,52 @@
+%{help=set files-path}%{+n}
+###  %bset files-path%b <path>
+   Specifica dove si trova la directory del file dcc del bot. Se non lo fai
+   vuoi una sezione di trasferimento file sul tuo bot, definiscila come "".
+   In caso contrario, la directory fornita sarà la directory principale per
+   utenti nella sezione file. Possono spostarsi in qualsiasi sottodirectory
+   e scaricare qualsiasi file che rendi visibile, ma potrebbe non essere mai
+   rimosso oltre la directory del percorso dei file.
+
+Vedi anche: set incoming-path
+%{help=set incoming-path}%{+n}
+###  %bset incoming-path%b <path>
+   Specifica la directory in cui andranno i file dcc nel bot. Se hai
+   disattivato la sezione file impostando %b'files-path'%b a "", quindi
+   questo non ha effetto poiché tutti i file offerti da dcc al bot verranno
+   comunque rifiutati. Se hai impostato il file %b'upload-to-pwd'%b su 1,
+   questo verrà ignorato e tutti i file caricati (inviati) al bot andranno
+   in qualsiasi directory l'utente è attualmente o era come ultimo posto.
+
+Vedi anche: set files-path, set upload-to-pwd
+%{help=set filedb-path}%{+n}
+###  %bset filedb-path%b <path>
+   Specifica dove devono essere posizionati i file di database per il file
+   system. (Questo è importante solo se il tuo bot ha un file system.) Se
+   questo viene lasciato vuoto, in ogni sottodirectory viene creato un file
+   nascosto del file system. Se imposti un filedb-path, però, il bot memorizzerà
+   tutti i file di database del file system nel percorso specificato. Questo è
+   utile se hai solo accesso in lettura al percorso dei file, o semplicemente non
+   vuoi che i file nascosti siano sparsi in giro.
+
+Vedi anche: set files-path
+%{help=set max-filesize}%{+n}
+###  %bset max-filesize%b <#>
+   Specifica la dimensione massima consentita (in kilobyte) di ogni file
+   che il bot accetterà in un invio dcc. Il valore predefinito è 1024,
+   che è 1 mega.
+
+Vedi anche: set max-dloads, set max-file-users
+%{help=set max-file-users}%{+n}
+###  %bset max-file-users%b <#>
+   Specifica il numero massimo di persone da consentire contemporaneamente
+   nel filesystem del bot. Questo può essere usato per evitare che il tuo
+   filesystem venga sfruttato eccessivamente se offri molti file.
+
+Vedi anche: set max-dloads, set max-filesize
+%{help=set upload-to-pwd}%{+n}
+###  %bset upload-to-pwd%b <0/1>
+   Specifica se i caricamenti nell'area file del bot vanno nella directory
+   corrente dell'utente (1) o nella directory specificata in
+   %b'incoming-path'%b (0).
+
+Vedi anche: set incoming-path
