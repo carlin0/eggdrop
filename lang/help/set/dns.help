@@ -1,37 +1,36 @@
 %{help=set dns-servers}%{+n}
 ###  %bset dns-servers%b <dns-server-list>
-   A list of dns servers for eggdrop to use. The list is initialised
-   from the system on startup. You can also specify the port numbers
-   if they differ from the standard 53.
+   Un elenco di server DNS da utilizzare con eggdrop. L'elenco viene
+   inizializzato dal sistema all'avvio. È inoltre possibile specificare i
+   numeri di porta se differiscono dalla standard 53.
 
 %{help=set dns-cache}%{+n}
-###  %bset dns-cache%b <seconds>
-   Defines how long should the DNS module cache replies at maximum.
-   Note that it will respect the TTL of the reply and this is just
-   an upper boundary.
+###  %bset dns-cache%b <secondi>
+   Definisce per quanto tempo la cache del modulo DNS deve rispondere al massimo.
+   Nota che rispetterà il TTL della risposta e questo è giusto un limite superiore.
 
 Vedi anche: set dns-negcache
 %{help=set dns-negcache}%{+n}
-###  %bset dns-negcache%b <seconds>
-   Defines how long should the DNS module cache negative replies
-   (NXDOMAIN, DNS Lookup failed).
+###  %bset dns-negcache%b <secondi>
+   Definisce per quanto tempo il modulo DNS deve memorizzare nella cache le
+   risposte negative (NXDOMAIN, DNS Lookup failed).
 
 Vedi anche: set dns-cache
 %{help=set dns-maxsends}%{+n}
 ###  %bset dns-maxsends%b <#>
-   specifies How many times should the DNS module resend the query for a
-   given domain if it receives no reply.
+   Specifica quante volte il modulo DNS deve inviare nuovamente la query per un
+   dato dominio se non riceve risposta.
 
 Vedi anche: set dns-retrydelay
 %{help=set dns-retrydelay}%{+n}
-###  %bset dns-retrydelay%b <seconds>
-   specify how long should the DNS module wait for a reply before
-   the query. The value must be in seconds.
+###  %bset dns-retrydelay%b <secondi>
+   Specificare per quanto tempo il modulo DNS deve attendere una risposta
+   prima della query. Il valore deve essere in secondi.
 
 Vedi anche: set dns-maxsends
 %{help=dns settings}%{+n}
 ###  Impostazioni per il %bmodulo dns%b
-   This is a list of the Tcl variables the can be used to setup
-   the dns module.
+   Questo è un elenco delle varibili Tcl che possono essere utilizzate
+   per la configurazione del modulo dns.
      %bdns-retrydelay%b    %bdns-maxsends%b    %bdns-servers%b
      %bdns-negcache%b      %bdns-cache%b
