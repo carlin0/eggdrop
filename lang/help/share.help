@@ -2,8 +2,8 @@
 ###  %bshare howto%b
    Per prima cosa devi decidere due cose:
      %b1.%b Quale bot sarà 'attivo' e quale 'passivo'.
-        Il bot attivo INVIA la lista utenti al bot passivo. Al bot 
-        %bpassivo%b la lista utenti %bverrà sovrascritta.%b Chiameremo il
+        Il bot passivo INVIA la lista utenti al bot attivo. Al bot 
+        %battivo%b la lista utenti %bverrà sovrascritta.%b Chiameremo il
         bot %bATTIVO%b "A" e il bot %bPASSIVO%b "B".
 
      %b2.%b Quali canali vuoi condividere tra i 2 bot. TUTTE le informazioni
@@ -17,16 +17,16 @@
 
      %b2.%b Nel bot A, digita:
      
-           '.botattr B +s' (+s cioè condivide attivamente)
+           '.botattr B +p' (+s cioè condivide passivamente)
 
      %b3.%b Nel bot B, digita:
 
-           '.botattr A +p' (+p cioè condivide passivamente)
+           '.botattr A +s' (+p cioè condivide aggressivamente)
 
      %b4.%b Per ogni canale che desideri condividere tra i due, procedi come segue:
 
-           Nel bot A, digita: '.botattr B |+s #channel'
-           Nel bot B, digita: '.botattr A |+p #channel'
+           Nel bot A, digita: '.botattr B |+p #channel'
+           Nel bot B, digita: '.botattr A |+s #channel'
 
      %b5.%b Collegali insieme; dovrebbero iniziare a condividere immediatamente.
 %{help=flush}%{+n}
