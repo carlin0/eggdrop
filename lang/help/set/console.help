@@ -1,0 +1,14 @@
+%{help=set console-autosave}%{+n}
+###  %bset console-autosave%b <0/1>
+   Salvare automaticamente le impostazioni della console degli utenti?
+   Altrimenti, devono usare il comando %b'store'%b.
+   
+Vedi anche: store
+%{help=set force-channel}%{+n}
+###  %bset force-channel%b <chan#>
+   Se un utente non ha salvato le impostazioni della console, quale canale
+   desideri venga impostato automaticamente?
+%{help=set info-party}%{+n}
+###  %bset info-party%b <0/1>
+   Abilita questa impostazione se le info line globali di un utente deve essere
+   visualizzata quando entra in un canale della botnet.
