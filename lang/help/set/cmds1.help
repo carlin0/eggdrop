@@ -188,166 +188,167 @@
    Utilizzare questa funzione per contrassegnare le voci nel file di registro.
 %{help=set timestamp-format}%{+n}
 ###  %bset timestamp-format%b <format>
-   Set the following to the timestamp for the logfile entries. Popular
-   times might be "[%H:%M]" (hour,min), or "[%H:%M:%S]" (hour, min, sec).
-   Read `man strftime' for more formatting options.  Keep it below 32
-   chars.
+   Impostare quanto segue sul timestamp per le voci del file di registro.
+   Popolari potrebbero essere "[%H:%M]" (ora, min) o "[%H:%M:%S]"
+   (ora, min, sec). Leggi 'man strftime' per ulteriori opzioni di formattazione.
+   Mantieni un valore inferiore a 32 caratteri.
 %{help=set max-logsize}%{+n}
 ###  %bset max-logsize%b <filesize>
-   This is the maximum size of your logfiles. Set it to 0 to disable.
-   This value is in kilobytes, so '550' would mean cycle logs when it
-   reaches the size of 550 kilobytes. Note that this only works if you
-   have keep-all-logs 0 (OFF).
+   Questa è la dimensione massima dei tuoi file di log. Impostalo su 0 per
+   disabilitare. Questo valore è espresso in kilobyte, quindi '550' significherebbe
+   il ciclo dei log quando esso raggiunge la dimensione di 550 kilobyte. Nota che
+   funziona solo se hai keep-all-logs 0 (OFF).
 %{help=set quick-logs}%{+n}
 ###  %bset quick-logs%b <0/1>
-   This could be good if you have had problem with the logfile
-   filling your quota/hard disk or if you log +p and publish it to
-   the web and need more up-to-date info. Note that this setting
-   might increase the CPU usage of your bot (on the other hand it will
-   decrease your mem usage).
+   Questo potrebbe essere utile se hai avuto problemi con il file di registro
+   riempiendo la tua quota/disco rigido o se accedi a +p e lo pubblichi sul
+   Web e necessitano di informazioni più aggiornate. Nota che questa impostazione
+   potrebbe aumentare l'utilizzo della CPU del tuo bot (d'altra parte farà
+   diminuire l'utilizzo della memoria).
 %{help=set logfile-suffix}%{+n}
 ###  %bset logfile-suffix%b <suffix>
-   If keep-all-logs is 1, this setting will define the suffix of the
-   logfiles. The default will result in a suffix like "04May2000".
-   "%Y%m%d" will produce the often used yyyymmdd format. Read the
-   strftime manpages for more options. NOTE: On systems which don't
-   support strftime, the default format will be used _always_.
+   Se keep-all-logs è 1, questa impostazione definirà il suffisso dei
+   log files. L'impostazione predefinita risulterà in un suffisso come
+   "04mag2000". "%Y%m%d" produrrà il formato aaaammgg spesso utilizzato.
+   Leggi il manpage strftime per ulteriori opzioni. NOTA: sui sistemi che non
+   hanno il supporto strftime, il formato predefinito verrà utilizzato sempre.
 %{help=set quiet-save}%{+n}
 ###  %bset quiet-save%b <0/1/2/3>
-   "Writing user file..." and "Writing channel file..." messages won't
-   be logged anymore if this option is enabled. If you set it to 2, the
-   "Backing up user file..." and "Backing up channel file..." messages
-   will also not be logged. In addition to this, you can disable the
-   "Switching logfiles..." and the new date message at midnight, by
-   setting this to 3.
+   I messaggi "Scrittura file utente ..." e "Scrittura file canale ..." non
+   saranno più loggati se questa opzione è abilitata. Se lo imposti su 2,
+   inoltre anche i messaggi "Backup file utente ..." e "Backup file canale ..."
+   non verranno più registrati. Oltre a questo, puoi anche disabilitare il
+   messaggio "Cambio file di registro ..." e il nuovo messaggio di data a
+   mezzanotte, impostandolo su 3.
 %{help=set remote-boots}%{+n}
 ###  %bset remote-boots%b <0/1>
-   This setting defines whether or not people can boot users on the
-   Eggdrop from other bots in your botnet. Valid settings are:
-     0 - allow *no* outside boots
-     1 - allow boots from sharebots
-     2 - allow any boots
+   Questa impostazione definisce se le persone possono essere espulse dalla
+   partyline sa altri bot della botnet. Le impostazioni valide sono:
+     0 - non sono consentite da esterni
+     1 - sono consentite da sharebots
+     2 - è consentita ogni espulsione
 %{help=set max-socks}%{+n}
 ###  %bset max-socks%b <max dcc connections>
-   Set here the maximum number of socket connections you will allow. You can
-   increase this later, but never decrease it below current usage. If you're
-   using Tcl threads, this is a per-thread maximum.
+   Imposta qui il numero massimo di connessioni socket consentite. Puoi aumentarlo
+   in un secondo momento, ma non diminuirlo mai al di sotto dell'utilizzo corrente.
+   Se tu stai usando i thread Tcl, questo è un massimo per thread.
 %{help=set max-logs}%{+n}
 ###  %bset max-logs%b <max number of logs>
-   This is the maximum number of logfiles allowed. This setting
-   can be increased; however, don't decrease it.
+   Questo è il numero massimo di file di registro consentiti. Questa impostazione
+   può essere aumentata; ma non diminuita.
 %{help=set protect-telnet}%{+n}
 ###  %bset protect-telnet%b <0/1>
-   This setting will drop telnet connections not matching a known
-   host.
+   Questa impostazione interromperà le connessioni telnet che non corrispondono
+   host conosciuto.
 %{help=set ident-timeout}%{+n}
 ###  %bset ident-timeout%b <timeout>
-   This setting defines the time in seconds the bot should wait for ident
-   reply before the lookup fails. The default ident on timeout is 'telnet'.
+   Questa impostazione definisce il tempo in secondi che il bot deve attendere
+   per la risposta dell'ident prima che la ricerca fallisca. Il timeout di
+   identificazione predefinito è 'telnet'.
 %{help=set share-unlinks}%{+n}
 ###  %bset share-unlinks%b 0/1
-   This setting prohibits remote bots from telling your Eggdrop to
-   unlink from share bots.
+   Questa impostazione impedisce ai bot remoti di comunicare al tuo Eggdrop di
+   scollegarsi dai bot in condivisione.
 %{help=set cidr-support}%{+n}
 ###  %bset cidr-support%b <0/1>
-   Enables cidr support for b/e/I modes if set to 1. This means the
-   bot will understand and match modes in cidr notation, and will
-   be able to put and enforce such bans or unban itself, if banned 
-   with a cidr mask.
-     Warning: enabling this on servers which don't support cidr may
-   result in kick floods or other problems.
+   Abilita il supporto cidr per le modalità b/e/I se impostato su 1.
+   Ciò significa che il bot capirà e abbinerà le modalità nella notazione
+   cidr e sarà in grado di imporre e far rispettare tali divieti (ban) o
+   sbloccare esso stesso, se bannato con una maschera cidr.
+     Attenzione: abilitandolo su server che non supportano cidr può
+      provocare kick-flood o altri problemi.
 %{help=set allow-dk-cmds}%{+n}
 ###  %bset allow-dk-cmds%b <0/1>
-   Enable this setting if you want +d & +k users to use commands
-   bound as -|-.
+   Abilita questa impostazione se desideri che gli utenti +d & +k possano
+   utilizzare i comandi con il legato come - | - (per tutti).
 %{help=set userfile-perm}%{+n}
 ###  %bset userfile-perm%b <octal value>
-   This specifies what permissions the user, channel, and notes
-   files should be set to. The octal values are the same as for
-   the chmod system command.
+   Questo specifica quali permessi dovrebbero avere i file: utenti, dei
+   canali e delle note. I valori ottali sono gli stessi del comando di
+   sistema chmod.
 %{help=set ssl-certificate}%{+n}
 ###  %bset ssl-certificate%b <filename>
-   Specify the filename where your SSL certificate is located. If
-   you don't set this, eggdrop will not be able to act as a server
-   in SSL connections, as with most ciphers a certificate and a
-   private key are required on the server side. Must be in PEM
-   format.
+   Specifica il nome del file del certificato SSL. Se non lo imposti,
+   l'eggdrop non sarà in grado di fungere da server nelle connessioni SSL,
+   come con la maggior parte delle cifrature un certificato e un file
+   chiave privata sono necessarie sul lato server. Deve essere in
+   formato PEM.
 %{help=set ssl-privatekey}%{+n}
 ###  %bset ssl-privatekey%b <filename>
-   File containing your private RSA key used for SSL connections.
+   File contenente la chiave RSA privata utilizzata per le connessioni SSL.
 %{help=set ssl-verify-depth}%{+n}
 ###  %bset ssl-verify-depth%b <depth>
-   Sets the maximum depth for the certificate chain verification
-   that will be allowed for ssl. When certificate verification is
-   enabled, any chain exceeding this depth will fail verification.
+   Imposta la profondità massima per la verifica della catena di certificati
+   che sarà consentito per ssl. Quando la verifica del certificato è abilitata,
+   qualsiasi catena che superi questa profondità fallirà la verifica.
 %{help=set ssl-capath}%{+n}
 ###  %bset ssl-capath%b <directory>
-   Specify the location where CA certificates for verification
-   purposes are located. These certificates are trusted. If you
-   don't set this or ssl-cafile, certificate verification will not
-   work.
+   Specificare la posizione in cui sono i CA certificati per gli scopi di
+   verifica. Questi certificati sono attendibili. Se tu non imposti questo
+   o ssl-cafile, la verifica del certificato non funzionerà.
 
-See also: ssl-cafile
+Vedi anche: ssl-cafile
 %{help=set ssl-cafile}%{+n}
 ###  %bset ssl-cafile%b <filename>
    Specify a file which contains CA certificates for verification
    purposes. These certificates are trusted. If you don't set this
    or ssl-capath, certificate verification will not work.
 
-See also: set ssl-capath
+Vedi anche: set ssl-capath
 %{help=set ssl-protocols}%{+n}
 ###  %bset ssl-protocols%b <protocol list>
-   Specify the list of protocols allowed for use with ssl. The protocol list
-   is one or more protocol strings separated by spaces. Available protocols
-   are SSLv2, SSLv3, TLSv1, TLSv1.1, TLSv1.2, TLSv1.3. Default is
-   "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3".
+   Specificare l'elenco dei protocolli consentiti per l'uso con ssl. L'elenco
+   dei protocolli può essere una o più stringhe di protocollo separate da uno
+   spazio. I protocolli disponibili sono: SSLv2, SSLv3, TLSv1, TLSv1.1,
+   TLSv1.2, TLSv1.3. L'impostazione predefinita è "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3".
 %{help=set ssl-dhparam}%{+n}
 ###  %bset ssl-dhparam%b <filename>
-   Specify dhparam filename. You can create it using the following command:
+   Specifica il nome del file dhparam. Puoi crearlo usando il seguente comando:
    openssl dhparam -out dhparam.pem 4096
 %{help=set ssl-ciphers}%{+n}
 ###  %bset ssl-ciphers%b <cipher list>
-   Specify the list of ciphers (in order of preference) allowed for
-   use with ssl. The cipher list is one or more cipher strings
-   separated by colons, commas or spaces. Unavailable ciphers are
-   silently ignored unless no usable cipher could be found. For the
-   list of possible cipher strings and their meanings, please refer
-   to the ciphers(1) manual.
-   If you set this, the value replaces any ciphers OpenSSL might use
-   by  default. To include the default ciphers, you can put DEFAULT
-   as a cipher string in the list. This setting may not impact TLSv1.3
-   ciphersuites.
+   Specificare l'elenco di cifrature (in ordine di preferenza) consentite da
+   utilizzare con ssl. L'elenco di cifratura è una o più stringhe di cifratura
+   separati da due punti, virgole o spazi. Le cifrature non disponibili sono
+   ignorate silenziosamente a meno che non sia stato possibile trovare un codice
+   utilizzabile. Per l'elenco delle possibili stringhe di cifratura e il loro
+   significato, fare riferimento al manuale dei cifrari (1). Se lo imposti, il
+   valore sostituisce qualsiasi cifra che OpenSSL potrebbe utilizzare per
+   impostazione predefinita. Per includere le crittografie predefinite, puoi
+   inserire "DEFAULT" come stringa di cifratura nell'elenco. Questa impostazione
+   potrebbe non influire su TLSv1.3 ciphersuites.
+   Impostando "ALL" farà sì che eggdrop consenta tutti i cifrari supportati da
+   OpenSSL, in un ordine ragionevole.
 %{help=set ssl-cert-auth}%{+n}
 ###  %bset ssl-cert-auth%b <0/1/2>
-   Enable certificate authorization. Set to 1 to allow users and bots
-   to identify automatically by their certificate fingerprints. Setting
-   it to 2 to will force fingerprint logins. With a value of 2, users
-   without a fingerprint set or with a certificate UID not matching
-   their handle won't be allowed to login on SSL enabled telnet ports.
-   Fingerprints must be set in advance with the .fprint and .chfinger
-   commands.
-   NOTE: this setting has no effect on plain-text ports.
+   Abilita autorizzazione del certificato. Impostare su 1 per consentire agli
+   utenti e ai bot di identificarsi automaticamente in base al certificato
+   fingerprint. Con un valore di 2, gli utenti senza una impostazione fingerprint
+   o con un UID del certificato non corrispondente al loro nome non saranno
+   autorizzati ad accedere alle porte telnet abilitate SSL. I fingerprint devono
+   essere impostati prima con i comandi .fprint e .chfinger.
+   NOTA: questa impostazione non ha effetto sulle porte telnet normali.
 %{help=set ssl-verify-dcc}%{+n}
 ###  %bset ssl-verify-dcc%b <#>
-   Control certificate verification for DCC chats (/dcc chat botnick)
+   Verifica il certificato per le DCC chat (/dcc chat botnick)
 
-See also: set ssl-verify-clients
+Vedi anche: set ssl-verify-clients
 %{help=set ssl-verify-bots}%{+n}
 ###  %bset ssl-verify-bots%b <#>
-   Control certificate verification for linking to hubs
+   Verifica il certificato per il collegamento ai bot hub
 
-See also: set ssl-verify-clients
+Vedi anche: set ssl-verify-clients
 %{help=set ssl-verify-clients}%{+n}
 ###  %bset ssl-verify-clients%b <#>
-   Control cerfificate verification for SSL listening ports. This includes
-   leaf bots connecting to us, users telneting in and /ctcp bot chat.
-   You can set this by adding together the numbers for all exceptions you
-   want to enable. By default certificate verification is disabled and all
-   certificates are assumed to be valid.
-   There are the following exceptions with their corresponding numbers:
-     1  enable certificate verification
-     2  allow self-signed certificates
-     4  don't check peer common or alt names
-     8  allow expired certificates
-     16 allow certificates which are not valid yet
-     32 allow revoked certificates
+   Controlla la verifica del certificato per le porte di ascolto SSL. Ciò
+   comprende bot leaf che si connettono a noi, utenti che si connettono a
+   Internet e /ctcp chat bot. Puoi impostarlo sommando i numeri per tutte le
+   eccezioni che desidera abilitare. Per impostazione predefinita, la verifica
+   del certificato è disabilitata e tutti i certificati si presume siano validi.
+   Ci sono le seguenti eccezioni con i numeri corrispondenti:
+     1 abilitare la verifica del certificato
+     2 Consenti certificati autofirmati
+     4 non controllare nomi comuni o alt
+     8 Consenti certificati scaduti
+     16 consentono certificati non ancora validi
+     32 consentire certificati revocati
