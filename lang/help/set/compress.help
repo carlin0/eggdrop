@@ -1,0 +1,8 @@
+%{help=set share-compressed}%{+n}
+###  %bset share-compressed%b <0/1>
+  Consentire l'invio compresso dell'elenco utenti? L'elenco utenti viene
+  compresso con il livello di compressione definito in 'compress-level'.
+%{help=set compress-level}%{+n}
+###  %bset compress-level%b <0-9>
+  Questo è il livello di compressione predefinito utilizzato. Questi livelli
+  sono gli stessi usati da GNU gzip.
