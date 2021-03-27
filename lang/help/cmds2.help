@@ -449,9 +449,9 @@ Vedi anche: whom
       %bl%b - leaf (bot non autorizzato a collegare altri bot nella botnet)
       %bn%b - ignore sharing (bot passivo può condividere gli ignore col
               bot aggressivo)
-      %bp%b - share passively (ACCETTA la lista utenti da un bot aggressivo)
+      %bp%b - share passively (INVIA la lista utenti al bot aggressivo)
       %br%b - reject (bot che non sarà autorizzato a collegare la botnet)
-      %bs%b - share aggressively (INVIA la lista utenti al bot passivo),
+      %bs%b - share aggressively (RICEVE la lista utenti dal bot passivo),
               tutto condiviso (bot passivo al bot aggressivo)
       %bu%b - user sharing (bot passivo può condividere le modifiche
               all'utente col bot aggressivo)
