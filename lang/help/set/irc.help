@@ -1,0 +1,67 @@
+%{help=set learn-users}%{+n}
+###  %bset learn-users%b <0/1>
+   Specifica se il bot aggiungerà gli utenti al volo quando loro inviano il
+   messaggio 'hello'. Se disattivato, l'unico modo per aggiungere utenti è
+   con i comandi %b'.adduser'%b o %b'. + user'%b. Se attivo, gli utenti
+   potranno registrarsi nel bot senza il tuo intervento.
+%{help=set wait-split}%{+n}
+### %bset wait-split%b <#>
+   Consente di impostare il numero di secondi da attendere prima che lo split
+   sia da considerarsi per sempre.
+%{help=set wait-info}%{+n}
+### %bset wait-info%b <#>
+   Consente di impostare il numero di secondi da attendere prima di
+   rivisualizzare la info line degli utenti quando entrano nel canale
+   (rilevante solo se %buse-info%b è 1).
+%{help=set modes-per-line}%{+n}
+### %bset modes-per-line%b <3-6>
+   Questo ti permette di impostare il numero di modifiche alla modalità che
+   il bot farà in una riga, il valore predefinito di irc è 3 ma alcune reti
+   consentono fino a 6 o più cambi di modalità.
+%{help=set mode-buf-length}%{+n}
+### %bset mode-buf-length%b <#>
+   La maggior parte dei server limita la quantità di dati che possono essere
+   inviati in formato argomenti dei cambiamenti di modalità, questa impostazione
+   ti consente di abbinarli, se il tuo server utilizza una configurazione non
+   standard (lo standard è 200).
+%{help=set bounce-bans}%{+n}
+### %bset bounce-bans%b 0/1
+   Vuoi che il bot levi i ban messi dal server?
+%{help=set bounce-exempts}%{+n}
+### %bset bounce-exempts%b 0/1
+   Vuoi che il bot inverta le modalità +e impostate dai server?
+   Questa è una funzionalità di IRCnet.
+%{help=set bounce-invites}%{+n}
+### %bset bounce-invites%b 0/1
+   Vuoi che il bot inverta le modalità +I impostate dai server?
+   Questa è una funzionalità di IRCnet.
+%{help=set bounce-modes}%{+n}
+### %bset bounce-modes%b 0/1
+   Vuoi che il bot inverta tutte le modalità impostate dal server?
+%{help=set max-bans}%{+n}
+### %bset max-bans%b <#>
+   Se ci sono più di max-ban ban attivi su un canale, allora il bot non
+   proverà a metterne altri. Quindi non farà flood al IRC server.
+%{help=set max-exempts}%{+n}
+### %bset max-exempts%b <#>
+   Se ci sono più di max-exempt ban attivi su un canale, allora il bot non
+   proverà a metterne altri. Quindi non farà flood al IRC server. Questa è
+   una funzionalità IRCnet.
+%{help=set max-invites}%{+n}
+### %bset max-invites%b <#>
+   Se ci sono più di max-invites ban attivi su un canale, allora il bot non
+   proverà a metterne altri. Quindi non farà flood al IRC server. Questa è
+   una funzionalità IRCnet.
+%{help=set max-modes}%{+n}
+### %bset max-modes%b <#>
+   Imposta qui il limite totale per le modalità +b/+e/+I, questo limite è
+   30 sul server irc ver.2.10. Questa è una funzionalità IRCnet. 
+%{help=set kick-bogus}%{+n}
+### %bset kick-bogus%b 0/1
+   Vuoi che il bot kicki gli username fasulli ?
+%{help=set use-354}%{+n}
+### %bset use-354%b 0/1
+   Ircu ha un nuovo formato per /who channel (che restituisce 354 numerici)
+   utilizzando questo si riduce la quantità di dati recuperati su ciascuno
+   utente quando il bot entra nel canale al minimo richiesto, risparmiare
+   larghezza di banda ed avere un buon netizen.
