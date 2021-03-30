@@ -1,0 +1,35 @@
+%{help=set allow-resync}%{+n}
+###  %bset allow-resync%b <0/1>
+   Quando due bot vengono disconnessi, questa impostazione consente loro di
+   creare una risincronizzazione buffer che salva tutte le modifiche apportate
+   alla lista utenti durante la disconnessione. Quando si riconnettono, non
+   dovranno trasferire il file utente completo, invia semplicemente solo il
+   buffer di risincronizzazione.
+
+   NOTA: è noto che ciò causa la perdita dei flag di canale e altri problemi.
+   L'uso di questa impostazione è sconsigliato.
+%{help=set resync-time}%{+n}
+###  %bset resync-time%b <tempo>
+   Questa impostazione specifica per quanto tempo devono essere conservati i
+   dati di risincronizzazione di un altro bot.
+%{help=set private-global}%{+n}
+###  %bset private-global%b <0/1>
+   Quando si condividono gli elenchi degli utenti, NON ACCETTARE modifiche
+   ai flag globali da altri bot? Il bot invierà comunque le modifiche apportate,
+   ma semplicemente non accetterà nessuna modifica alle flag globali da altri
+   bot. Questo sovrascrive l'impostazione %bprivate-globals%b.
+%{help=set private-globals}%{+n}
+###  %bset private-globals%b [flag]
+   Quando si condividono elenchi di utenti, se private-global non è impostato,
+   quali modifiche alle flag globali da altri bot dovrebbero essere ignorate?
+%{help=set private-user}%{+n}
+###  %bset private-user <0/1>
+   Quando si condividono elenchi di utenti, non accettare NESSUNA modifica della
+   lista utenti da altri bot? Le persone paranoiche dovrebbero utilizzare questa
+   funzione sul proprio bot hub. Questo imporrà che tutte le modifiche all'elenco
+   utenti vengano apportate solo tramite l'hub.
+%{help=set override-bots}%{+n}
+###  %bset override-bots <0/1>
+   Questa impostazione fa sì che il bot scarti i propri record del bot a favore di
+   quelli inviati dall'hub. Nessuna password o botflag viene condivisa, solo porte
+   e indirizzo vengono aggiunti alla procedura di condivisione. 
