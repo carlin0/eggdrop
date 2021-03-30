@@ -1,0 +1,37 @@
+%{help=set max-dloads}%{+n}
+###  %bset max-dloads%b <#>
+   Specifica il numero massimo di download (dcc gets) per ogni utente
+   può essere subito inviato. Per disabilitarlo in modo efficace, impostalo
+   su 99. Il valore predefinito è 3. Quando un utente raggiunge questo limite,
+   non sarà in grado di 'ottenere' altri file dall'area file fino a quando i
+   trasferimenti correnti completati o eventuali trasferimenti in sospeso
+   andranno eventualmente in timeout.
+%{help=set dcc-block}%{+n}
+###  %bset dcc-block%b <#>
+   Specifica la dimensione del blocco da utilizzare nei trasferimenti di file
+   DCC. Il client ircII è di default 512, ma ammette che potrebbe essere troppo
+   piccolo. 1024 è l'impostazione più comune.
+
+   Puoi impostarlo su 0, che attiva 'turbo dcc'. In turbo dcc modalità, il bot
+   scaricherà i trasferimenti il ​​più velocemente possibile, solo fermandosi a
+   contare gli ack dopo che è finito. Questo può drammaticamente migliorare la
+   velocità dei trasferimenti di file ed è consigliato.
+%{help=set copy-to-tmp}%{+n}
+###  %bset copy-to-tmp%b <0/1>
+   Abilita questa impostazione se desideri copiare i file in una posizione
+   temporanea prima di inviarli o riceverli. Questo potrebbe essere utile per
+   la stabilità, ma se le tue directory sono montate su NFS, è un problema.
+   L'impostazione di questo a 1 non è consigliata per file di grandi dimensioni
+   o se sei a corto spazio sul disco.
+%{help=set xfer-timeout}%{+n}
+###  %bset xfer-timeout%b <#>
+   Questo è il numero di secondi da attendere prima che venga inviato o ricevuto
+   un dcc considerato scaduto. Se non si verifica traffico durante il
+   trasferimento nel tempo dato si chiude.
+%{help=set sharefail-unlink}%{+n}
+###  %bset sharefail-unlink%b <0/1>
+    Per impostazione predefinita, Eggdrop interromperà il processo di collegamento
+    se la condivisione della lista utenti è abilitata ma il trasferimento del file
+    non riesce. Impostalo su 0 per mantenere i bot collegati se il trasferimento
+    del file fallisce riproverà ogni minuto (entrambi i bot devono essere v1.9.0
+    o successiva).
