@@ -1,0 +1,21 @@
+%{help=set note-life}%{+n}
+### %bset note-life%b <giorni>
+   Imposta il numero di giorni in cui conservare una nota prima che scada
+   (cancellandola dal bot).
+%{help=set max-notes}%{+n}
+### %bset max-notes%b <numero>
+   Imposta il numero massimo di note che ogni utente può avere memorizzate sul
+   bot. Una volta raggiunto questo limite, non ne verranno più accettate altre.
+%{help=set allow-fwd}%{+n}
+###  %bset allow-fwd%b <0/1>
+   Questa impostazione determina se è consentito o meno l'inoltro delle note.
+   Se una nota sta per essere memorizzata (poiché l'utente è attualmente online)
+   ed è attivo l'impostazione di inoltro (e questo valore è 1), la nota sarà
+   inoltrata all'appropriato utente@bot.
+%{help=set notefile}%{+n}
+###  %bset notefile%b <filename>
+   Specifica il nome del file in cui il bot memorizzerà le note inviate agli utenti
+   che non sono attualmente in partyline (o sono assenti). Cambiare questo mentre
+   il bot è in esecuzione è sconsigliato, tuttavia, l'archiviazione delle note può
+   essere disabilitata impostandolo su "" (vuoto) oppure evitando di caricare il
+   modulo notes.
