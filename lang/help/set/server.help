@@ -1,0 +1,183 @@
+%{help=set altnick}%{+n}
+###  %bset altnick%b <nickname>
+   Imposta un nickname alternativo da usare se il nickname preferito
+   (in 'nick') è in uso. Se anche il soprannome alternativo è in uso, o è
+   vuoto(""), il bot proverà a inserire delle cifre alla fine del nick
+   preferito fino a quando non ne ottiene uno che funzioni.
+
+Vedi anche: set nick, set botnet-nick
+%{help=set realname}%{+n}
+###  %bset realname%b <text>
+   Specifica il campo del nome reale da utilizzare su IRC. questo di solito
+   appare nel /WHOIS come la cosa tra parentesi dopoil proprio nome utente@host.
+   Può essere qualsiasi cosa tu voglia, ma IRC imposta una lunghezza massima in
+   modo che possa essere tagliato se lo imposti troppo lungo.
+
+Vedi anche: set username
+%{help=set init-server}%{+n}
+###  %bset init-server%b <raw-irc-text>
+   Specifica il testo da inviare al server durante la prima connessione.
+   Questo viene solitamente utilizzato per impostare la modalità del bot
+   +i o qualcosa di altrettanto irrilevante.
+%{help=set botnick}%{+n}
+###  %bset botnick%b
+   Questa variabile di sola lettura restituisce il nickname corrente
+   del bot su irc.
+%{help=set servlimit}%{+n}
+###  %bset servlimit%b <#>
+   Specifica il numero minimo di server che il bot deve provare. Se il canale
+   home del bot si svuota e il numero di server sulla rete irc è inferiore al
+   'servlimit', il bot passerà a un nuovo server. Questo per impedire che il
+   bot rimanga bloccato dalla parte sbagliata di un netsplit. Per
+   disabilitarlo, basta impostarlo a 0.
+%{help=set server-timeout}%{+n}
+###  %bset server-timeout%b <secondi>
+   Specifica quanto tempo attendere durante la connessione a un server. Se
+   il server non si connette dopo molti secondi, il bot si limiterà a
+   passare al server successivo.
+%{help=set lowercase-ctcp}%{+n}
+###  %bset lowercase-ctcp%b 0/1
+   Alcuni client IRC accettano CTCP minuscoli e maiuscoli,
+   cambiando questa impostazione a 1 si abilita questa operazione.
+%{help=set server-online}%{+n}
+###  %bset server-online%b
+   Questa variabile di sola lettura restituisce l'ora unix in cui il bot
+   si è connesso con successo al server, quindi se puoi leggere l'ora
+   unix, sei fortunato ;)
+%{help=set keep-nick}%{+n}
+###  %bset keep-nick%b <0/1>
+   Specifica se il bot continuerà a provare a riguadagnare il suo nickname
+   principale nel caso sia costretto a cambiare nick. Se è attivo, e cambi il
+   nick del bot su irc tramite uno script Tcl o il comando %b'.dump'%b, il bot
+   tornerà al nick previsto entro 60 secondi.
+
+Vedi anche: set nick, set altnick
+%{help=set check-stoned}%{+n}
+###  %bset check-stoned%b 0/1
+   Questa impostazione, se abilitata, farà sì che il bot esegua il ping del
+   server di tanto in tanto per assicurarsi che sia effettivamente ancora
+   connesso. Fornisce anche un 'misuratore di lag'. Questo su IRCnet non
+   funziona molto bene.
+%{help=set serverror-quit}%{+n}
+###  %bset serverror-quit%b 0/1
+   Abilitando questo, il bot presumerà che un messaggio di ERRORE dal server
+   indica che sta per interrompere la connessione, e così il bot chiuderà
+   immediatamente la connessione al server.
+%{help=set quiet-reject}%{+n}
+###  %bset quiet-reject%b 0/1
+   Alcuni dei comandi message & ctcp restituiscono messaggi negativi a
+   utenti sconosciuti, sebbene sia educato e utile, è anche un possibile
+   metodo di rilevamento, abilitandolo farà si che il bot invii risposte
+   positive solo agli utenti conosciuti.
+%{help=set max-queue-msg}%{+n}
+###  %bset max-queue-msg%b <#>
+   Questo imposta il numero massimo di messaggi che il bot memorizzerà in
+   CIASCUNA delle sue code di messaggi (ne ha 3) prima che le consideri piene,
+   e inizi a cancellare i messaggi.
+%{help=set trigger-on-ignore}%{+n}
+###  %bset trigger-on-ignore%b 0/1
+   Abilitando questa opzione, gli utenti ignorati attiveranno comunque le
+   associazioni, utente normalmente ignorato è proprio questo, qualcuno
+   che viene ignorato.
+%{help=set exclusive-binds}%{+n}
+###  %bset exclusive-binds%b 0/1
+  Questa impostazione configura PUBM e le associazioni MSGM in modo che siano
+  esclusive di PUB e MSG. Ciò significa che se esiste un bind MSGM con la maschera
+  "* help *" e viene attivato, qualsiasi associazione MSG con "help" nella maschera
+  non sarà attivato. Non abilitarlo a meno che tu non sappia cosa stai facendo!
+%{help=set answer-ctcp}%{+n}
+###  %bset answer-ctcp%b 0/1
+   Questo imposta il numero massimo di CTCP impilati a cui rispondere da qualsiasi
+   messaggio.
+%{help=set server-cycle-wait}%{+n}
+###  %bset server-cycle-wait%b <#>
+   Questo imposta il numero di secondi di attesa tra i server per connettere
+   i successivi, questo può essere utilizzato per prevenire i problemi di
+   limitazione con ircu e connessione troppo rapida.
+%{help=set default-port}%{+n}
+###  %bset default-port%b <#>
+   Imposta la porta predefinita alla quale il bot tenta di connettersi quando
+   non è specificata nell'elenco dei server.
+%{help=set nick}%{+n}
+###  %bset nick%b <nickname>
+   Specifica il nickname predefinito del bot da utilizzare su IRC e nella
+   botnet, a meno che botnet-nick non sia impostato diversamente.
+
+Vedi anche: set altnick, set botnet-nick
+%{help=set flood-ctcp}%{+n}
+###  %bset flood-ctcp%b <#ctcps>[:<#secondi>]
+   Specifica la soglia di flood per le query CTCP (al bot). Se lo stesso host
+   invia più di questo numero di CTCP sul bot entro 60 secondi, verrà
+   impostato su Ignora automaticamente. Puoi anche specificare il numero di
+   secondi per la scansione aggiungendolo dopo i due punti (:). Se imposti il
+   ​​numero di ctcps a 0, si disabilita la protezione contro i flood ctcp
+   (inclusa la protezione avalanche-flood).
+
+Vedi anche: set flood-msg
+%{help=set flood-msg}%{+n}
+###  %bset flood-msg%b <#msgs>[:<#secondi>]
+   Specifica la soglia di flood per i /MSG. Se lo stesso host invia più di questo
+   numero di /MSG al bot entro 60 secondi, è considerato flood e quell'host viene
+   messo in automatico in ignore. È possibile modificare il tempo di scansione da
+   60 secondi specificando il numero dei secondi dopo due punti (:). Se imposti
+   il numero di messaggi a 0 si disattiva la protezione da flood di messaggi.
+
+   esempi:
+     set flood-msg 10
+       (10 msg in 60 secondi è flood)
+     set flood-msg 5:15
+       (5 msg in 15 secondi è flood)
+     set flood-msg 0
+       (protezione flood disattivata)
+
+Vedi anche: set flood-ctcp
+%{help=set servers}%{+n}
+###  %bset servers%b <lista-server>
+   Fornisce al bot un elenco di server da usare per IRC. Si può cambiare
+   in qualsiasi momento al volo, ma se l'attuale server IRC del bot (quello
+   in cui si trova in questo momento) non è nella tua nuova lista, sarà
+   aggiunto, per coerenza. Il formato è: "server add <server> [port [password]]".
+   Se la porta è per connessioni SSL ha come prefisso il segno più (+).
+   Ecco un esempio:
+       
+       server add chat.freenode.net +7070
+       server add irc.freenode.net +7000
+       server add 2001:db8:618:5c0:263:: 6669 password
+       server add ssl.example.net +7000
+
+   Si noti che se si omette il numero della porta, assumerà il valore
+   dell'impostazione %bdefault-port%b.
+
+Vedi anche: default-port
+%{help=set msg-rate}%{+n}
+###  %bset msg-rate%b <#secondi>
+   Numero di secondi di attesa tra la trasmissione delle linee in coda
+   al server. Abbassa questo valore a tuo rischio. Ircd è noto per avviare
+   il controllo di flood da 512 byte/2 secondi.
+%{help=set server}%{+n}
+###  %bset server%b
+   Questa variabile di sola lettura restituisce il server corrente del bot.
+%{help=set net-type}%{+n}
+###  %bset net-type%b
+   Definisci la rete utilizzata dal bot. Le opsioni sono EFnet, IRCnet, UnderNet,
+   DALnet, freenode, QuakeNet, Rizon, Twitch e Other .
+%{help=set ssl-verify-server}%{+n}
+###  %bset ssl-verify-server%b
+   Controlla la verifica del certificato per i server IRC. Per una descrizione dei
+   possibili valori, guarda la sezione Impostazioni SSL. 
+
+Vedi anche: set ssl-verify-clients
+%{help=server settings}%{+n}
+###  Impostazioni per il %bmodulo server%b
+   Questo è un elenco delle variabili Tcl che possono essere utilizzate per la
+   configurazione del modulo server, per un elenco di comandi rilevanti digita
+   %b'.help server module'%b.
+     %bquiet-reject%b        %bservlimit%b      %bnick%b
+     %bserver-online%b        %bflood-ctcp%b     %bserver%b
+     %bmax-queue-msg%b        %bmsg-rate%b       %bbotnick%b
+     %bserver-timeout%b       %binit-server%b    %bservers%b
+     %blowercase-ctcp%b       %bnet-type%b       %bbotname%b
+     %bserverror-quit%b       %banswer-ctcp%b    %baltnick%b
+     %btrigger-on-ignore%b    %bdefault-port%b   %brealname%b
+     %bserver-cycle-wait%b    %bcheck-stoned%b   %bflood-msg%b
+     %bssl-verify-server%b    %bkeep-nick%b
