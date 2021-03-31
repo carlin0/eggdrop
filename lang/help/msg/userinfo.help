@@ -1,0 +1,45 @@
+%{help=email}
+%b/MSG%b %B %bEMAIL%b <il mio indirizzo email>
+   Questo imposterà il tuo indirizzo email. Viene mostrato quando
+   qualcuno fa un WHOIS su di te (vedi HELP WHOIS). Se non
+   specifichi un indirizzo email, il bot mostrerà il tuo
+   indirizzo email che è attualmente impostato per te (se presente).
+%b/MSG%b %B %bEMAIL%b none
+   Questo cancella il tuo indirizzo email.
+%{help=url}
+%b/MSG%b %B %bURL%b <il mio sito>
+   Questo imposterà il tuo indirizzo URL. Se non specifichi un
+   indirizzo URL, il bot ti mostrerà l'indirizzo URL che
+   attualmente è impostato per te (se presente).
+%b/MSG%b %B %bURL%b none
+   Questo cancella il tuo indirizzo URL.
+%{help=bf}
+%b/MSG%b %B %bBF%b <il mio fidanzato>
+   Questo imposterà il tuo fidanzato. Alcuni script (come questo)
+   utilizzano queste informazioni. Se non specifichi un fidanzato,
+   il bot mostrerà il fidanzato che è attualmente impostato
+   per te (se ce ne sono).
+%b/MSG%b %B %bBF%b none
+   Questo cancella il tuo fidanzato.
+%{help=gf}
+%b/MSG%b %B %bGF%b <la mia fidanzata>
+   Questo imposterà la tua fidanzata. Alcuni script (come questo)
+   utilizzano queste informazioni. Se non specifichi una fidanzata,
+   il bot mostrerà la fidanzata che è attualmente impostata
+   per te (se ce ne sono). 
+%b/MSG%b %B %bGF%b none
+   Questo cancella la tua fidanzata.
+%{help=irl}
+%b/MSG%b %B %bIRL%b <il mio vero nome>
+   Questo imposterà il tuo vero nome. Solo per informazione degli
+   altri :). Se non specifichi un vero nome, il bot mostrerà il
+   ​​vero nome che è attualmente impostato per te (se presente).
+%b/MSG%b %B %bIRL%b none
+   Questo cancella il tuo vero nome.
+%{help=dob}
+%b/MSG%b %B %bDOB%b <la mia data di nascita>
+   Questo imposterà la tua data di nascita. Ora ora, sii onesto :)
+   Se non specifichi una data di nascita, il bot visualizzerà la
+   data di nascita che è attualmente impostata per te (se presente).
+%b/MSG%b %B %bDOB%b none
+   Questo cancella la tua data di nascita.
