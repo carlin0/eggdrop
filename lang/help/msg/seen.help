@@ -1,0 +1,5 @@
+%{help=seen}
+###  %bseen%b <nome>
+   Restituisce quanto tempo è trascorso dall'ultima volta che
+   l'utente è stato visto dal bot. Potrebbe anche essere disponibile
+   un comando pubblico nei canali che fa la stessa cosa.
