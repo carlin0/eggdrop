@@ -1,0 +1,6 @@
+%{help=notes}
+Devi usare la tua password per tutti i comandi NOTES.
+%b/MSG%b %B %bNOTES%b <password> %bINDEX%b - Questo elenca tutte le note memorizzate per te.
+%b/MSG%b %B %bNOTES%b <password> %bREAD%b <numero/ALL> - Visualizza le note memorizzate per te. Se viene specificato un numero, verrà visualizzata solo quella nota. Se si specifica ALL, verranno visualizzate tutte le note. Puoi anche richiedere un elenco di note, ad esempio "2-4;8;16-".
+%b/MSG%b %B %bNOTES%b <password> %bERASE%b <numero/ALL> - Ha la stessa sintassi di %bREAD%b, ma questo comando cancella le note specificate.
+%b/MSG%b %B %bNOTES%b <password> %bTO%b <nome> <messaggio> - Memorizza una nota per il nome specificato, ma questo deve essere un utente valido nel bot.
