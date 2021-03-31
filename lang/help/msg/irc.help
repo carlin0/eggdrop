@@ -1,0 +1,73 @@
+%{help=die}%{+n}
+%b/MSG%b %B %bDIE%b <password> [motivo]
+Questo mi uccide (esco da irc e termina il programma).
+%{help=go}%{+o|o}
+%b/MSG%b %B %bGO%b <canale>
+Questo fa sì che il bot lasci un canale se non è attualmente op.
+%{help=help}
+%b/MSG%b comandi per %b%B%b:
+Tutti gli utenti: ADDHOST HELP IDENT INFO PASS VOICE WHO WHOIS
+%{+l|l}
+Mezzi-op di canale e globali: HALFOP INVITE KEY
+%{+o|o}
+Op di canale e globali: OP GO
+%{+m}
+Master globali: DIE JUMP MEMORY SAVE REHASH RESET
+%{+m|m}
+Master di canale: STATUS
+%{end}
+Per aiuto su un comando specifico, %b/MSG%b %B %bHELP%b <comando>.%{+m} Sei un master. Molti altri comandi sono disponibili tramite dcc chat.%{-} Potrebbero esserci anche comandi aggiuntivi forniti da altri moduli.
+Amministratore: %A
+%{help=addhost}
+%b/MSG%b %B %bADDHOST%b <password> <hostmask>
+Ciò consente al bot di riconoscerti da una nuova maschera host. La maschera host specificata non deve corrispondere alla maschera host di un altro utente.
+%{help=ident}
+%b/MSG%b %B %bIDENT%b <password> [nome]
+Ciò consente al bot di riconoscerti da un nuovo indirizzo. Non è necessario specificare un nome se il tuo nome è lo stesso del tuo nickname su IRC.
+%{help=info}
+%b/MSG%b %B %bINFO%b <password> [canale] [info line]
+Qualunque cosa imposti come info line verrà solitamente visualizzata quando entri in un canale, a condizione che tu non ci sia stato negli ultimi tre minuti. Viene anche mostrato quando fai %bWHO%b o %bWHOIS%b. È possibile impostare una info line specifica per un canale. Se per un canale non esiste una info line specifica, verrà visualizzata la info line globale.
+%b/MSG%b %B %bINFO%b <password> [canale] %bNONE%b
+Questo cancella la tua info line.
+%{help=invite}%{+l|l}
+%b/MSG%b %B %bINVITE%b <password> <canale>
+Questo serve a farsi invitare in un canale specifico (se il bot è op in quel canale).
+%{help=jump}%{+m}
+%b/MSG%b %B %bJUMP%b <password> [server [[+]port [server password]]]
+Questo farà passare il bot a un nuovo server. Facoltativamente, è possibile specificare un server a cui passare, sotto forma di 'new.server.com' o 'new.server.com 6667', ecc. Aggiungere il prefisso '+' alla porta per SSL.
+%{help=memory}%{+m}
+%b/MSG%b %B %bMEMORY%b <password>
+Visualizza le informazioni sull'utilizzo della memoria del bot.
+%{help=op}%{+o|o}
+%b/MSG%b %B %bOP%b <password> [canale]
+Ti metto l'op in tutti i canali in cui io sono op e tu no. Se invece specifichi un canale, sarai oppato solo lì.
+%{help=halfop}%{+l|l}
+%b/MSG%b %B %bHALFOP%b <password> [canale]
+Ti metto il mezzo-op in tutti i canali in cui io sono op e tu non hai il mezzo-op. Se invece specifichi un canale ti darò il mezzo-op solo lì.
+%{help=voice}%{+o|o}
+%b/MSG%b %B %bVOICE%b <password> [canale]
+Ti metto il voice (+v) in ogni canale in cui io sono op e tu non hai il voice. Se invece specifichi un canale ti metto il voice solo lì.
+%{help=key}%{+l|l}
+%b/MSG%b %B %bKEY%b <password> <canale>
+Questo ti invierà la chiave per un canale che è +k e forse ti inviterà anche in quel canale se è +i (se il bot è op nel canale specificato).
+%{help=pass}
+%b/MSG%b %B %bPASS%b <password> - Questo imposta una password per il tuo nome. La pass è necessaria per utilizzare la maggior parte dei comandi e/o per entrare in partyline.
+%b/MSG%b %B %bPASS%b <vecchia-pass> <nuova-pass> - Ti permette di cambiare la tua password.
+%{help=save}%{+m}
+%b/MSG%b %B %bSAVE%b <password>
+Questo fa si che il bot salvi la sua lista utenti.
+%{help=rehash}%{+m}
+%b/MSG%b %B %bREHASH%b <password>
+Questo fa si che il bot rilegga tutte le configurazioni e gli script Tcl.
+%{help=reset}%{+m}
+%b/MSG%b %B %bRESET%b <password> [canale]
+Questo fa sì che il bot ripristini le informazioni sul canale, nel caso in cui non siano sincronizzate con la realtà. Non è più usato molto.
+%{help=status}%{+m|m}
+%b/MSG%b %B %bSTATUS%b <password>
+Questo ti dà una breve visualizzazione del mio stato attuale. Lo stesso comando in partyline da molte più informazioni.
+%{help=who}
+%b/MSG%b %B %bWHO%b <canale>
+Questo ti mostrerà un elenco di chi è sul canale specificato in questo momento e la info line di ogni persona (se ne ha una).
+%{help=whois}
+%b/MSG%b %B %bWHOIS%b <nome>
+Mostra le informazioni sul nome specificato.
