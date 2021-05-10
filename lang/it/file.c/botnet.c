@@ -543,7 +543,7 @@ void answer_local_whom(int idx, int chan)
                 party[i].away ? party[i].away : "");
     }
   }
-  dprintf(idx, "Total users: %d\n", total);
+  dprintf(idx, "Totale utenti: %d\n", total);
 }
 
 /* Show z a list of all bots connected
@@ -918,13 +918,13 @@ int botunlink(int idx, char *nick, char *reason, char *from)
                          BOT_UNLINKEDFROM, dcc[i].nick, reason, from, bots,
                          (bots != 1) ? "s" : "", users, (users != 1) ?
                          "s" : "");
-          dprintf(i, "bye %s\n", reason);
+          dprintf(i, "addio %s\n", reason);
         } else {
           simple_sprintf(s, "%s %s (%s) (lost %d bot%s and %d user%s)",
                          BOT_UNLINKEDFROM, dcc[i].nick, from, bots,
                          (bots != 1) ? "s" : "", users,
                          (users != 1) ? "s" : "");
-          dprintf(i, "bye No reason\n");
+          dprintf(i, "addio senza motivo\n");
         }
         putlog(LOG_BOTS, "*", "%s.", s);
         dprintf(idx, "%s.\n", s);
