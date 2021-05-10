@@ -445,7 +445,7 @@ void tell_dcc(int zidx)
 void not_away(int idx)
 {
   if (dcc[idx].u.chat->away == NULL) {
-    dprintf(idx, "You weren't away!\n");
+    dprintf(idx, "Non eri assente!\n");
     return;
   }
   if (dcc[idx].u.chat->channel >= 0) {
@@ -455,7 +455,7 @@ void not_away(int idx)
       botnet_send_away(-1, botnetnick, dcc[idx].sock, NULL, idx);
     }
   }
-  dprintf(idx, "You're not away any more.\n");
+  dprintf(idx, "Non sei più assente.\n");
   nfree(dcc[idx].u.chat->away);
   dcc[idx].u.chat->away = NULL;
   check_tcl_away(botnetnick, dcc[idx].sock, NULL);
@@ -482,7 +482,7 @@ void set_away(int idx, char *s)
       botnet_send_away(-1, botnetnick, dcc[idx].sock, s, idx);
     }
   }
-  dprintf(idx, "You are now away.\n");
+  dprintf(idx, "Adesso sei assente.\n");
   check_tcl_away(botnetnick, dcc[idx].sock, s);
 }
 
