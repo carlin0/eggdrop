@@ -1,1 +1,2 @@
-File che servono a completare la traduzione
+File che servono a completare la traduzione , i file vanno inseriti nell'eggdrop prima di compilarlo.
+Vanno tutti nella cartella /src/ escluso il file channels.c che va in /src/mod/channels.mod/
