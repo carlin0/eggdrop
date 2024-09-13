@@ -13,6 +13,7 @@
 #                                                                     #
 #######################################################################
 
+# set ::http::defaultCharset utf-8
 package require Tcl 8.3
 package require eggdrop 1.6
 package require http 2.0
