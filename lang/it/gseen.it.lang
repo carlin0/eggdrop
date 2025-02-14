@@ -1,0 +1,137 @@
+#####################################################################
+#
+# Langfile italiano per GSeen.Mod v1.1.0
+#
+# Devi solamente modificare il testo sottostante per renderlo più
+# conforme alle tue necessità. Poi aggiungere o rimuovere qualsiasi
+# tag come vuoi, non c'è alcun bisogno di porli in un ordine speciale
+# (o numero).
+#
+# Se inserisci più di una linea per ID, allora una risposta random
+# sarà scelta per ogni risposta. (non funziona per le stringhe
+# temporali)
+#
+# Se pensi di aver bisogno di più tags, mandami una email e forse
+# l'aggiungerò nella prossima release.
+#
+# Una lista completa di tutte le Tags disponibili si trova alla fine
+# del file slang_gseen_commands.c (sfortunatamente, non contiene
+# alcuna descrizione delle tags)
+#
+#
+# File tradotto da Skizo (Skizo@DBC2000.ORG)
+#
+#####################################################################
+
+#
+## stringhe temporali
+#
+# tutte le stringhe temporali al singolare e plurale
+#
+D 0 anno
+D 1 anni
+D 2 settimana
+D 3 settimane
+D 4 giorno
+D 5 giorni
+D 6 ora
+D 7 ore
+D 8 minuto
+D 9 minuti
+D 10 secondo
+D 11 secondi
+# se è stato fornito un tempo non valido, scrivi la seguente stringa
+D 12 diverso tempo
+
+#
+## prefissi
+#
+# Questi sono prefissi per le risposte. Di default, c'è solo un prefisso
+# per le risposte pubbliche (così sai a chi è rivolta la risposta),
+# ma puoi anche definire prefissi per altre risposte.
+
+# per le risposte nel canale:
+10 <?nick/?>,
+# per le risposte attraverso notice:
+11
+# per le risposte via PRIVMSG
+12
+# per le risposte sulla partyline
+13
+
+#
+## messaggi d'errore
+#
+54 sai cos'e` un parametro?
+54 non pensi sarebbe piu` ragionevole dirmi chi stai cercando?
+54 42.
+55 ti sembro forse uno specchio? ^_^
+55 cantati "mirror mirror on the wall"...
+55 hai una doppia personalita`?
+56 se non vedi <?query/?> qui, hai un urgente bisogno di nuovi occhiali. ^_^
+56 guarda piu` da vicino la lista degli utenti di questo canale.
+57 spiacente ma le wildcards ('?' o '*') non sono ammesse nella ricerca.
+58 uhm... non pensi che il nick sia un po` troppo lungo? ^_^
+58 sai che la lunghezza dei nick e` limitata, vero?
+
+#
+## nessun risultato
+#
+65 non ricordo di aver visto <?query/?>.
+65 <?query/?>? uhm... sto` cercando di ricordare... forse... non sono sicuro... no. Non ricordo <?query/?>.
+66 non vedo <?query/?> da <?laston/?>.
+67 non ho trovato corrispondenze alla tua richiesta.
+67 spiacente, ma la tua richiesta non ha prodotto alcun risultato
+68 Ahi, la tua richiesta ha troppi risultati. Sei pregato di modificarla.
+
+#
+## la vittima è online
+#
+73 <?query/?> e` <?othernick/?>, e si trova nel canale in questo momento.
+74 <?query/?> e` su <?otherchan/?> ora.
+
+#
+## risultati trovati
+#
+75 Ho trovato una corrispondenza alla tua ricerca:
+76 Ho trovato <?numresults/?> risultati per la tua ricerca:
+77 Ho trovato <?numresults/?> risultati per la tua ricerca. Ecco i 5 piu` recenti:
+
+#
+## il risultato è stato trovato su un altro bot del botnet
+#
+85 <?remotebot/?> dice:
+
+#
+## le informazioni principali
+#
+101 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto entrare in<?schan/?> <?swhen/?> fa (<?stime/?>). <?snick/?> e` ancora presente.
+121 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto entrare in <?schan/?> <?swhen/?> fa (<?stime/?>), ma <?snick/?> si e` misteriosamente dematerializzato.
+102 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto lasciare <?schan/?> <?swhen/?> fa (<?stime/?>), dopo esserci stato per <?spent/?>.
+103 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto uscire da <?schan/?> <?swhen/?> fa (<?stime/?>) dicendo "<?smsg/?>" dopo esserci stato per <?spent/?>.
+104 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto cambiare il suo nick in <?snick2/?> su <?schan/?> <?swhen/?> fa (<?stime/?>). <?snick2/?> e` tuttora presente.
+124 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto cambiare il suo nick in <?snick2/?> su <?schan/?> <?swhen/?> fa (<?stime/?>), ma <?snick2/?> si e` misteriosamente dematerializzato.
+105 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto cambiare il suo nick da <?snick2/?> su <?schan/?> <?swhen/?> fa (<?stime/?>). <?snick/?> e` tuttora presente.
+125 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto cambiare il suo nick da <?snick2/?> su <?schan/?> <?swhen/?> fa (<?stime/?>), ma <?snick/?> si e` misteriosamente dematerializzato.
+106 <?snick/?> (<?shost/?>) l'ultima volta e` stato kickato da <?schan/?> by <?punisher/?> (<?kickreason/?>) <?swhen/?> fa (<?stime/?>), dopo averci passato <?spent/?>.
+107 <?snick/?> (<?shost/?>) l'ultima volta e` stato splittato da <?schan/?> <?swhen/?> fa (<?stime/?>), dopo averci passato <?spent/?>.
+108 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto rientrare in <?schan/?> da un netsplit <?swhen/?> fa (<?stime/?>) <?snick/?> e` ancora online.
+128 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto rientrare in <?schan/?> da un netsplit <?swhen/?> fa (<?stime/?>), ma il dio dei netsplits non l'ha lasciato scappare, ed ora non e` con noi.
+109 <?snick/?> l'ultima volta e` stato visto entrare nel canale botnet <?schan/?> su <?bnbot/?> <?swhen/?> fa (<?stime/?>).
+129 <?snick/?> l'ultima volta e` stato visto entrare in party line su <?bnbot/?> <?swhen/?> fa (<?stime/?>).
+110 <?snick/?> l'ultima volta e` stato visto lasciare il canale botnet <?schan/?> da <?bnbot/?> <?swhen/?> fa (<?stime/?>).
+130 <?snick/?> l'ultima volta e` stato visto lasciare la party line da <?bnbot/?> <?swhen/?> fa (<?stime/?>).
+140 <?snick/?> (<?shost/?>) l'ultima volta e` stato visto su <?schan/?> <?swhen/?> fa (<?stime/?>).
+
+#
+## notifiche seen
+#
+170 <?rnick/?> (<?rhost/?>) ti cercava su <?rchan/?> <?rwhen/?> fa (<?rtime/?>).
+171 <?requests/?> utenti ti cercavano:
+172 L'ultimo era <?rnick/?> (<?rhost/?>) su <?rchan/?> <?rwhen/?> fa (<?rtime/?>).
+
+#
+## statistiche seen
+#
+180 Sto` attualmente tracciando <?totalnicks/?> nicks usando <?totalbytes/?> bytes.
+
