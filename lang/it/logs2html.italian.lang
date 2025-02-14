@@ -1,0 +1,38 @@
+# logs2html.italian.lang
+# messaggi per il modulo logs2html
+
+# Anno
+0xe000,anno
+
+# Torna alla pagina principale
+0xe001,Pagina principale
+
+# Up link
+0xe002,sù
+
+# Link avanti, indietro
+0xe003,torna
+0xe004,prossimo
+
+# Nomi dei mesi
+0xe005,Gennaio
+0xe006,Febbraio
+0xe007,Marzo
+0xe008,Aprile
+0xe009,Maggio
+0xe010,Giugno
+0xe011,Luglio
+0xe012,Agosto
+0xe013,Settembre
+0xe014,Ottobre
+0xe015,Novembre
+0xe016,Dicembre
+
+# Nomi dei giorni della settimana
+0xe017,Do
+0xe018,Lu
+0xe019,Ma
+0xe020,Me
+0xe021,Gi
+0xe022,Ve
+0xe023,Sa
