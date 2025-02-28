@@ -1,0 +1,13 @@
+|       Comando	              |       Funzione                 |        Chi/Grado       |
+_________________________________________________________________________________________
+!quote <numero>                 Richiama un quote                       Tutti
+!randquote                      Richiama quote a caso                   Tutti
+!lastquote                      Richiama ultimo quote                   Tutti
+!findquote <stringa>            Cerca in base alla stringa              Tutti
+!quoteinfo <numero>             Mostra le info                          Tutti
+!addquote                       Aggiunge un quote                       Almeno +f
+!delquote <numero>              Cancella un quote                       Master
+!deletedquoteinfo <numero>      Mostra info su quote cancellati         Master
+!undelquote <numero>            Ripristina quote cancellati             Master
+!forcedelquote <numero>         Forza la cancellazione di un quote      Master
+!cancelquote <numero>           Cancella definitivamente un quote       Master
