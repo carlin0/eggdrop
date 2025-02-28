@@ -1,0 +1,12 @@
+|           Comando                  |              Funzione                 |   Chi/Grado   |
+_______________________________________________________________________________________________
+!help-db                               Menù di aiuto                                Tutti
+!explain <voce>                        Richiama una voce tra quelle aggiunte        Tutti
+!explain <*stringa*>                   Effettua una ricerca tra le voci             Tutti
+!findb <*stringa*>                     Effettua una ricerca tra le voci             Tutti
+!db-lines                              Mostra quante linee ci sono nel database     Tutti
+!db-size                               Mostra quanti bytes occupa il database       Tutti
+!add <voce> <descrizione>              Aggiunge una voce                            Solo +o
+!rem <voce>                            Cancella una voce                            Solo +o
+!modify <voce> <nuova descrizione>     Cambia la descrizione di una voce            Solo +o
+!backup                                Crea un backup del database                  Master
