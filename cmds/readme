@@ -1,1 +1,30 @@
+### Moduli per script helpsys
 
+
+SETUP
+    1. Create a directory to store help files (using eggdrop's help directory is not recommended)
+    2. For each help "topic" create a file that will be read when the user requests it
+       NOTE: Step 1 & 2 must be done BEFORE loading the script, if it is not, the script will
+       return an error and not load
+    3. Read and edit the configuration section of commands.tcl
+    4. Add the line "source scripts/commands.tcl" to your eggdrop conf
+    5. Rehash
+
+USAGE
+    The file matched up with the "main" topic will be sent to the user if no topic is specified,
+    otherwise, the specified topic is searched for and the coresponding file is sent. Command
+    syntax for the help commands are !help [topic] or /msg BOT help [topic].
+
+EXAMPLE
+    variable dir "commands/"
+
+    variable topics {
+        main    main.help
+        google  google.help
+    }
+
+    User input: !help
+    Result: commands/main.help is sent line-by-line to the user
+
+    User input: !help google
+    Result: commands/google.help is sent to the user
