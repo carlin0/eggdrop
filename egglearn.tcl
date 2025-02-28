@@ -29,7 +29,7 @@ set eglrn(define) !explain
 set eglrn(dbbcktrigger) !backup
 
 #Trigger to request the help
-set eglrn(hlp) !help
+set eglrn(hlp) !help-db
 
 #Who add records must be op ? 1|0 (Default 1)
 set eglrn(addop) "0"
